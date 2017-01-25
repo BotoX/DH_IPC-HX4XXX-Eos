@@ -87,5 +87,7 @@ touch /mnt/mtd/Config/ppp/pppoesessionctx
 touch /mnt/mtd/Config/ppp/pppoe-redial_time
 touch /mnt/mtd/Config/dial-ip
 
+/sbin/utelnetd -p 2300 -l /bin/login &
+
 /usr/etc/imod
 
