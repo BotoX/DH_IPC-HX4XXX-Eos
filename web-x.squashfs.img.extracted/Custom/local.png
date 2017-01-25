@@ -25,7 +25,7 @@ show_Device_type = 1
 is_k6_DeviceType = 0
 
 //show or not show the enable of device discover，1:show,0:not show,default:not show
-is_show_startDeviceDiscover = 0
+is_show_startDeviceDiscover = 1
 
 //show or not show UPNP Mode，1:show,0:not show,default:show
 is_show_upnpMode = 1
@@ -47,7 +47,7 @@ is_show_VPN_Certificate = 0
 
 
 //show or not show snap main stream mode,1:Yes,0:No,default:Yes
-is_has_SnapFormatAs = 0
+is_has_SnapFormatAs = 1
 
 //show or not show real-time monitor figure,1：show，0：not show，default: show
 is_has_detectPic = 1
@@ -116,7 +116,7 @@ is_show_image = 1
 is_show_help = 1
 
 //show or not show font size
-is_show_fontSize = 0
+is_show_fontSize = 1
 
 //show or not show Onvif,default: show
 is_show_Onvif = 1
@@ -131,13 +131,13 @@ is_385_intellent = 1
 is_show_roi = 1
 
 //is or isn't watchNet，1:Yes，0:No
-is_show_WatchNet = 0
+is_show_WatchNet = 1
 
 //show or not show eventManage page, default: show
 is_show_eventManage = 0
 
 //show or not show alarm detect of code page, default:not show
-is_show_mainStreamType = 0
+is_show_mainStreamType = 1
 
 //show or not show PCM, default:not show
 is_show_PCM = 0
@@ -151,7 +151,7 @@ is_show_plate = 0
 is_hide_connectHttpsEnable = 0
 
 //是否显示登陆密码强度检验,默认不显示
-is_show_secrityCheck = 0
+is_show_secrityCheck = 1
 
 //hide or not hide aud_Manage tab, 1：hide，0：show，default:hide
 is_hide_audManage = 1
