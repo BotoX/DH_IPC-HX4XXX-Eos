@@ -1,7 +1,7 @@
 {
-   "DefaultLanguage" : "English",
+   "DefaultLanguage" : "SimpChinese",
    "DefaultVideoStandard" : "PAL",
-   "SupportLanguages" : "English",
+   "SupportLanguages" : "SimpChinese",
    "hwid" : [
       "IPC-HFW4231B:01:02:02:36:1A:00:01:00:00:00:00:258:00:00:00:00:00:01:00:00:100",
       "IPC-HFW4231B-AS:01:02:02:36:1A:00:01:0A:01:01:04:258:03:00:00:00:00:01:00:00:100",
