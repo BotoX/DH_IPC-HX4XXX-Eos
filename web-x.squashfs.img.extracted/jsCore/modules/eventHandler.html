@@ -1,0 +1,92 @@
+<div class="ui-form-item">
+    <label class="ui-label">
+        <input type="checkbox" cfg="FlashEnable"><span class="fn-marl3" t="w_led"><!-- led --></span>
+    </label>
+</div>
+<div class="ui-form-item">
+    <label class="ui-label"><span class="fn-padl20" t="w_flashDelay"><!-- flashDelay --></span></label>
+    <input type="text" cfg="FlashLatch" class="fn-width80"/>
+    <span t="w_Second"><!-- Second --></span>
+    <span>(10~300)</span>
+</div>
+<div class="ui-form-item">
+    <label class="ui-label">
+        <input type="checkbox" cfg="RecordEnable"><span class="fn-marl3" t="w_RecordChannel"><!-- Record Channel --></span>
+    </label>
+    <div class="ui-channel" id="e_recordchn"></div>
+</div>
+<div class="ui-form-item">
+    <label class="ui-label"><span class="fn-padl20" t="RecordLatch"><!-- Record Latch --></span></label>
+    <input type="text" cfg="RecordLatch" class="fn-width80"/>
+    <span t="w_Second"><!-- Second --></span>
+    <span>(10~300)</span>
+</div>
+<div class="ui-form-item">
+    <label class="ui-label">
+        <input type="checkbox" cfg="AlarmOutEnable"><span class="fn-marl3" t="w_Alarm Out"><!-- Alarm Out --></span>
+    </label>
+    <div class="ui-channel" id="e_alarmchn"></div>
+</div>
+<div class="ui-form-item">
+    <label class="ui-label"><span class="fn-padl20" t="AlarmOutLatch"><!-- Alarm Out Latch --></span></label>
+    <input type="text" cfg="AlarmOutLatch" class="fn-width80"/>
+    <span t="w_Second"><!-- Second --></span>
+    <span>(10~300)</span>
+</div>
+<div class="ui-form-item">
+    <label class="ui-label">
+        <input type="checkbox" cfg="MailEnable"><span class="fn-marl3" t="w_Send E-Mail"><!-- Send E-Mail --></span>
+    </label>
+</div>
+<div class="ui-form-item">        
+    <label class="ui-label"><input cfg="PtzLinkEnable" type="checkbox"/><span class="fn-marl3" t="w_PtzLink"><!-- Ptz Link --></span></label>
+    <div class="fn-left" style="display:none">
+        <label class="ui-label-sub fn-minwid50" t="w_LinkWork"><!-- Link Work --></label>
+        <select id="e_ptz_link" class="ui-select fn-width80 fn-height20">
+            <option value="None" t="w_none"><!-- None --></option>
+            <option value="Preset" t="w_Preset"><!-- Preset --></option>
+            <option value="Tour" t="w_Tour"><!-- Tour --></option>
+            <option value="Pattern" t="w_Pattern"><!-- Pattern --></option>
+            <option value="QuickFocus" t="QuickFocus"><!-- QuickFocus --></option>
+        </select>
+    </div>
+    <div class="fn-left" style="display:none">
+        <label class="ui-label-sub fn-minwid50" t="w_ptzAddress"><!-- NO. --></label>
+        <input id="e_ptz_num" type="text" class="fn-width74"/>
+        <span>(1~255)</span>
+    </div>
+</div>
+<div class="ui-form-item fn-padl120" style="display:none">
+    <label class="ui-label-sub fn-minwid50" t="TrickerZoom"><!-- 倍率 --></label>
+    <input type="text" class="fn-width74" id="e_ptz_quickfzoom"/>
+    <span>(0~24)</span>
+</div>
+<div class="ui-form-item fn-padl120" style="display:none">
+    <label class="ui-label-sub fn-minwid50" t="KeepTime"><!-- 持续时间 --></label>
+    <input type="text" class="fn-width74" id="e_ptz_quickftime"/>
+    <span t="w_Second"><!-- 秒 --></span>
+    <span>(1~300)</span>
+</div>
+<div class="ui-form-item fn-padl120" style="display:none">
+    <label class="ui-label-sub fn-minwid50" t="coldHotSpot"><!-- 冷热点 --></label>
+    <select id="e_ptz_hotcoldspot" class="fn-width100">
+        <option value="0" t="w_hotspotfocus"></option>
+        <option value="1" t="w_coldspotfocus"></option>
+    </select>
+</div>
+<div class="ui-form-item">
+    <label class="ui-label">
+        <input type="checkbox" cfg="VoiceEnable"><span class="fn-marl3" t="w_audioAlarm"><!-- audio Alarm --></span>
+    </label>
+</div>
+<div class="ui-form-item">
+    <label class="ui-label">
+        <input type="checkbox" cfg="SnapshotEnable"><span class="fn-marl3" t="w_Snap"><!-- Snap --></span>
+    </label>
+    <div class="ui-channel" id="e_snapchn"></div>
+</div>
+<div class="ui-form-item">
+    <label class="ui-label">
+        <input type="checkbox" cfg="MMSEnable"><span class="fn-marl3" t="w_noteLink"><!-- note Link --></span>
+    </label>
+</div>

@@ -1,0 +1,811 @@
+{
+   "DVRIP" : {
+	     "MaxConnections" : 10,
+	     "RegisterServer" : {
+	     "DeviceID" : "none"
+	      }
+	  },
+	"Multicast":{
+			"DHII" : [
+			{
+				 "Channel" : 0,
+				 "Enable" : true,
+				 "LocalAddr" : "192.168.1.101",
+				 "MulticastAddr" : "239.255.42.42",
+				 "StreamType" : "Main"
+			},
+			{
+				 "Channel" : 0,
+				 "Enable" : false,
+				 "LocalAddr" : "192.168.1.102",
+				 "MulticastAddr" : "239.255.42.42",
+				 "StreamType" : "Extra1"
+			}],
+			"RTP" : [
+			{
+				"Channel" : 0,
+				"Enable" : true,
+				"IPType" : "IPV4",
+				"IPV6" : "FF15:0000:0000:0000:0000:0000:8000:0000",
+				"LocalAddr" : "0.0.0.0",
+				"MulticastAddr" : "224.1.2.4",
+				"StreamType" : "Main",
+				"TTL" : 64
+			},
+			{
+				"Channel" : 0,
+				"Enable" : true,
+				"IPType" : "IPV4",
+				"IPV6" : "FF15:0000:0000:0000:0000:0000:8000:0000",
+				"LocalAddr" : "0.0.0.0",
+				"MulticastAddr" : "224.1.2.4",
+				"StreamType" : "Extra1",
+				"TTL" : 64
+			},
+			{
+				"Channel" : 0,
+				"Enable" : false,
+				"IPType" : "IPV4",
+				"IPV6" : "FF15:0000:0000:0000:0000:0000:8000:0000",
+				"LocalAddr" : "0.0.0.0",
+				"MulticastAddr" : "224.1.2.4",
+				"StreamType" : "Extra2",
+				"TTL" : 64
+			}],
+			"TS" : [
+			{
+				"Channel" : 0,
+				"Enable" : false,
+				"LocalAddr" : "0.0.0.0",
+				"MulticastAddr" : "224.1.2.3",
+				"StreamType" : "Main"
+			},
+			{
+				"Channel" : 0,
+				"Enable" : false,
+				"LocalAddr" : "0.0.0.0",
+				"MulticastAddr" : "224.1.2.3",
+				"StreamType" : "Extra1"
+			},
+			{
+				"Channel" : 0,
+				"Enable" : false,
+				"LocalAddr" : "0.0.0.0",
+				"MulticastAddr" : "224.1.2.3",
+				"StreamType" : "Extra2"
+			}]
+	},
+	  "Ptz" : [{
+	     "ProtocolName" : "PELCOD"
+	  }],
+	  "Email" : {
+	  "Enable" : true,
+	  "Address" : "none",
+	  "SendAddress" : "none",
+	  "Title" : "IPC Message"
+	  },
+	  "AutoMaintain" : {
+	     "AutoRebootDay" : 2,
+	     "AutoRebootHour" : 2
+	  },
+	  "MediaGlobal" : {
+	     "PacketLength" : 8
+	  },
+	  "VideoColor" : [[
+	  {
+         "Brightness" : 50,
+         "Contrast" : 50,
+         "Hue" : 50,
+         "Saturation" : 50,
+         "TimeSection" : "1 00:00:00-24:00:00"
+      },
+      {
+         "Brightness" : 50,
+         "Contrast" : 50,
+         "Hue" : 50,
+         "Saturation" : 50,
+         "TimeSection" : "0 00:00:00-24:00:00"
+      },
+      {
+         "Brightness" : 50,
+         "Contrast" : 50,
+         "Hue" : 50,
+         "Saturation" : 50,
+         "TimeSection" : "0 00:00:00-24:00:00"
+      }
+	  ]],
+	 "Network" : {
+	  "eth0" : {
+	  "IPAddress" : "192.168.1.108",
+	  "SubnetMask" : "255.255.255.0",
+	  "DefaultGateway" : "192.168.1.1",
+	  "DnsServers" : ["8.8.8.8", "8.8.4.4"]
+	  },	  
+	    "eth2" : {
+	  "IPAddress" : "192.168.0.108",
+	  "SubnetMask" : "255.255.255.0",
+	  "DefaultGateway" : "192.168.0.1",
+	  "DnsServers" : ["8.8.8.8", "8.8.4.4"]
+	  }
+	  },
+	  "NTP" : {
+	  "UpdatePeriod" : 10
+	  },
+	  "DDNS" : [{
+	     "Protocol" : "CN99 DDNS",
+		 "Name" : "CN99 DDNS",
+	     "Address" : "www.3322.org",
+	     "HostName" : "none",
+	     "Port" : 80,
+	     "UserName": "none",
+	     "Password" : "none",
+	     "KeepAlive" : 10
+	  					},
+				 {
+	     "Protocol" : "NO-IP DDNS",
+		 "Name" : "NO-IP DDNS",
+	     "Address" : "dynupdate.no-ip.com",
+	     "HostName" : "none",
+	     "Port" : 80,
+	     "UserName": "none",
+	     "Password" : "none",
+	     "KeepAlive" : 10
+	  				},
+	  				{
+	     "Protocol" : "Dyndns DDNS",
+		 "Name" : "Dyndns DDNS",
+	     "Address" : "members.dyndns.org",
+	     "HostName" : "none",
+	     "Port" : 80,
+	     "UserName": "none",
+	     "Password" : "none",
+	     "KeepAlive" : 10
+	  			 },
+	  			 {
+	     "Protocol" : "Private DDNS",
+		 "Name" : "Dahua DDNS",
+	     "Address" : "www.dahuaddns.com",
+	     "Port" : 12366,
+	     "UserName": "",
+	     "Password" : "",
+	     "KeepAlive" : 10
+	  			 }
+	  ],
+	"NetAbort": {
+		"Enable": true,
+		"EventHandler": {
+			"AlarmOutEnable": false,
+			"RecordEnable": false
+		}
+	},
+	"IPConflict": {
+		"Enable": true,
+		"EventHandler": {
+			"AlarmOutEnable": false,
+			"RecordEnable": false
+		}
+	},
+	  "Encode" : [ {
+	     "MainFormat" : [ {
+			"Audio" : {
+               "Compression" : "G.711A"
+				},
+	  		"Video" : {
+				"Compression" : "H.264",
+	  			"BitRate" : 4096,
+	  			"BitRateControl" : "CBR",
+				"Profile" : "High"
+	  			}
+	  		},
+	  		 {
+			 "Audio" : {
+               "Compression" : "G.711A"
+				},
+	  		"Video" : {
+				"Compression" : "H.264",
+	  			"BitRate" : 4096,
+	  			"BitRateControl" : "CBR",
+				"Profile" : "High"
+	  			}
+	  		},
+			{
+			 "Audio" : {
+               "Compression" : "G.711A"
+				},
+	  		"Video" : {
+				"Compression" : "H.264",
+	  			"BitRate" : 4096,
+	  			"BitRateControl" : "CBR",
+				"Profile" : "High"
+	  			}
+	  		},
+			{
+			 "Audio" : {
+               "Compression" : "G.711A"
+				},
+	  		"Video" : {
+				"Compression" : "H.264",
+	  			"BitRate" : 4096,
+	  			"BitRateControl" : "CBR",
+				"Profile" : "High"
+	  			}
+	  		}],	   
+	  	"ExtraFormat" : [ {
+	  		"AudioEnable" : false,
+			"Audio" : {
+               "Compression" : "G.711A"
+            },
+	  		"VideoEnable" : true,
+	  		"Video" : {
+	  			"Compression" : "H.264",
+	  			"BitRate" : 1024,
+	  			"BitRateControl" : "CBR",
+	  			"Profile" : "High"
+	  			}
+	  	},
+		{
+	  		"AudioEnable" : false,
+			"Audio" : {
+               "Compression" : "G.711A"
+            },
+	  		"VideoEnable" : false,
+	  		"Video" : {
+	  			"Compression" : "H.264",
+	  			"BitRate" : 1024,
+	  			"BitRateControl" : "CBR",
+	  			"Profile" : "High"
+	  			}
+	  	},
+		{
+	  		"AudioEnable" : false,
+			"Audio" : {
+               "Compression" : "G.711A"
+            },
+	  		"VideoEnable" : false,
+	  		"Video" : {
+	  			"Compression" : "H.264",
+	  			"BitRate" : 1024,
+	  			"BitRateControl" : "CBR",
+	  			"Profile" : "High"
+	  			}
+	  	}],	  
+	  	"SnapFormat":[ {	  		
+	  		"Video" : {
+	  		  "Compression" : "MJPG",
+	  		  "Quality" : 5
+	  			}
+	  		},
+	  		 {
+	  		"Video" : {
+	  		  "Compression" : "MJPG",
+	  		  "Quality" : 5
+	  			}
+	  		},
+	  		 {
+	  		"Video" : {
+	  			"Compression" : "MJPG",
+	  			"Quality" : 5
+	  			}
+	  		}]
+	  }],
+	  "VideoInOptions" : [ {
+	  	"IrisAuto" : true,
+	  	"WhiteBalance" : "Auto",
+	  	"DayNightColor" : 1,
+	 		"Gain" : 50,
+	 		"ExternalSync" : 0,
+		"GainMax" : 70,
+        	"NightOptions" : {
+				"SwitchMode": 0,
+                "DayNightColor" : 1
+            	},
+        	"NormalOptions" : {
+				"SwitchMode": 0,
+                "DayNightColor" : 1
+            	}
+	  }],
+	   "VideoEncodeROI" : [{
+		"Main" : false
+		}],
+	  "VideoInPreviewOptions" :[ {
+		"SwitchMode": 3,
+		"DayOptions": {
+		"TridimDenoise" : 1,
+		"TridimEstimation" : 50},
+		"NightOptions": {
+		"TridimDenoise" : 1,
+		"TridimEstimation" : 50},
+		"NormalOptions": {
+		"TridimDenoise" : 1,
+		"TridimEstimation" : 50}
+	  }],
+	  "VideoWidget" : [{
+		"PTZCoordinates" : {
+			"EncodeBlend" : false
+		},
+		"PTZDirection" : {
+			"EncodeBlend" : false
+		},
+		"PTZOSDMenu" : {
+			"EncodeBlend" : false
+		},
+		"PTZOSDMenuViaApp" : {
+			"EncodeBlend" : false
+		},
+		"PTZPreset" : {
+			"EncodeBlend" : false
+		},
+		"PTZZoom" : {
+			"EncodeBlend" : false
+		},
+		"PtzPattern" : {
+			"EncodeBlend" : false
+		},
+		"PtzRS485Detect" : {
+			"EncodeBlend" : false
+		}
+	  } ],
+	  "Record" : [ {
+	      "TimeSection" : 
+		[
+  		       ["393222 00:00:00-23:59:59",
+  			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59"
+  			],
+  			["393222 00:00:00-23:59:59",
+  			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59"
+  			],
+  			["393222 00:00:00-23:59:59",
+  			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59"
+  			],
+  			["393222 00:00:00-23:59:59",
+  			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59"
+  			],
+  			["393222 00:00:00-23:59:59",
+  			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59"
+  			],
+  			["393222 00:00:00-23:59:59",
+  			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59"
+  			],
+  			["393222 00:00:00-23:59:59",
+  			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59",
+			"0 00:00:00-23:59:59"
+  			]
+                ],
+              "PreRecord" : 5
+              }],
+          "MotionDetect" : [{
+	  	"EventHandler" : {
+	  		"Dejitter" : 5
+	  	},
+	    "MotionDetectWindow" : [
+	  	  {
+	  	  "Name" : "Region1",
+        "Sensitive" : 60,
+        "Threshold" : 5
+      	},
+	  	  {
+	  	  "Name" : "Region2",
+        "Sensitive" : 60,
+        "Threshold" : 5
+      	},
+	  	  {
+	  	  "Name" : "Region3",
+        "Sensitive" : 60,
+        "Threshold" : 5
+      	},
+	  	  {
+	  	  "Name" : "Region4",
+        "Sensitive" : 60,
+        "Threshold" : 5
+      	}
+      	]
+	  }],
+	"AudioDetect" : [{
+		"EventHandler" : {
+			"Dejitter" : 5
+	}
+	},{
+		"EventHandler" : {
+			"Dejitter" : 5
+	}
+	}],
+	  "Mobile" : {
+		   "DialInActivation" : {
+		  "Enable" : false
+		},
+	   "EventMessageSending" : {
+		  "Enable" : false
+	   },
+	   "SMSActivation" : {
+		  "Enable" : false
+	   }
+	  },
+	  "Sound" : {
+			"AlarmSound" : "\/usr\/data\/audiofiles\/alarm1.pcm"
+	  } ,
+	  "Wireless" : {
+		  "3G" : {
+		  "Activate" : false,
+		  "Enable" : false,
+		  "TimeSection" : [
+			 [
+				"1 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59"
+			 ],
+			 [
+				"1 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59"
+			 ],
+			 [
+				"1 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59"
+			 ],
+			 [
+				"1 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59"
+			 ],
+			 [
+				"1 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59"
+			 ],
+			 [
+				"1 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59"
+			 ],
+			 [
+				"1 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59",
+				"0 00:00:00-23:59:59"
+			 ]
+		  ]
+	   }
+	  },
+	"VideoAnalyseGlobal" : [{
+		"CalibrateArea" : null,
+		"Scene" : {
+			"Dejitter" : false,
+			"Detail" : {
+				"CameraAngle" : 0,
+				"CameraDistance" : 10,
+				"CameraHeight" : 6.2,
+				"Track" : {
+					"DistLimit" : 10,
+					"OverlapPercent" : 0,
+					"TimeLimit" : 10
+				}
+			},
+			"Jitter" : 50,
+			"PtzPresetId" : 0,
+			"Type" : null,
+			"TypeList" : null
+		}
+	}],
+	"VideoAnalyseModule" : [
+		[{
+				"Type" : "Normal",
+				"Accuracy" : 1,
+				"AntiDisturbance" : true,
+				"Attributes" : ["Category"],
+				"Backgroud" : "Normal",
+				"Backlight" : true,
+				"Category" : ["Motor"],
+				"ContourAssistantTrack" : true,
+				"DetectBalance" : 0,
+				"DetectRegion" : [[0, 0], [0, 8191], [8191, 8191], [8191, 0]],
+				"MaxTrackZoom" : 0.250,
+				"MovingStep" : 5,
+				"ObjectImageSize" : {
+					"Height" : 0,
+					"Width" : 0
+				},
+				"ObjectType" : "Unknown",
+				"PlateAnalyseMode" : 0,
+				"PlateDiffZeroOrD" : false,
+				"PtzPresetId" : 0,
+				"ScalingFactor" : 5,
+				"Sensitivity" : 5,
+				"Shadow" : false,
+				"SizeClassifier" : {
+					"Number" : 2,
+					"Values" : [3.50, 5.0]
+				},
+				"SizeFilter" : {
+					"ByArea" : false,
+					"ByRatio" : false,
+					"BySize" : true,
+					"CalibrateBoxs" : [{
+							"CenterPoint" : [4096, 4096],
+							"Ratio" : 1
+						}
+					],
+					"MaxSize" : [8191, 8191],
+					"MeasureMode" : "Pixel",
+					"MinSize" : [0, 0],
+					"Type" : "ByLength"
+				},
+				"SnapShot" : false
+			}, {
+				"Type" : "FaceDetection",
+				"Accuracy" : 1,
+				"AntiDisturbance" : true,
+				"Attributes" : ["Category"],
+				"Backgroud" : "Normal",
+				"Backlight" : true,
+				"Category" : ["Motor"],
+				"ContourAssistantTrack" : true,
+				"DetectBalance" : 0,
+				"DetectRegion" : [[0, 0], [0, 8191], [8191, 8191], [8191, 0]],
+				"MaxTrackZoom" : 0.250,
+				"MovingStep" : 5,
+				"ObjectImageSize" : {
+					"Height" : 0,
+					"Width" : 0
+				},
+				"ObjectType" : "HumanFace",
+				"PlateAnalyseMode" : 0,
+				"PlateDiffZeroOrD" : false,
+				"PtzPresetId" : 0,
+				"ScalingFactor" : 5,
+				"Sensitivity" : 8,
+				"Shadow" : false,
+				"SizeClassifier" : {
+					"Number" : 2,
+					"Values" : [3.50, 5.0]
+				},
+				"SizeFilter" : {
+					"ByArea" : false,
+					"ByRatio" : false,
+					"BySize" : true,
+					"CalibrateBoxs" : [{
+							"CenterPoint" : [4096, 4096],
+							"Ratio" : 1
+						}
+					],
+					"MaxSize" : [8191, 8191],
+					"MeasureMode" : "Pixel",
+					"MinSize" : [0, 0],
+					"Type" : "ByLength"
+				},
+				"SnapShot" : false
+			}, {
+				"Type" : "NumberStat",
+				"Accuracy" : 1,
+				"AntiDisturbance" : true,
+				"Attributes" : ["Category"],
+				"Backgroud" : "Normal",
+				"Backlight" : true,
+				"Category" : ["Motor"],
+				"ContourAssistantTrack" : true,
+				"DetectBalance" : 0,
+				"DetectRegion" : [
+					[0, 0],
+					[0, 8191],
+					[8191, 8191],
+					[8191, 0]
+				],
+				"MaxTrackZoom" : 0.250,
+				"MovingStep" : 5,
+				"ObjectImageSize" : {
+					"Height" : 0,
+					"Width" : 0
+				},
+				"ObjectType" : "Unknown",
+				"PlateAnalyseMode" : 0,
+				"PlateDiffZeroOrD" : false,
+				"PtzPresetId" : 0,
+				"ScalingFactor" : 5,
+				"Sensitivity" : 5,
+				"Shadow" : false,
+				"SizeClassifier" : {
+					"Number" : 2,
+					"Values" : [3.50, 5.0]
+				},
+				"SizeFilter" : {
+					"ByArea" : false,
+					"ByRatio" : false,
+					"BySize" : true,
+					"CalibrateBoxs" : [{
+							"CenterPoint" : [4096, 4096],
+							"Ratio" : 1
+						}
+					],
+					"MaxSize" : [8191, 8191],
+					"MeasureMode" : "Pixel",
+					"MinSize" : [0, 0],
+					"Type" : "ByLength"
+				},
+				"SnapShot" : false
+			}
+		]
+	],
+	"VideoAnalyseRule" : [
+		[
+			{
+				"Name" : "HeatMap1",
+				"Type" : "HeatMap",
+				"Class": "HeatMap",
+				"PtzPresetId" : 0,
+				"Config": {
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0]
+					}
+				}
+			},
+			{
+				"Enable" : false,
+				"Name" : "FaceDetection",
+				"Type" : "FaceDetection",
+				"Class": "FaceDetection",
+				"PtzPresetId" : 0,
+				"Config": {
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0]
+					}
+				}
+			},
+			{
+				"Enable" : false,
+				"Name" : "NumberStat",
+				"Type" : "NumberStat",
+				"Class": "NumberStat",
+				"PtzPresetId" : 0,
+				"Config": {
+					"Type" : "Entrance",
+					"EnterThreshold" : 0,
+					"ExitThreshold" : 0,
+					"InsideThreshold" : 0,
+					"SizeFilter" : {
+						"MaxSize" : [2560, 2560],
+						"MinSize" : [1792, 1792]
+					}
+				},
+				"EventHandler":{
+					"SnapshotTimes" : 0
+				}
+			}
+		]
+	],
+	"MovedDetect" : [
+	{
+		"EventHandler":{
+			"Dejitter" : 5
+			}
+		}
+	],
+	   "RecordStoragePoint" : [ {
+	  	"AlarmRecord" : {
+			"Local" : true,
+			"FTP" : false
+		},
+		"AlarmSnapShot" : {
+			"Local" : true,
+			"FTP" : false
+		},
+		"EventRecord" : {
+			"Remote" : false,
+			"Local" : true
+		},
+		"EventSnapShot" : {
+			"Remote" : false,
+			"Local" : true
+		},
+		"ManualRecord" : {
+			"Remote" : false,
+			"Local" : true
+		},
+		"ManualSnapShot" : {
+			"Remote" : false,
+			"Local" : true
+		},
+		"TimingRecord" : {
+			"FTP" : false,
+			"Local" : true
+		},
+		"TimingSnapShot" : {
+			"FTP" : false,
+			"Local" : true
+		},
+		"VideoDetectRecord" : {
+			"FTP" : false,
+			"Local" : true
+		},
+		"VideoDetectSnapShot" : {
+			"FTP" : false,
+			"Local" : true
+		}
+	  }],
+	  "SNMP" : {
+		"V1Enable" : false,
+		"V2Enable" : false,
+		"Enable" : true,
+		"Port" : 161,
+		"ReadCommon" : "public",
+		"WriteCommon" : "private",
+		"TrapServer" : "",
+		"TrapPort" : 162,
+		"V3Enable" : false,
+		"User" : "private",
+		"Password" : "",
+		"V3RWAuthType" : "MD5",
+		"V3RWEncryType" : "CBC-DES",
+		"V3RWEncryPwd" : "",
+		"V3ReadUser" : "public",
+		"V3ReadAuthType" : "MD5",
+		"V3ReadAuthPwd" : "",
+		"V3ReadEncryType" : "CBC-DES",
+		"V3ReadEncryPwd" : "",
+		"KeepAliveEnable" : false,
+		"KeepAlivePeriod" : 120,
+		"SysContact" : "syscontact market@dahuatech.com"
+	  },
+	"T2UServer" : {
+		"Address" : "www.easy4ipcloud.com",
+		"Enable" : false,
+		"Key" : "YXQ3Mahe-5H-R1Z_",
+		"Port" : 8800,
+		"RegisterPort" : 12366,
+		"RegisterServer" : "www.easy4ip.com",
+		"Type" : "dhp2p",
+		"WebVersion" : "2.420.0"
+	},
+		"CloudUpgradeServer" : {
+		"Address" : "dus.easy4ipcloud.com",
+		"Port" : 16759
+		}
+}

@@ -1,0 +1,68 @@
+{
+	  "Encode" : [ {
+	     "MainFormat" : [ 
+			{
+	  		"Video" : {
+				"BitRate" : 12288,
+				"CustomResolutionName" : "3072x2048",
+				"Height" : 2048,
+				"Width" : 3072
+	  			}
+	  		},
+	  		 {
+	  		"Video" : {
+				"BitRate" : 12288,
+				"CustomResolutionName" : "3072x2048",
+				"Height" : 2048,
+				"Width" : 3072
+	  			}
+	  		},
+			{
+	  		"Video" : {
+				"BitRate" : 12288,
+				"CustomResolutionName" : "3072x2048",
+				"Height" : 2048,
+				"Width" : 3072
+	  			}
+	  		},
+			{
+	  		"Video" : {
+	  			"BitRate" : 4096,
+				"CustomResolutionName" : "720P"
+	  			}
+	  		}],	   
+	  	"ExtraFormat" : [ {
+	  		"Video" : {
+				"CustomResolutionName" : "D1",
+	  			"BitRate" : 1024
+	  			}
+	  	},
+		{
+	  		"Video" : {
+				"CustomResolutionName" : "D1",
+	  			"BitRate" : 1024
+	  			}
+	  	},
+		{
+	  		"Video" : {
+				"CustomResolutionName" : "D1",
+	  			"BitRate" : 1024  			
+				}
+	  	}],	  
+	  	"SnapFormat":[ {	  		
+	  		"Video" : {
+				"CustomResolutionName" : "3072x2048"
+	  			}
+	  		},
+	  		 {
+	  		"Video" : {
+				"CustomResolutionName" : "3072x2048"			
+				}
+	  		},
+	  		 {
+	  		"Video" : {
+				"CustomResolutionName" : "3072x2048"  			
+				}
+	  		}]
+	  }]
+}

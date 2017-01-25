@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            Log
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <p class="noiceC">
+            <span class="bold">Comment:</span>
+            Only the equipments which support these scales have the function.
+        </p>
+        <h2>Log Introduce</h2>
+        <p class="detailP">
+            It is to record user operation information and some system information.
+        </p>
+        <h2>Parameter Function</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Parameter</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td class="wid80">Start Time</td>
+                <td>
+                    Set the start time of the requested log.(The earliest time is Jan 1st 2000)
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">End Time</td>
+                <td>
+                    Set the end time of the requested log.(The oldest time is Dec 31st2037.)
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Type</td>
+                <td>
+                    Log types include: system operation, configuration operation, data operation, event operation, record operation, user management, log clear.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Search</td>
+                <td>
+                    You can select log type from the drop down list and then click search button to view the list.；You can click the stop button to terminate current search operation. You can view searched items amount and period.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Detailed Information</td>
+                <td>Click one log, you can view its detailed information.</td>
+            </tr>
+            <tr>
+                <td class="wid80">Clear</td>
+                <td>
+                    You can click this button to delete all displayed log files.  Please note system does not support clear by type.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Backup</td>
+                <td>You can click this button to backup log files to current PC.</td>
+            </tr>
+        </table>
+        <p class="normalP">
+            <span class="boldT">
+                Please refer to the following contents for detailed definition of different log types：
+            </span>
+        </p>
+        <p class="iconP2">
+            <span class="boldT">The system operation log type includes:</span>
+            <SPAN class="yellow">
+                "StartUp", "Abort", "Exit", "Restart", "ShutDown", "Reboot", "Upgrade"
+            </SPAN>
+        </p>
+        <p class="iconP2">
+            <span class="boldT">The setting operation log includes:</span>
+            <SPAN class="yellow">"SaveConfig", "RecallConfig","Zoom and Focus".</SPAN>
+        </p>
+        <p class="iconP2">
+            <span class="boldT">The data operation includes:</span>
+            <SPAN class="yellow">"SetWorkDirType", "ClearWorkDir", "HotPlug", "FTP Status", "NAS Status", "RecordMode","SD card error","Disk error".</SPAN>
+        </p>
+        <p class="iconP2">
+            <span class="boldT">
+                The event operation includes（record motion detect, camera masking and local alarm event）:
+            </span>
+            <SPAN class="yellow">"EventStart", "EventStop"</SPAN>
+        </p>
+        <p class="iconP2">
+            <span class="boldT">Record operation includes:</span>
+            <SPAN class="yellow">"FileAccess", "FileAccessError", "FileSearch"</SPAN>
+        </p>
+        <p class="iconP2">
+            <span class="boldT">Account（Record account modification and user login/logout.）：</span>
+            <SPAN class="yellow">
+                "LogIn", "LogOut", "AddUser", "DeleteUser", "ModifyUser", "AddGroup", "DeleteGroup", "ModifyGroup"
+            </SPAN>
+        </p>
+        <p class="iconP2">
+            <span class="boldT">Clear log:</span>
+            <SPAN class="yellow">ClearLog</SPAN>
+        </p>
+</div>
+<script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+<script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

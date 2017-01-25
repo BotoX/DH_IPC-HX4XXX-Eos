@@ -1,0 +1,369 @@
+{
+	"CustomTemplateGlobal" : {
+		"CalibrateArea" : null,
+		"Scene" : {
+			"Type" : "Normal",
+			"PtzPresetId" : 0,
+			"Jitter" : 50,
+			"Dejitter" : false,
+			"Detail" : {
+				"CameraAngle" : 30,
+				"CameraDistance" : 10.0,
+				"CameraHeight" : 6.2,
+				"Track" : {
+					"DistLimit" : 10,
+					"OverlapPercent" : 0,
+					"TimeLimit" : 10
+				},
+				"Landline" : [
+					[500, 500],
+					[7690, 500]
+				]
+			}
+		}
+	},
+
+	"CustomTemplateRule" : {
+		"Normal": {
+			"CrossLineDetection" : {
+				"Name" : "line1",
+				"Class" : "Normal",
+				"Type" : "CrossLineDetection",
+				"PtzPresetId" : 0,
+				"Enable" : true,
+				"Config" : {
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0]
+					}
+				},
+				"EventHandler" : {
+					"SnapshotTimes" : 0
+				}
+			},
+			"CrossRegionDetection" : {
+				"Name" : "area1",
+				"Class" : "Normal",
+				"Type" : "CrossRegionDetection",
+				"PtzPresetId" : 0,
+				"Enable" : true,
+				"Config" : {
+					"Action" : ["Cross"],
+					"Direction" : "Both",
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0]
+					}
+				},
+				"EventHandler" : {
+					"SnapshotTimes" : 0
+				}
+			},
+			"LeftDetection" : {
+				"Name" : "object1",
+				"Class" : "Normal",
+				"Type" : "LeftDetection",
+				"PtzPresetId" : 0,
+				"Enable" : true,
+				"Config" : {
+					"DetectRegion" : [
+						[0, 0], [0, 0], [0, 0], [0, 0]
+					],
+					"MinDuration" : 10,
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0],
+						"Type" : "ByLength"
+					}
+				},
+				"EventHandler" : {
+					"SnapshotTimes" : 0
+				}
+			},
+			"TakenAwayDetection" : {
+				"Name" : "object1",
+				"Class" : "Normal",
+				"Type" : "TakenAwayDetection",
+				"PtzPresetId" : 0,
+				"Enable" : true,
+				"Config" : {
+					"DetectRegion" : [
+						[0, 0], [0, 0], [0, 0], [0, 0]
+					],
+					"MinDuration" : 10,
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0],
+						"Type" : "ByLength"
+					}
+				},
+				"EventHandler" : {
+					"SnapshotTimes" : 0
+				}
+			},
+			"ParkingDetection" : {
+				"Name" : "ParkingDetection1",
+				"Class" : "Normal",
+				"Type" : "ParkingDetection",
+				"PtzPresetId" : 0,
+				"Enable" : true,
+				"Config" : {
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0]
+					}
+				},
+				"EventHandler" : {
+					"SnapshotTimes" : 0
+				}
+			},
+			"WanderDetection" : {
+				"Name" : "LoiteringDetection1",
+				"Class" : "Normal",
+				"Type" : "WanderDetection",
+				"PtzPresetId" : 0,
+				"Enable" : true,
+				"Config" : {
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0]
+					}
+				},
+				"EventHandler" : {
+					"SnapshotTimes" : 0
+				}
+			},
+			"RioterDetection" : {
+				"Name" : "PeopleGathering1",
+				"Class" : "Normal",
+				"Type" : "RioterDetection",
+				"PtzPresetId" : 0,
+				"Enable" : true,
+				"Config" : {
+					"MinDetectRect" :
+					[
+						[3776, 3696],
+						[4416, 4496]
+					],
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0]
+					}
+				},
+				"EventHandler" : {
+					"SnapshotTimes" : 0
+				}
+			},
+			"MoveDetection" : {
+				"Name" : "FastMoving1",
+				"Class" : "Normal",
+				"Type" : "MoveDetection",
+				"PtzPresetId" : 0,
+				"Enable" : true,
+				"Config" : {
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0]
+					}
+				},
+				"EventHandler" : {
+					"SnapshotTimes" : 0
+				}
+			}
+		},
+		"HeatMap" : {
+			"HeatMap" : {
+				"Name" : "HeatMap1",
+				"Type" : "HeatMap",
+				"Class" : "HeatMap",
+				"PtzPresetId" : 0
+			}
+		},
+		"FaceDetection" : {
+			"FaceDetection" : {
+				"Name" : "FaceDetection",
+				"Class" : "FaceDetection",
+				"Type" : "FaceDetection",
+				"PtzPresetId" : 0,
+				"Enable" : true,
+				"Config" : {
+					"SizeFilter" : {
+						"MaxSize" : [8191, 8191],
+						"MinSize" : [0, 0]
+					}
+				},
+				"EventHandler" : {
+					"SnapshotTimes" : 0
+				}
+			}
+		},
+		"NumberStat" : {
+			"NumberStat" : {
+				"Name" : "NumberStat",
+				"Class" : "NumberStat",
+				"Type" : "NumberStat",
+				"PtzPresetId" : 0,
+				"Enable" : true,
+				"Config" : {
+					"Type" : "Entrance",
+					"EnterThreshold" : 0,
+					"ExitThreshold" : 0,
+					"InsideThreshold" : 0
+				},
+				"EventHandler" : {
+					"SnapshotTimes" : 0
+				}
+			}
+		}
+	},
+
+	"CustomTemplateModule" : {
+		"Normal" : {
+			"Type" : "Normal",
+			"Accuracy" : 1,
+			"AntiDisturbance" : true,
+			"Attributes" : ["Category"],
+			"Backgroud" : "Normal",
+			"Backlight" : true,
+			"Category" : ["Motor"],
+			"ContourAssistantTrack" : true,
+			"DetectBalance" : 0,
+			"DetectRegion" : [
+				[0, 0],
+				[0, 8191],
+				[8191, 8191],
+				[8191, 0]
+			],
+			"MaxTrackZoom" : 0.250,
+			"MovingStep" : 5,
+			"ObjectImageSize" : {
+				"Height" : 0,
+				"Width" : 0
+			},
+			"ObjectType" : "Unknown",
+			"PlateAnalyseMode" : 0,
+			"PlateDiffZeroOrD" : false,
+			"PtzPresetId" : 0,
+			"ScalingFactor" : 5,
+			"Sensitivity" : 5,
+			"Shadow" : false,
+			"SizeClassifier" : {
+				"Number" : 2,
+				"Values" : [3.50, 5.0]
+			},
+			"SizeFilter" : {
+				"ByArea" : false,
+				"ByRatio" : false,
+				"BySize" : true,
+				"CalibrateBoxs" : [{
+						"CenterPoint" : [4096, 4096],
+						"Ratio" : 1
+					}
+				],
+				"MaxSize" : [8191, 8191],
+				"MeasureMode" : "Pixel",
+				"MinSize" : [0, 0],
+				"Type" : "ByLength"
+			},
+			"SnapShot" : false
+		},
+		"FaceDetection" : {
+			"Type" : "FaceDetection",
+			"Accuracy" : 1,
+			"AntiDisturbance" : true,
+			"Attributes" : ["Category"],
+			"Backgroud" : "Normal",
+			"Backlight" : true,
+			"Category" : ["Motor"],
+			"ContourAssistantTrack" : true,
+			"DetectBalance" : 0,
+			"DetectRegion" : [
+				[0, 0],
+				[0, 8191],
+				[8191, 8191],
+				[8191, 0]
+			],
+			"MaxTrackZoom" : 0.250,
+			"MovingStep" : 5,
+			"ObjectImageSize" : {
+				"Height" : 0,
+				"Width" : 0
+			},
+			"ObjectType" : "HumanFace",
+			"PlateAnalyseMode" : 0,
+			"PlateDiffZeroOrD" : false,
+			"PtzPresetId" : 0,
+			"ScalingFactor" : 5,
+			"Sensitivity" : 8,
+			"Shadow" : false,
+			"SizeClassifier" : {
+				"Number" : 2,
+				"Values" : [3.50, 5.0]
+			},
+			"SizeFilter" : {
+				"ByArea" : false,
+				"ByRatio" : false,
+				"BySize" : true,
+				"CalibrateBoxs" : [{
+						"CenterPoint" : [4096, 4096],
+						"Ratio" : 1
+					}
+				],
+				"MaxSize" : [8191, 8191],
+				"MeasureMode" : "Pixel",
+				"MinSize" : [0, 0],
+				"Type" : "ByLength"
+			},
+			"SnapShot" : false
+		},
+		"NumberStat" : {
+			"Type" : "NumberStat",
+			"Accuracy" : 1,
+			"AntiDisturbance" : true,
+			"Attributes" : ["Category"],
+			"Backgroud" : "Normal",
+			"Backlight" : true,
+			"Category" : ["Motor"],
+			"ContourAssistantTrack" : true,
+			"DetectBalance" : 0,
+			"DetectRegion" : [
+				[0, 0],
+				[0, 8191],
+				[8191, 8191],
+				[8191, 0]
+			],
+			"MaxTrackZoom" : 0.250,
+			"MovingStep" : 5,
+			"ObjectImageSize" : {
+				"Height" : 0,
+				"Width" : 0
+			},
+			"ObjectType" : "Unknown",
+			"PlateAnalyseMode" : 0,
+			"PlateDiffZeroOrD" : false,
+			"PtzPresetId" : 0,
+			"ScalingFactor" : 5,
+			"Sensitivity" : 5,
+			"Shadow" : false,
+			"SizeClassifier" : {
+				"Number" : 2,
+				"Values" : [3.50, 5.0]
+			},
+			"SizeFilter" : {
+				"ByArea" : false,
+				"ByRatio" : false,
+				"BySize" : true,
+				"CalibrateBoxs" : [{
+						"CenterPoint" : [4096, 4096],
+						"Ratio" : 1
+					}
+				],
+				"MaxSize" : [8191, 8191],
+				"MeasureMode" : "Pixel",
+				"MinSize" : [0, 0],
+				"Type" : "ByLength"
+			},
+			"SnapShot" : false
+		}
+	}
+}

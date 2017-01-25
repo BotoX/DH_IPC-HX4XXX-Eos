@@ -1,0 +1,327 @@
+{
+   "EncodingResolutionLimit" : [
+      [ "3072x2048", "2048x2048", "3M", "UXGA" ],
+      [ "D1", "CIF" ],
+      [ "1_3M", "D1" ],
+      null,
+      [ "3072x2048", "2048x2048", "3M", "UXGA", "1_3M", "D1", "CIF" ]
+   ],
+   "FishEyeImageResolutionMap" : {
+      "1280x960" : {
+         "CeilMode" : {
+            "Config" : "1280x960",
+            "DoublePanorama" : "960x960",
+            "FourEPtzRegion" : "960x960",
+            "Original" : "1280x960",
+            "OriginalPlusThreeEPtzRegion" : "960x960",
+            "Panorama" : "1280x480",
+            "Single" : "480x480",
+            "TwoEPtzRegion" : "960x960"
+         },
+         "FloorMode" : {
+            "Config" : "1280x960",
+            "DoublePanorama" : "960x960",
+            "FourEPtzRegion" : "960x960",
+            "Original" : "1280x960",
+            "OriginalPlusThreeEPtzRegion" : "960x960",
+            "Panorama" : "1280x480",
+            "Single" : "480x480",
+            "TwoEPtzRegion" : "960x960"
+         },
+         "WallMode" : {
+            "Config" : "1280x960",
+            "FourEPtzRegion" : "960x960",
+            "Original" : "1280x960",
+            "OriginalPlusThreeEPtzRegion" : "960x960",
+            "Panorama" : "960x480",
+            "Single" : "480x480",
+            "TwoEPtzRegion" : "960x960"
+         }
+      },
+      "1600x1200" : {
+         "CeilMode" : {
+            "Config" : "1600x1200",
+            "DoublePanorama" : "1152x1152",
+            "FourEPtzRegion" : "1152x1152",
+            "Original" : "1600x1200",
+            "OriginalPlusThreeEPtzRegion" : "1152x1152",
+            "Panorama" : "2304x576",
+            "Single" : "576x576",
+            "TwoEPtzRegion" : "1152x1152"
+         },
+         "FloorMode" : {
+            "Config" : "1600x1200",
+            "DoublePanorama" : "1152x1152",
+            "FourEPtzRegion" : "1152x1152",
+            "Original" : "1600x1200",
+            "OriginalPlusThreeEPtzRegion" : "1152x1152",
+            "Panorama" : "2304x576",
+            "Single" : "576x576",
+            "TwoEPtzRegion" : "1152x1152"
+         },
+         "WallMode" : {
+            "Config" : "1600x1200",
+            "FourEPtzRegion" : "1152x1152",
+            "Original" : "1600x1200",
+            "OriginalPlusThreeEPtzRegion" : "1152x1152",
+            "Panorama" : "1152x576",
+            "Single" : "576x576",
+            "TwoEPtzRegion" : "1152x1152"
+         }
+      },
+      "2048x1536" : {
+         "CeilMode" : {
+            "Config" : "2048x1536",
+            "DoublePanorama" : "1536x1536",
+            "FourEPtzRegion" : "1536x1536",
+            "Original" : "2048x1536",
+            "OriginalPlusThreeEPtzRegion" : "1536x1536",
+            "Panorama" : "3072x768",
+            "Single" : "768x768",
+            "TwoEPtzRegion" : "1536x1536"
+         },
+         "FloorMode" : {
+            "Config" : "2048x1536",
+            "DoublePanorama" : "1536x1536",
+            "FourEPtzRegion" : "1536x1536",
+            "Original" : "2048x1536",
+            "OriginalPlusThreeEPtzRegion" : "1536x1536",
+            "Panorama" : "3072x768",
+            "Single" : "768x768",
+            "TwoEPtzRegion" : "1536x1536"
+         },
+         "WallMode" : {
+            "Config" : "2048x1536",
+            "FourEPtzRegion" : "1536x1536",
+            "Original" : "2048x1536",
+            "OriginalPlusThreeEPtzRegion" : "1536x1536",
+            "Panorama" : "1536x768",
+            "Single" : "768x768",
+            "TwoEPtzRegion" : "1536x1536"
+         }
+      },
+      "2048x2048" : {
+         "CeilMode" : {
+            "Config" : "2048x2048",
+            "DoublePanorama" : "1920x1920",
+            "FourEPtzRegion" : "1920x1920",
+            "Original" : "2048x2048",
+            "OriginalPlusThreeEPtzRegion" : "1920x1920",
+            "Panorama" : "3840x960",
+            "Single" : "960x960",
+            "TwoEPtzRegion" : "1920x1920"
+         },
+         "FloorMode" : {
+            "Config" : "2048x2048",
+            "DoublePanorama" : "1920x1920",
+            "FourEPtzRegion" : "1920x1920",
+            "Original" : "2048x2048",
+            "OriginalPlusThreeEPtzRegion" : "1920x1920",
+            "Panorama" : "3840x960",
+            "Single" : "960x960",
+            "TwoEPtzRegion" : "1920x1920"
+         },
+         "WallMode" : {
+            "Config" : "2048x2048",
+            "FourEPtzRegion" : "1920x1920",
+            "Original" : "2048x2048",
+            "OriginalPlusThreeEPtzRegion" : "1920x1920",
+            "Panorama" : "1920x960",
+            "Single" : "960x960",
+            "TwoEPtzRegion" : "1920x1920"
+         }
+      },
+      "3072x2048" : {
+         "CeilMode" : {
+            "Config" : "3072x2048",
+            "DoublePanorama" : "1920x1920",
+            "FourEPtzRegion" : "1920x1920",
+            "Original" : "3072x2048",
+            "OriginalPlusThreeEPtzRegion" : "1920x1920",
+            "Panorama" : "3840x960",
+            "Single" : "960x960",
+            "TwoEPtzRegion" : "1920x1920"
+         },
+         "FloorMode" : {
+            "Config" : "3072x2048",
+            "DoublePanorama" : "1920x1920",
+            "FourEPtzRegion" : "1920x1920",
+            "Original" : "3072x2048",
+            "OriginalPlusThreeEPtzRegion" : "1920x1920",
+            "Panorama" : "3840x960",
+            "Single" : "960x960",
+            "TwoEPtzRegion" : "1920x1920"
+         },
+         "WallMode" : {
+            "Config" : "3072x2048",
+            "FourEPtzRegion" : "1920x1920",
+            "Original" : "3072x2048",
+            "OriginalPlusThreeEPtzRegion" : "1920x1920",
+            "Panorama" : "1920x960",
+            "Single" : "960x960",
+            "TwoEPtzRegion" : "1920x1920"
+         }
+      },
+      "352x240" : {
+         "CeilMode" : {
+            "Config" : "352x240",
+            "DoublePanorama" : "512x512",
+            "FourEPtzRegion" : "512x512",
+            "Original" : "352x240",
+            "OriginalPlusThreeEPtzRegion" : "512x512",
+            "Panorama" : "704x256",
+            "Single" : "320x256",
+            "TwoEPtzRegion" : "512x512"
+         },
+         "FloorMode" : {
+            "Config" : "352x240",
+            "DoublePanorama" : "512x512",
+            "FourEPtzRegion" : "512x512",
+            "Original" : "352x240",
+            "OriginalPlusThreeEPtzRegion" : "512x512",
+            "Panorama" : "704x256",
+            "Single" : "320x256",
+            "TwoEPtzRegion" : "512x512"
+         },
+         "WallMode" : {
+            "Config" : "352x240",
+            "FourEPtzRegion" : "512x512",
+            "Original" : "352x240",
+            "OriginalPlusThreeEPtzRegion" : "512x512",
+            "Panorama" : "512x256",
+            "Single" : "320x256",
+            "TwoEPtzRegion" : "512x512"
+         }
+      },
+      "352x288" : {
+         "CeilMode" : {
+            "Config" : "352x288",
+            "DoublePanorama" : "512x512",
+            "FourEPtzRegion" : "512x512",
+            "Original" : "352x288",
+            "OriginalPlusThreeEPtzRegion" : "512x512",
+            "Panorama" : "704x256",
+            "Single" : "320x256",
+            "TwoEPtzRegion" : "512x512"
+         },
+         "FloorMode" : {
+            "Config" : "352x288",
+            "DoublePanorama" : "512x512",
+            "FourEPtzRegion" : "512x512",
+            "Original" : "352x288",
+            "OriginalPlusThreeEPtzRegion" : "512x512",
+            "Panorama" : "704x256",
+            "Single" : "320x256",
+            "TwoEPtzRegion" : "512x512"
+         },
+         "WallMode" : {
+            "Config" : "352x288",
+            "FourEPtzRegion" : "512x512",
+            "Original" : "352x288",
+            "OriginalPlusThreeEPtzRegion" : "512x512",
+            "Panorama" : "512x256",
+            "Single" : "320x256",
+            "TwoEPtzRegion" : "512x512"
+         }
+      },
+      "704x480" : {
+         "CeilMode" : {
+            "Config" : "704x480",
+            "DoublePanorama" : "640x640",
+            "FourEPtzRegion" : "640x640",
+            "Original" : "704x480",
+            "OriginalPlusThreeEPtzRegion" : "640x640",
+            "Panorama" : "704x320",
+            "Single" : "320x320",
+            "TwoEPtzRegion" : "640x640"
+         },
+         "FloorMode" : {
+            "Config" : "704x480",
+            "DoublePanorama" : "640x640",
+            "FourEPtzRegion" : "640x640",
+            "Original" : "704x480",
+            "OriginalPlusThreeEPtzRegion" : "640x640",
+            "Panorama" : "704x320",
+            "Single" : "320x320",
+            "TwoEPtzRegion" : "640x640"
+         },
+         "WallMode" : {
+            "Config" : "704x480",
+            "FourEPtzRegion" : "640x640",
+            "Original" : "704x480",
+            "OriginalPlusThreeEPtzRegion" : "640x640",
+            "Panorama" : "640x320",
+            "Single" : "320x320",
+            "TwoEPtzRegion" : "640x640"
+         }
+      },
+      "704x576" : {
+         "CeilMode" : {
+            "Config" : "704x576",
+            "DoublePanorama" : "640x640",
+            "FourEPtzRegion" : "640x640",
+            "Original" : "704x576",
+            "OriginalPlusThreeEPtzRegion" : "640x640",
+            "Panorama" : "704x320",
+            "Single" : "320x320",
+            "TwoEPtzRegion" : "640x640"
+         },
+         "FloorMode" : {
+            "Config" : "704x576",
+            "DoublePanorama" : "640x640",
+            "FourEPtzRegion" : "640x640",
+            "Original" : "704x576",
+            "OriginalPlusThreeEPtzRegion" : "640x640",
+            "Panorama" : "704x320",
+            "Single" : "320x320",
+            "TwoEPtzRegion" : "640x640"
+         },
+         "WallMode" : {
+            "Config" : "704x576",
+            "FourEPtzRegion" : "640x640",
+            "Original" : "704x576",
+            "OriginalPlusThreeEPtzRegion" : "640x640",
+            "Panorama" : "640x320",
+            "Single" : "320x320",
+            "TwoEPtzRegion" : "640x640"
+         }
+      }
+   },
+   "HeatMap" : {
+      "MaxRules" : 1
+   },
+   "IntelliTracker" : {
+      "Support" : false
+   },
+   "MaxMainStreamBitrate" : 16384,
+   "MaxRules" : 13,
+   "Normal" : {
+      "MaxRules" : 10,
+      "SupportedModuleParams" : {
+         "AntiDisturbance" : true,
+         "Shadow" : false
+      }
+   },
+   "RotateResolutionLimit" : [ "D1", "CIF" ],
+   "VideoAnalyse" : {
+      "Support" : true,
+      "SupportedComp" : [
+         [ "Normal", "HeatMap" ]
+      ],
+      "SupportedLib" : {
+         "HeatMap" : [ "lib-Normal" ],
+         "Normal" : [ "lib-Normal" ]
+      },
+      "SupportedRules" : {
+         "HeatMap" : [ "HeatMap" ],
+         "Normal" : [
+            "CrossLineDetection",
+            "CrossRegionDetection",
+            "LeftDetection",
+            "TakenAwayDetection",
+            "VideoAbnormalDetection"
+         ]
+      },
+      "SupportedScene" : [ "Normal", "FaceDetection" ]
+   }
+}

@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>4G</title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            4G
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <p class="noiceC">
+            <span class="bold">Comment:</span>
+            Only the equipments which support these scales have the function.
+        </p>
+        <h2>Dial Setup</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">Wireless Network Type</td>
+                <td>
+					<span class="kuai">■</span>
+                    WCDMA signal——Dial, message, incoming call(Only for China Unicom)
+                    <br/>
+                    <span class="kuai">■</span>
+                    TD-SCDMA signal——Dial, message, incoming call(Only for China Mobile)
+                    <br/>
+					<span class="kuai">■</span>
+                    EVDO signal——Dial(Only for China Telecom)
+                    <br/>
+					<span class="kuai">■</span>
+                    TD-LTE signal——Dial
+                    <br/>
+					<span class="kuai">■</span>
+                    FDD-LTE signal——Dial(For China Telecom/China Unicom)
+                    <br/>
+					<span class="kuai">■</span>
+                    CDMA1X signal——Message, incoming call(Only for China Telecom)
+                    <br/>
+                    <span class="kuai">■</span>
+                    Auto Mode——Dial, message, incoming call(Recommended)
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Enable</td>
+                <td>Check the box here to enable 4G module</td>
+            </tr>
+            <tr>
+                <td class="wid80">APN</td>
+                <td>
+                    For the geenral cards, APN of China Telecom is ctlte，China Mobil is cmnet，China Unicom is 3gnet. It may vary due to different cards.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Authorize Mode</td>
+                <td>
+                    For the general cards, the authentication mode of China Telecom is CHAP or PAP. There is no authentication mode for China Mobile or China Unicom. It may vary due to different cards.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Dial-up Number</td>
+                <td>
+                    For the general cards, the dial number of China Telecom is #777. For China Mobile, it is *98*1#. For China Unicom, it is *99#. It may vary due to different cards.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Username</td>
+                <td>
+                    For the general cards, the user name of China Telecom is ctnet@mycdma.cn or card. There is no user name for China Mobile or China Unicom. It may vary due to different cards.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Password</td>
+                <td>
+                    For the general cards, the password of China Telecom is vnet.mobi or card. There is no password for China Mobile or China Unicom.It may vary due to different cards.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Update Period</td>
+                <td>
+                    0~7200s. Default setup is 30s. Alive time means for the non-dial period, system can get 4G dial status each 30s to disconnect the dial operation to save the flux.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Time Range</td>
+                <td>
+                    It is to set dial period. You can use message activation if there is no period setup to send out message to the SIM card of the device to enable/disable dial function.
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">Wireless Network Status</th>
+            </tr>
+            <tr>
+                <td class="wid80">IP Address</td>
+                <td>It is to display IP after 4G dial succeeded.</td>
+            </tr>
+            <tr>
+                <th colspan="2">Wireless Signal</th>
+            </tr>
+            <tr>
+                <td class="wid80">Signal</td>
+                <td>
+                    It is to display intensity of current signal. Dial operation may fail, or system can not send out data even dial operation succeeded, if the signal intensity is too low.
+                </td>
+            </tr>
+        </table>
+        <h2>Mobile Setup</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">Message Send</td>
+                <td>
+                    Please go to the Event Manager interface to check the corresponding message activation item(s), then system can send out message to the specified mobile number when an event occurred. If you want to use this function please check the message activation function on the Event Manager interface.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Message Activation</td>
+                <td>
+                    The mobile number on the list can send out ON/OFF, REBOOT message to the SIM card of the device to enable/disable dial function or reboot device.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Phone Activation</td>
+                <td>
+                    The mobile number on the list can send out message to the SIM card of the device to enable dial function.
+                </td>
+            </tr>
+        </table>
+        <p class="noiceC">
+            <span class="bold">Note：</span>
+            <br/>
+            1. SIM card does not support hotswap function. Hotswap operation may burn down the SIM. You need to reboot 4G module after you insert a SIM card, otherwise system can not detect the new card.
+            <br/>
+            2. System can not receive/send out message, receive incoming card or 4G dial if there is no SIM card.
+        </p>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

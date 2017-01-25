@@ -1,0 +1,76 @@
+{
+	  "Encode" : [ {
+	     "MainFormat" : [ 
+			{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"CustomResolutionName": "1080P"
+	  			}
+	  		},
+			{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"CustomResolutionName": "1080P"
+	  			}
+	  		},
+			{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"CustomResolutionName": "1080P"
+	  			}
+	  		},
+			{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+	  			"CustomResolutionName": "1080P"
+	  			}
+	  		}],	   
+	  	"ExtraFormat" : [ {
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"BitRate" : 1024
+	  			}
+	  	},
+		{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"BitRate" : 1024
+	  			}
+	  	},
+		{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"BitRate" : 1024
+	  			}
+	  	}],	  
+	  	"SnapFormat":[ {	  		
+	  		"Video" : {
+				"CustomResolutionName": "1080P"
+	  			}
+	  		},
+	  		 {
+	  		"Video" : {
+				"CustomResolutionName": "1080P"		
+				}
+	  		},
+	  		 {
+	  		"Video" : {
+				"CustomResolutionName": "1080P" 			
+				}
+	  		}]
+	  }]
+}

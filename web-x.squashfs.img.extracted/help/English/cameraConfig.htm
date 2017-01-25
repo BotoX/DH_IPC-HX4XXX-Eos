@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            Conditions
+            <a href="javascript:;" class="righBut" onclick="back()">back list</a>
+        </h1>
+        <p class="noiceC">
+            <span class="bold">Comment:</span>
+            Only the equipments which support these scales have the function.
+        </p>
+        <h2>Profile</h2>
+        <p class="detailP">
+            You can select normal, daytime or night mode. After you selected mode, you can set and view the setup and effect of the corresponding mode.
+        </p>
+        <h2>Profile Management</h2>
+        <p class="detailP">
+            It works with the configuration files. You can select normal/daytime/night mode according to your actual requirements.
+        </p>
+        <h2>Brightness</h2>
+        <p class="detailP">
+            It is to adjust monitor window brightness via the nonlinear mode. The larger the number is, the bright the video is. Please note the video may become hazy if the value is too high. The recommended value ranges from 40 to 60. The default value is 50.
+        </p>
+        <h2>Contrastness</h2>
+        <p class="detailP">
+            It is to adjust monitor window contrast. The larger the number is, the higher the contrast is. Please note the video may become hazy if the value is too low. If this value is too high, the dark section may lack brightness while the bright section may over exposure .The recommended value ranges from 40 to 60. The default value is 50.
+        </p>
+        <h2>Saturation</h2>
+        <p class="detailP">
+            It is to adjust monitor window saturation. The larger the number is, the strong the color is. This value has no effect on the general brightness of the whole video. The recommended value ranges from 40 to 60. The default value is 50.
+        </p>
+        <h2>Sharpness</h2>
+        <p class="detailP">
+            It is to adjust the sharpness of the video edge. The higher the value is, the clearer the edge is and vice versa. There may be noise if the value is too high. The default value is 50 and the recommended value ranges from 40 to 60.
+        </p>
+		<h2>Gamma</h2>
+        <p class="detailP">
+            The threshold here is to adjust video brightness via the nonlinear mode to enhance video dynamic display range. The larger the number is, the bright the video is. The default value is 50 and the recommended value ranges from 40 to 60.
+        </p>
+		<h2>Mirror</h2>
+        <p class="detailP">
+            It is to switch video left and right direction.This function is disabled by default.
+        </p>
+        <h2>Flip</h2>
+        <p class="detailP">
+            The flip function can turn the monitor video direction. It is off by default.
+        </p>
+        <h2>Anti-flicker</h2>
+        <p class="detailP disindent">
+            <table class="Table" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="wid80">50HZ</td>
+                    <td>
+                        When the current is 50Hz, it can guarantee there is no cross band when system auto exposures according to the brightness.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wid80">60HZ</td>
+                    <td>
+                        When the current is 60Hz, it can guarantee there is no cross band when system auto exposures according to the brightness.
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wid80">Outdoor</td>
+                    <td>
+                        In this mode, you can switch exposure mode to achieve the effect in the corresponding exposure mode.
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </p>
+        <h2>Exposure</h2>
+        <p class="detailP disindent">
+			<p class="detailP">The exposure mode includes: auto, gain priority, shutter priority, aperture priority and manual.</p>
+            <table class="Table" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="wid80">Auto mode</td>
+                    <td>
+                        The overall brightness of the image can be auto adjusted according to different scene brightness within the range of normal exposure.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wid80">Gain Priority</td>
+                    <td>
+                        The overall brightness of the image can be auto adjusted according to the gain range within the range of normal exposure. 
+						If the image brightness is still improper and the gain has reached the threshold, then it will auto adjust the shutter value to make the image normal. 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wid80">Shutter Priority</td>
+                    <td>
+						The overall brightness of the image can be auto adjusted according to the shutter range within the range of normal exposure. 
+						If the image brightness is still improper and the gain has reached the threshold, then it will auto adjust the gain value to make the image normal.
+                    </td>
+                </tr>
+				<tr>
+					<td class="wid80">Iris Priority</td>
+					<td>
+						An iris value can be set on the web, and the best brightness can be auto realized according to the mode of driving exposure time preferentially and followed by driving gain.
+					</td>
+				</tr>
+                <tr>
+                    <td class="wid80">Manual</td>
+                    <td>
+                        It can manually adjust gain value and shutter value under the mode of manual exposure. 
+						Gain range is 0-100 adjustable, shutter value supports 1/100000 and customized range, support long exposure.
+					</td>
+                </tr>
+            </table>
+            <p class="noiceC">
+                <span class="bold">Note:</span>
+                System only switches exposure mode when then anti-flicker mode is outdoor.
+            </p>
+        </p>
+        <h2>Auto Iris</h2>
+        <p class="detailP">
+            You can check the box before ON to enable this function. This function is on by default.
+        </p>
+        <p class="noiceC">
+            <span class="bold">Note:</span>
+            Before the setup, please make sure you have installed the auto iris.
+        </p>
+		<h2>3D NR</h2>
+        <p class="detailP">
+            3D NR reduction is mainly in view of the frame(frame) for at least two image processing,information between frames between before and after the use of video frames for noise reduction.The larger the number is, the better the results.
+        </p>
+		<h2>BLC Mode</h2>
+        <p class="detailP disindent">
+			<p class="detailP">It is the backlight compensation button. This function is for backlight environments.</p>
+			<table class="Table" cellpadding="0" cellspacing="0">
+				<tr>
+                    <td class="wid80">BLC</td>
+                    <td>
+                        <span class="kuai">■</span>
+                        The device auto exposure according to the environments situation so that the darkest area of the video is clears.
+                        <br/>
+                        <span class="kuai">■</span>
+                        Customized BLC：The selected area of the device exposures properly so that it can get the proper brightness.
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wid80">WDR</td>
+                    <td>
+                        For the WDR scene, this function can lower the high bright section and enhance the brightness of the low bright section. So that you can view these two sections clearly at the same time.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wid80">HLC</td>
+                    <td>
+                        After you enabled HLC function, the device can lower the brightness of the brightest section according to the HLC control level. It can reduce the area of the halo and lower the brightness of the whole video.
+                    </td>
+                </tr>
+            </table>
+        </p>
+        <h2>White Balance</h2>
+        <p class="detailP disindent">
+            <p class="detailP">It is to set the white balance mode. It has effect on the general hue of the video. This function is on by default.</p>
+            <table class="Table" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="wid80">Auto</td>
+                    <td>
+                        Auto set white balance, which can automatically realize white balance compensation for different color temperatures to make the image color normal.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wid80">Natural</td>
+                    <td>
+						It can auto realize white balance compensation to the scene without artificial light, which is to make the image color normal. 
+					</td>
+                </tr>
+                <tr>
+                    <td class="wid80">Street Lamp</td>
+                    <td>
+						It can auto realize white balance compensation to the outdoor scene at night, which is to make the image color normal.
+					</td>
+                </tr>
+                <tr>
+                    <td class="wid80">Outdoor</td>
+                    <td>
+                        It can auto realize white balance compensation to most of the outdoor scenes with natural light and artificial light, which is to make the image color normal.
+                    </td>
+                </tr>
+				<tr>
+                    <td class="wid80">Manual</td>
+                    <td>
+						It can set red and blue gain manually; the value range is from 0 to 100.
+					</td>
+                </tr>
+            </table>
+        </p>
+        <h2>Day & Night</h2>
+        <p class="detailP disindent">
+            <p class="detailP">It is to set device color and the B/W mode switch. The default setup is on.</p>
+            <table class="Table" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="wid80">Color</td>
+                    <td>Camera outputs the color video only.</td>
+                </tr>
+                <tr>
+                    <td class="wid80">Auto</td>
+                    <td>
+                        Device auto selects to output the color or the B/W video according to the device general bright of the video.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wid80">B/W</td>
+                    <td>The device outputs the black and white video only.</td>
+                </tr>
+            </table>
+        </p>
+		<h2>D&N Sensitivity,D&N Delay</h2>
+		<p class="detailP">
+            Set sensitivity and delay value during day/night switch process. The delay value is 6. 
+        </p>
+		<h2>Flash</h2>
+		<table class="Table" cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="wid80">Manual</td>
+				<td>
+					<span class="kuai">■</span>
+					Single channel IR control device, in the manual mode, IR light is controlled by the value of middle light, range is 0-100, default is 50.
+					<br/>
+					<span class="kuai">■</span>					
+				    Double channel IR control device, in the manual mode, IR light is controlled by near light and far light, range is 0-100, default is 50.
+					<br/>
+				</td>
+			</tr>
+			<tr>
+				<td class="wid80">Auto</td>
+				<td>Auto adjust the IR light.</td>
+			</tr>
+			<tr>
+				<td class="wid80">Off</td>
+				<td>Turn off the IR light.</td>
+			</tr>
+		</table>
+		<h2>EIS</h2>
+        <p class="detailP">It can realize electronic anti-jitter function via algorithm of comparing image difference, which has efficiently solved the problem of image dithering during use and makes the picture much clearer.</p>
+        <h2>Defog Mode</h2>
+        <p class="detailP">The image quality will be lower when the device is exposed to the environment with fog and haze, the image can operate auto de-warp in auto mode. It can also select different intensity manually according to the fog density to adjust the image definition.</p>
+    </div>
+    <div class="detailBox">
+        <h1>Focusing Scale</h1>
+        <p class="noiceC">
+            <span class="bold">Comment：</span>
+            Only the equipments which support focusing scale have the function.
+        </p>
+        <h2>Zoom</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">Zoom out</td>
+                <td>
+                    If you press the minus key,the focal length of the video decreases.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Zoom in</td>
+                <td>
+                    If you press the add key,the focal length of the video increase.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Speed</td>
+                <td>Speed consists of 1，5，20，100.</td>
+            </tr>
+        </table>
+        <h2>Focus</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">NEAR</td>
+                <td>
+                    If you press the minus key,the focal plane of the lens moves to the close shot.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">FAR</td>
+                <td>
+                    If you press the add key,the focal plane of the lens moves to the long shot.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Speed</td>
+                <td>Speed consists of 1，5，20，100.</td>
+            </tr>
+        </table>
+        <h2>Restory All</h2>
+        <p class="detailP">Restory All,the value of focus and zoom change to 0.</p>
+        <h2>Autofocus</h2>
+        <p class="detailP">
+            Adjust the focal plane of the lens to make the video in the clearest condition.
+        </p>
+        <h2>Refresh</h2>
+        <p class="detailP">Obtain the newest condition of focusing scale.</p>
+    </div>
+
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

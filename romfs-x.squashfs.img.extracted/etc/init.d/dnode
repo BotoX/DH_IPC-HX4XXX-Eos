@@ -1,0 +1,39 @@
+#!/bin/sh
+
+/bin/mount -a
+mkdir -p /dev/pts -m 666
+mdev -s
+mkdir -p /dev/misc -m 666
+mkdir -p /dev/mtd -m 666
+mknod /dev/mtd/0 c 90 0
+mknod /dev/mtd/1 c 90 2
+mknod /dev/mtd/2 c 90 4
+mknod /dev/mtd/3 c 90 6
+mknod /dev/mtd/4 c 90 8
+mknod /dev/mtd/5 c 90 10
+mknod /dev/mtd/6 c 90 12
+mknod /dev/mtd/7 c 90 14
+mknod /dev/mtd/8 c 90 16
+mknod /dev/mtd/9 c 90 18
+mknod /dev/mtd/10 c 90 20
+mknod /dev/mtd/11 c 90 22
+mknod /dev/mtd/12 c 90 24
+mknod /dev/mtd/13 c 90 26
+mknod /dev/mtd/14 c 90 28
+mknod /dev/mtd/15 c 90 30
+mknod /dev/mtd/16 c 90 32
+mknod /dev/console c 5 1
+mknod /dev/ttyS0 c 204 64
+mknod /dev/ttyS1 c 204 65
+mknod /dev/ttyS000 c 204 64
+mknod /dev/null    c 1 3
+
+mount -t devpts devpts /dev/pts
+
+mkdir -p /dev/.udev
+udevd --daemon
+udevadm trigger
+
+chmod -R 666 /dev/*
+chmod -R 666 /dev/*
+

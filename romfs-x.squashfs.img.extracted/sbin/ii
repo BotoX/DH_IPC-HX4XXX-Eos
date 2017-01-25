@@ -1,0 +1,9 @@
+#! /bin/sh
+#special profile.txt
+cd /usr/bin
+/usr/etc/app.sh
+code=$?
+echo "application exit:${code}"
+/usr/bin/exittime ${code}
+/usr/etc/exit.sh
+

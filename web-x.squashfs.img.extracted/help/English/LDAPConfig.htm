@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            AD&LDAP
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <h2>AD&LDAP Introduce</h2>
+        <p class="detailP">
+            LDAP is so called Lightweight Directory Access Protocol. It is for the user rights verification when a device logs in. The users of different systems can share the account on the LDAP server to login the device. It is easy for the administrator to manage accounts and synchronize the accounts of different systems.
+        </p>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">Server</td>
+                <td>
+                    The server is to storage destination authorization user information and verification user information.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">User Type</td>
+                <td>
+                    Check the item and then select corresponding account on the login interface to login.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Port</td>
+                <td>
+                    The default port is 389. The port value ranges from 1 to 65535. Usually we do not recommend value 1 to 1025 in case it conflicts with other port.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Base DN to begin searching users</td>
+                <td>
+                    DN is user's only path on the LDAP domain. Set search user initial DN is to reduce user search time.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Anonymous Bind</td>
+                <td>
+                    If the anonymous bind is checked, do not need to input binding DN and password.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Bind DN</td>
+                <td>
+                    DN max has 64 characters. It can only contain number, letter, dot, equal sign, and underline.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Bind Password</td>
+                <td>
+                    The password ranges from 0 to 32 characters. It can only contain number, letter.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">LDAP Filter</td>
+                <td>
+                    Specify DN conditions can filter redundancy information to quickly search user.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

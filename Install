@@ -1,0 +1,16 @@
+{
+   "Commands" : [
+      "burn kernel.img kernel",
+      "burn partition-x.cramfs.img partition",
+      "burn romfs-x.squashfs.img rootfs",
+      "burn pd-x.squashfs.img pd",
+      "burn user-x.squashfs.img user",
+      "burn custom-x.squashfs.img custom",
+      "burn web-x.squashfs.img web"
+   ],
+   "Devices" : [
+      [ "IPC-HX3XXX", "1.00" ]
+   ],
+   "Vendor" : "General"
+}
+//IPC_RestoreDefault

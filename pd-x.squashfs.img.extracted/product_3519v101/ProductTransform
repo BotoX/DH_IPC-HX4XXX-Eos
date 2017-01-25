@@ -1,0 +1,48 @@
+{
+	"DeviceTypeTransform" : {	
+			"General":{
+			"IPC-HFW1100S" : "IP Camera",
+			"IPC-HFW1100S-W" : "IP Camera",
+			"IPC-HFW1150S-W" : "IP Camera",
+			"IPC-HFW1105S-W" : "IP Camera",
+			"IPC-HFW1100B" : "IP Camera",
+			"IPC-HFW1100B-W" : "IP Camera",
+			"IPC-HFW1150B-W" : "IP Camera",
+			"IPC-HFW1105B-W" : "IP Camera",
+			"IPC-HDW1100S" : "IP Camera",
+			"IPC-HDW1100S-M" : "IP Camera",
+			"IPC-HDW1100C" : "IP Camera",
+			"IPC-HD1100C" : "IP Camera",
+			"IPC-HD1100C-W" : "IP Camera",
+			"IPC-HD1150C-W" : "IP Camera",
+			"IPC-HD1105C-W" : "IP Camera",
+			"IPC-HDBW1100E-W" : "IP Camera",
+			"IPC-HDBW1150E-W" : "IP Camera",
+			"IPC-HDBW1105E-W" : "IP Camera",
+			"IPC-HDBW1105E" : "IP Camera",
+			"IPC-HDBW1100E" : "IP Camera",
+			"IPC-HFW1105S" : "IP Camera",
+			"IPC-HFW1105B" : "IP Camera",
+			"IPC-HDW1105S" : "IP Camera",
+			"IPC-HDW1105S-M" : "IP Camera",
+			"IPC-HDW1105C" : "IP Camera",
+			"IPC-HD1105C" : "IP Camera",
+			"IPC-KW10" : "IP Camera",
+			"IPC-KW10W" : "IP Camera",
+			"IPC-KW12W" : "IP Camera",
+			"IPC-KW12" : "IP Camera",
+			"IPC-KW10-A" : "IP Camera",
+			"IPC-KW12-A" : "IP Camera",
+			"IPC-HD1100C-A" : "IP Camera",
+			"IPC-HDW1100S-A" : "IP Camera",
+			"Default" : "IP Camera"
+			},
+			"Sanko":{
+			"IPC-IPVM2150F" : "IP Camera",
+			"IPC-IPVM2131F" : "IP Camera",
+			"IPC-IPVM2011F" : "IP Camera",
+			"Default" : "IP Camera"
+			}
+		}  
+}
+

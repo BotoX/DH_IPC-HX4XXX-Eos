@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            Video Detect
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <p class="detailP">
+            The video detect include motion detect and the video tamper
+        </p>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th >Parameter</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td class="wid80">Enable</td>
+                <td>
+                    You need to check the box here to realize the motion detect or video tamper alarm.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Working period</td>
+                <td>
+                    1.The alarm function becomes activated in the specified periods.
+                    <br />
+                    2.There are six periods in one day. Please check the box to enable corresponding period.
+                    <br />
+                    3.Select date. If you do not select, current setup applies to today only. You can select all week column to apply to the whole week.
+                    <br />
+                    4.Click OK button, system goes back to motion detection interface, please click save button to exit.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Anti-dither</td>
+                <td>
+                    System only memorizes one event during the anti-dither period. The value ranges from 0s to 100s.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Area</td>
+                <td>
+                    Click Set button to go to the corresponding interface. It is for you to set valid motion detect area. You can set sensitivity, area size respectively (The motion detect can be easily triggered if the sensitivity is bigger or the area is smaller.). The default valid area is the whole video area.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Record</td>
+                <td>
+                    Check the box so that system auto activates motion detection channel to record once an alarm occurs. Please note you need to go to “
+                    <a href="recordPlanConfig.htm"  class="linka">Set->Storage->Schedule</a>
+                    ”to set current channel as general record.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Record Delay</td>
+                <td>
+                    System can delay the record for specified time after alarm ended. The value ranges from 10s to 300s.
+                </td>
+            </tr>
+
+            <tr>
+                <td class="wid80">Relay-out</td>
+                <td>
+                    Check the box here to enable alarm activation function. You need to select alarm output port so that system can activate corresponding alarm device when an alarm occurs.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Alarm Delay</td>
+                <td>
+                    System can delay the alarm output for specified time after an alarm ended. The value ranges from 10s to 300s.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Send Email</td>
+                <td>
+                    If you enabled this function, System can send out email to alert you when alarm occurs and ends. Please note you need to go to“
+                    <a href="emailConfig.htm"  class="linka">Set->Network->SMTP(Email)</a>
+                    ”to set your own email address.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">PTZ</td>
+                <td>
+                    Please check the box here to enable this function. Here you can set PTZ movement when an alarm occurs. Such as go to preset x when there is an alarm.
+The event type includes: preset, tour and pattern.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Snapshot</td>
+                <td>
+                    You need to check the box here so that system can backup motion detection snapshot file. Please note you need to go to the“
+                    <a href="recordPlanConfig.htm"  class="linka">Set->Storage-Schedule</a>
+                    ”to set snapshot period.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

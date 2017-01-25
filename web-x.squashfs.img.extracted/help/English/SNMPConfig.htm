@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            SNMP
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <h2>Function</h2>
+        <p>&nbsp;</p>
+        <p class="iconP2">
+            Check SNMP v1, the device can only process the information of v1. Check SNMP v2, the device can only process the information of v2. Check the SNMP v3, you can set user name,password and authentication type. The server needs to set the corresponding account when you want to access the device, it is for the security reasons. Right now the v1 and v2 are both null.
+        </p>
+        <p class="iconP2"> <strong>Community</strong>
+            ：It is a string. It is a command between the manage process and the proxy process. It defined the authentication, access control and the management relationship between one proxy and one group of the managers. Please make sure the device and the proxy are the same.
+        </p>
+        <p class="iconP2"> <strong>Read Community</strong>
+            ：The read community will read all the objects the SNMP supported in the specified name. The default setup is public.
+        </p>
+        <p class="iconP2">
+            <strong>Write Community</strong>
+            ：The read community will read/write/access all the objects the SNMP supported in the specified name. The default setup is write.
+        </p>
+        <p class="iconP2">
+            <strong>Trap</strong>
+            ：The SNMP trap is the information from the SNMP proxy to the administrator. The proxy can inform the administrator when an important event occurred or status has changed. SNMP v1 or SNMP v2 both supports.
+        </p>
+        <p class="iconP2">
+            <strong>Trap address</strong>
+            : The destination address of the Trap information from the proxy program of the device.
+        </p>
+        <p class="iconP2">
+            <strong>Trap port</strong>
+            : The destination port of the Trap information from the proxy program of the device. The default value is 162. It ranges from 1 to 65535.
+        </p>
+        <p class="iconP2">
+            <strong>SNMP port</strong>
+            : It is the listening port of the proxy applications in the device. The default value is 161. The value ranges from 1 to 65535.
+        </p>
+
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

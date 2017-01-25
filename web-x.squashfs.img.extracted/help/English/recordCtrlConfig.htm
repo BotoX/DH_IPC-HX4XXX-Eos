@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            Record Control
+            <a href="javascript:;" class="righBut" onclick="back()">back list</a>
+        </h1>
+        <h2>Parameter Function</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Parameter</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td class="wid80">Pack Duration</td>
+                <td>Here you can select file size.</td>
+            </tr>
+            <tr>
+                <td class="wid80">Pre-event Record</td>
+                <td>
+                    Please input pre-record value here. For example, once you input 4 here, system can record the four seconds video before the event occurred from the buffer in the file.
+                    <p class="noiceC">
+                        Note：For the pre-record function, system is not record when alarm record or motion detect record occurred. System can save the previous several seconds video in the record after you enabled the record function.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Disk Full</td>
+                <td>
+                    There are two options:stop recording or overwrite the previous files when HDD is full.
+                    <br />
+                    <span class="kuai">■</span>
+                    Stop: Current working HDD is overwriting or current HDD is full, it will stop record.
+                    <br />
+                    <span class="kuai">■</span>
+                    Overwrite: Current working HDD is full; it will overwrite the previous file.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Record Mode</td>
+                <td>
+                    You can select Auto/Manual/Off mode. Manual mode is to begin record and auto mode is to record in the specified period.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Record Stream</td>
+                <td>Here you can select extra stream if necessary.</td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

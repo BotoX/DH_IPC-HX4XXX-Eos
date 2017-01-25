@@ -1,0 +1,381 @@
+#! /bin/sh
+
+/sbin/syshelper 60 &
+/usr/sbin/upgraded &
+
+insmod /usr/lib/modules/sensor.ko
+insmod /usr/lib/modules/sdcard.ko
+insmod /usr/lib/modules/ivf.ko size=506
+
+ifconfig lo up
+netinit if=eth0 default
+netinit6 if=eth0
+
+#解析设备名称和前端类型
+PRODUCT=$(gethwid 0)
+temp=${PRODUCT##*hwidValue == }
+product_name=${temp%% *}
+echo product_name =$product_name
+
+
+#放在网络设备正常后加载rstp驱动，防止rstp发数据包时网络没有准备好，从而导致网络异常,所以需要放到netinit之后
+case "$product_name" in
+	"IPC-HFW4231B-N2-AS")
+		/usr/sbin/ethtool -K eth0 tx off
+		insmod rstp_proto.ko
+		;;
+esac
+
+STRSEN=$(gethwid 4)
+temp=${STRSEN##*hwidValue == }
+fvideo_chip=${temp%% *}
+echo fvideo_chip = $fvideo_chip
+
+SDCAP=$(gethwid 11)
+temp=${SDCAP##*hwidValue == }
+cap_sd=${temp%% *}
+echo cap_sd $cap_sd
+
+#根据设备型号确定驱动加载能力
+cap_af=""
+cap_wifi=0
+cap_3g=0
+VideoEnv="AEWB DSP"
+
+#解压缩pd到tmp目录
+unzip /mnt/pd/product.zip -d /var/tmp > /dev/null
+
+#解压缩2A参数到tmp目录
+#unzip /usr/data/2Acfg.zip -d /var/tmp > /dev/null
+cp -rf /usr/data/2Acfg /var/tmp/
+
+#创建pd目录
+mkdir -p /var/tmp/pd
+
+#将设备名映射文件拷贝的pd分区
+cp -f /var/tmp/product/ProductTransform /var/tmp/pd/
+
+#使用外部音频codec,aio连接至i2s2
+case "$product_name" in
+	"IPC-K4231-JR" | "IPC-HFS7238F-WGS-I6" | "IPC-HFS7239F-WGS-I6")
+	himm 0x201200E0 0xe
+	;;
+esac
+#挂载usb设备
+USB_DEV=`ls /dev | grep sda1`
+if [ "$USB_DEV" = "sda1" ]
+then
+	mount -t vfat /dev/sda1 /mnt/tmp
+fi
+#增加电机支持
+case "$product_name" in
+	"IPC-HF8530E" | "IPC-HF8239E" | "IPC-HF8331E" | "IPC-HDBW8331R-Z" | "IPC-HFW8331D-Z" | "IPC-HFW8331E-Z" | "IPC-HFW8331-Z-IRA" | "IPC-HDBW8331E-Z" | "IPC-HDB8331E-Z" | "IPC-HDBW8331EP-Z" | "IPC-HFW8331F-Z" | \
+	"IPC-HF5231EP" | "IPC-HFW5231EP-Z" | "IPC-HFW5231DP-Z" | "IPC-HDBW5231EP-Z" | "IPC-HDBW5231RP-Z" | "IPC-HFW5231EP-Z-IRA" | "IPC-HDBW4231R-Z" | \
+	"IPC-HF8231E" | "IPC-HFW8231E-Z" | "IPC-HFW8231D-Z" | "IPC-HFW8231D-Z-A2" | "IPC-HDBW8231E-Z" | "IPC-HDBW8231R-Z" | "IPC-HFW8231E-Z-IRA" | "IPC-HDB8231E-Z" | "IPC-HFW8231F-Z" | "IPC-HFW4231R-Z" | \
+	"IPC-HF5431EP" | "IPC-HFW5431EP-Z" | "IPC-HFW5431DP-Z" | "IPC-HDBW5431EP-Z" | "IPC-HDBW5431RP-Z" | "IPC-HFW5431EP-Z-IRA" | \
+	"IPC-HF8431E" | "IPC-HFW8431E-Z" | "IPC-HFW8431D-Z" | "IPC-HDBW8431E-Z" | "IPC-HDBW8431R-Z" | "IPC-HFW8431E-Z-IRA" | "IPC-HDB8431E-Z" | "IPC-HFW8431F-Z" | \
+	"IPC-HF8231EP" | "IPC-HFW8231EP-Z" | "IPC-HDBW8231EP-Z" | \
+	"IPC-HF8238E" | "IPC-HFW8238E-Z" | "IPC-HDBW8238E-Z" | "IPC-HFW8238E-Z-IRA" | "IPC-HDB8238E-Z" | "IPC-HFW8238F-Z" | "IPC-HFW8238D-Z" | \
+	"IPC-HF7238E-JMKT" | "IPC-HFW7238E-Z-JMKT" | "IPC-HFW7238E-Z-IRA-JMKT" | "IPC-HDBW7238E-Z-JMKT" | "IPC-HF7239E-JMHSY" | "IPC-HFW7238E-Z-JMHSY" | "IPC-HDBW7238E-Z-JMHSY" |\
+	"IPC-HFW8239E-Z-IRA" | "IPC-HFW8331E-Z-IRA-4747" | "IPC-HFW8238E-Z-IRA-4747" | "IPC-HFW8331E-Z-IRA-I" | "IPC-HFW8239E-Z-IRA-I" | "IPC-HFW8239E-ZNF-IRA" | "IPC-HFW8239E-ZNF-IRA-0784" | "IPC-HDBW8239E-ZNF" | \
+	"IPC-HFW4431R-Z" | "IPC-HDBW4431R-Z" | "IPC-HFW8238K-Z" | "IPC-HFW8331K-Z" | "IPC-HDBW81230E-Z" | \
+	"IPC-HFW8238K-Z-CVI" | "IPC-HFW8331K-Z-CVI" | "IPC-HFW8238K-Z-CVI-0735" | "IPC-HFW8331K-Z-CVI-0735" | \
+	"IPC-HDBW8239E-Z"|"IPC-HFW8239K-Z-I4" |"IPC-HDBW8239E-Z-SDI"| "IPC-HFW8239K-Z-SDI-I4" | "IPC-HDBW4431R-ZAS" | "IPC-HDBW4231R-ZAS" | \
+	"IPC-HFW8238K-Z-0735" | "IPC-HFW8331K-Z-0735" | "IPC-HFS7238F-WGS-I6" | "IPC-HFS7239F-WGS-I6" | "IPC-HFS7238")
+	insmod /usr/lib/modules/motorDrv.ko
+	#cp -f /var/tmp/2Acfg/af_cfg.bin /mnt/mtd/3A/
+	VideoEnv="${VideoEnv} AF MOTOR"
+		;;
+	"IPC-HDB8331E-0185B" | "IPC-HDB7331E-0185B-UWB")
+	insmod /usr/lib/modules/motorDrv.ko
+	;;
+esac
+
+#加载usb device驱动
+case "$product_name" in
+	"IPC-HFS7238F-WGS-I6"|"IPC-HFS7239F-WGS-I6")
+	insmod /usr/lib/modules/dwc_otg.ko
+	insmod /usr/lib/modules/usbSlv.ko
+	;;
+esac
+
+#确定设备内存
+PRODUCT=`cat /proc/dahua/bootpara`
+MEMSIZE=${PRODUCT##*:}
+
+#根据不同的设备类型拷贝pd文件和2A参数文件
+
+aewcfg=IPC-IPVM2150F
+
+#根据设备型号确定需要用product下的哪个目录以及2Acfg下的哪个目录
+case "$product_name" in
+	"IPC-HF8530E" )
+		if [ "$MEMSIZE" = "100" ];then
+			#256M内存
+			product=IPC-HF8530E
+		else
+			#512M内存
+			product=IPC-HF8530E_512
+		fi
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HF8239E" | "IPC-HF7239E-JMHSY" | "IPC-HF8231EP" | "IPC-HFW8231EP-Z" | "IPC-HDBW8231EP-Z" | "IPC-HF8238E" | "IPC-HFW8238E-Z" | "IPC-HFW7238E-Z-JMHSY" |"IPC-HDBW8238E-Z" | "IPC-HDBW7238E-Z-JMHSY" | "IPC-HFW8239E-Z-IRA" | "IPC-HDB8238E-Z" | "IPC-HFW8238F-Z" |\
+	"IPC-HF8231E" | "IPC-HFW8231E-Z" | "IPC-HFW8231D-Z" | "IPC-HFW8231D-Z-A2" | "IPC-HDBW8231E-Z" | "IPC-HDBW8231R-Z" | "IPC-HFW8231E-Z-IRA" | "IPC-HFW8238E-Z-IRA" | "IPC-HDB8231E-Z" | "IPC-HFW8231F-Z" | "IPC-HFW8238D-Z" | "IPC-HFW8238K-Z" | \
+	"IPC-HFW8239E-ZNF-IRA" | "IPC-HFW8239E-ZNF-IRA-0784" | "IPC-HDBW8239E-ZNF" | "IPC-HDBW8239E-Z"|"IPC-HFW8239K-Z-I4"|"IPC-HFW8239K-Z-SDI-I4" | "IPC-HFW8238K-Z-0735" | "IPC-HFW8238K-Z-CVI" | "IPC-HFW8238K-Z-CVI-0735" )
+		if [ "$MEMSIZE" = "100" ];then
+			#256M内存
+			product=IPC-HF8239E
+		else
+			#512M内存
+			product=IPC-HF8239E_512
+		fi
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HDBW8239E-Z-SDI")
+		product=IPC-HDBW8239E-Z-SDI_512
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HFS7238")
+		product=IPC-HFS7238
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HFS7238F-WGS-I6" | "IPC-HFS7239F-WGS-I6")
+		product=IPC-HFS7238F
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HF7238E-JMKT" | "IPC-HFW7238E-Z-JMKT" | "IPC-HFW7238E-Z-IRA-JMKT" | "IPC-HDBW7238E-Z-JMKT")
+		product=IPC-HX7238-JMKT
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HFW8238E-Z-IRA-4747" | "IPC-HFW8239E-Z-IRA-I")
+		product=IPC-HFW823XE_I
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HF5231EP" | "IPC-HFW5231EP-Z" | "IPC-HFW5231DP-Z" | "IPC-HDBW5231EP-Z" | "IPC-HDBW5231RP-Z" | "IPC-HFW5231EP-Z-IRA")
+		if [ "$MEMSIZE" = "100" ];then
+			#256M内存
+			product=IPC-HF5231E
+		else
+			#512M内存
+			product=IPC-HF5231E_512
+		fi
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HF8331E" | "IPC-HDBW8331R-Z" | "IPC-HFW8331D-Z" | "IPC-HFW8331E-Z" | "IPC-HFW8331-Z-IRA" | "IPC-HDBW8331E-Z" | "IPC-HDBW8331EP-Z" | "IPC-HDB8331E-Z" | "IPC-HFW8331F-Z" | "IPC-HFW8331K-Z" | "IPC-HFW8331K-Z-0735" | "IPC-HFW8331K-Z-CVI" | "IPC-HFW8331K-Z-CVI-0735")
+		if [ "$MEMSIZE" = "100" ];then
+			#256M内存
+			product=IPC-HF8331E
+		else
+			#512M内存
+			product=IPC-HF8331E_512
+		fi
+		;;
+esac
+
+
+case "$product_name" in
+	"IPC-HDBW8238E-A2")
+		if [ "$MEMSIZE" = "100" ];then
+			#256M内存
+			product=IPC-HDBW8238E-A2
+		else
+			#512M内存
+			product=IPC-HDBW8238E-A2_512
+		fi
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HDB8331E-0185B" | "IPC-HDBW8331E-A2" | "IPC-HDB7331E-0185B-UWB")
+		if [ "$MEMSIZE" = "100" ];then
+			#256M内存,ldc默认开独立pd,辅码流去掉cif
+			product=IPC-HF8331E-185B
+		else
+			#512M内存
+			product=IPC-HF8331E-185B_512
+		fi
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HFW8331E-Z-IRA-4747" | "IPC-HFW8331E-Z-IRA-I")
+		product=IPC-HFW8331E_I
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HF5431EP" | "IPC-HFW5431EP-Z" | "IPC-HFW5431DP-Z" | "IPC-HDBW5431EP-Z" | "IPC-HDBW5431RP-Z" | "IPC-HFW5431EP-Z-IRA" | "IPC-HFW5431-IRA" | "IPC-HFW5431-IRA-AS")
+		if [ "$MEMSIZE" = "100" ];then
+			#256M内存
+			product=IPC-HF5431E
+		else
+			#512M内存
+			product=IPC-HF5431E_512
+		fi
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HF8431E" | "IPC-HFW8431E-Z" | "IPC-HFW8431D-Z" | "IPC-HDBW8431E-Z" | "IPC-HDBW8431R-Z" | "IPC-HFW8431E-Z-IRA" | "IPC-HDB8431E-Z" | "IPC-HFW8431F-Z")
+		if [ "$MEMSIZE" = "100" ];then
+			#256M内存
+			product=IPC-HF8431E
+		else
+			#512M内存
+			product=IPC-HF8431E_512
+		fi
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HFW4231B" | "IPC-HDW4231C" | "IPC-HFW4231B-AS" | "IPC-HFW4231B-N2-AS" | "IPC-HFW7231B-AS-JMHSY" | "IPC-HFW4231R-VF" | "IPC-HFW4231R-VFAS" | "IPC-HDBW4231R-VF" | "IPC-HDBW4231R-VFAS" | "IPC-HF4231" | \
+	"IPC-HFW4238KM" | "IPC-HFW4238KM-AS" | "IPC-HFW4238K-I6" | "IPC-HFW4238K-AS-I6" | "IPC-HDBW4233R" | "IPC-HDW4233C" | "IPC-HFW7233M-AS" | \
+	"IPC-HFW4231KM" | "IPC-HFW4231KM-AS" | "IPC-HFW4231K-I6" | "IPC-HFW4231K-AS-I6" | "IPC-HFW4231R-Z" | "IPC-HDBW4231R-Z" | "IPC-HFW4231KM" | "IPC-HFW4231KM-AS" | "IPC-HFW4231B-I6" | "IPC-HDBW4231R-ZAS")
+		product=IPC-HFW4231B
+		;;
+esac
+
+case "$product_name" in
+	 "IPC-K4231-JR" )
+		product=IPC-K4231
+		;;
+esac
+
+case "$product_name" in
+	"IPC-HFW4431B" | "IPC-HDW4431C" | "IPC-HFW4431B-AS" | "IPC-HFW4431R-VF" | "IPC-HFW4431R-VFAS" | "IPC-HFW4431R-Z" | "IPC-HDBW4431R-VF" | "IPC-HDBW4431R-VFAS" | "IPC-HF4431" | \
+	"IPC-HFW4431KM" | "IPC-HFW4431KM-AS" | "IPC-HFW4431K-I6" | "IPC-HFW4431K-AS-I6" | "IPC-HDBW4431R-Z" | "IPC-HDBW4431R-ZAS")
+		product=IPC-HF4431B
+		;;
+esac
+
+
+#增加3G支持
+if [ $cap_3g -eq 1 ];then
+	insmod /usr/lib/modules/usbserial.ko vendor=0x19d2 product=0xffed
+	net3g&
+fi
+
+if [ "$product" != "" ];then
+    echo product = $product
+	cp -f /var/tmp/product/$product/*  /var/tmp/pd/
+	#有SD卡的设备，默认存储点为本地开启， 无SD卡设备， 默认FTP存储点开启
+	if [ $cap_sd -eq 0 ];then
+		sed 's/\"FTP\" \: false/\"FTP\" \: true/' /var/tmp/pd/CustomConfig | \
+		sed 's/\"Local\" \: true/\"Local\" \: false/' | \
+		sed 's/\"Remote\" \: false/\"Remote\" \: true/' | \
+		sed 's/\"Local\" \: false, \"FTP\" \: true/\"FTP\" \: true, \"Local\" \: false/'  > /var/tmp/pd/CustomConfig~
+		mv -f /var/tmp/pd/CustomConfig~ /var/tmp/pd/CustomConfig
+	fi
+	
+	#如果是3G设备将程序标示修改成3G
+	if [ $cap_3g -eq 1 ];then
+		sed 's/\"3G\" \: false/\"3G\" \: true/' /var/tmp/pd/ProductDefinition > /var/tmp/pd/ProductDefinition~
+		mv -f /var/tmp/pd/ProductDefinition~ /var/tmp/pd/ProductDefinition
+	fi
+fi
+
+if [ "$aewcfg" != "" ];then
+    echo product = $product
+#	cp -f /var/tmp/2Acfg/$aewcfg/* /mnt/mtd/3A/
+fi
+#cp -f /var/tmp/2Acfg/3D.bin /mnt/mtd/3A/
+#cp -f /var/tmp/2Acfg/reg.bin /mnt/mtd/3A/
+
+#根据不同的设备类型拷贝聚焦库配置
+#默认为手动镜头
+case "$product_name" in     
+        "IPC-HF8530E" | "IPC-HF8239E" | "IPC-HF7239E-JMHSY" | "IPC-HF8331E" | "IPC-HF5231EP" | "IPC-HF5431EP" | "IPC-HF8231EP" | "IPC-HF8231E" | "IPC-HF8431E" | "IPC-HF8238E" | \
+		"IPC-HF7238E-JMKT" | "IPC-HFS7238F-WGS-I6" | "IPC-HFS7239F-WGS-I6"|"IPC-HFS7238")
+		afcfg=ABF
+		cap_af="AF"
+		;;
+     	#fuguang_NV3.5~12镜头设备
+        "IPC-HDBW8331R-Z" | "IPC-HFW8331D-Z" | "IPC-HFW8331E-Z" | "IPC-HFW8331-Z-IRA" | "IPC-HDBW8331E-Z" | "IPC-HDB8331E-Z" | "IPC-HFW8331F-Z" | "IPC-HDBW8331EP-Z" | \
+		"IPC-HFW5231EP-Z" | "IPC-HFW5231DP-Z" | "IPC-HDBW5231EP-Z" | "IPC-HDBW5231RP-Z" | "IPC-HFW5231EP-Z-IRA" | "IPC-HDBW4231R-Z" | \
+		"IPC-HFW8231E-Z" | "IPC-HFW8231D-Z" | "IPC-HFW8231D-Z-A2" | "IPC-HDBW8231E-Z" | "IPC-HDBW8231R-Z" |"IPC-HFW8231E-Z-IRA" | "IPC-HDB8231E-Z" | "IPC-HFW8231F-Z" | \
+		"IPC-HFW8231EP-Z" | "IPC-HDBW8231EP-Z" | "IPC-HFW8238E-Z" | "IPC-HFW7238E-Z-JMHSY" | "IPC-HDBW8238E-Z" | "IPC-HDBW7238E-Z-JMHSY" | "IPC-HFW8238E-Z-IRA" | "IPC-HDB8238E-Z" | "IPC-HFW8238F-Z" | "IPC-HFW8238D-Z" | \
+		"IPC-HFW8238K-Z" | "IPC-HFW8331K-Z" | "IPC-HFW8238K-Z-CVI"| "IPC-HFW8331K-Z-CVI" | "IPC-HFW4231R-Z" | "IPC-HFW7238E-Z-JMKT" | "IPC-HDBW7238E-Z-JMKT" | "IPC-HFW7238E-Z-IRA-JMKT" | "IPC-HDBW4231R-ZAS")
+		afcfg=fuguang_nv_0035-0120
+		cap_af="AF"
+		;;
+	#fuguang_NV2.7~12 不限角度
+	"IPC-HFW5431EP-Z" | "IPC-HFW5431DP-Z" | "IPC-HDBW5431EP-Z" | "IPC-HDBW5431RP-Z" | "IPC-HFW5431EP-Z-IRA" | \
+	"IPC-HFW8431E-Z" | "IPC-HFW8431D-Z" | "IPC-HDBW8431E-Z" | "IPC-HDBW8431R-Z" | "IPC-HFW8431E-Z-IRA" | "IPC-HDB8431E-Z" | "IPC-HFW8431F-Z" | \
+	"IPC-HFW4431R-Z" | "IPC-HDBW4431R-Z" | "IPC-HDBW81230E-Z" | "IPC-HDBW4431R-ZAS")
+	       afcfg=fuguang_nv_0028-0120
+	       cap_af="AF"
+	       ;;
+     #yasico_0070-0840
+	 "IPC-HFW8239E-Z-IRA" | "IPC-HFW8239E-Z-IRA-I" | "IPC-HFW8239E-ZNF-IRA-0784")
+	       afcfg=yasico_0070-0840
+	       cap_af="AF"
+	       ;;
+	 #union_0047_0470
+	 "IPC-HFW8331E-Z-IRA-4747" | "IPC-HFW8238E-Z-IRA-4747" | "IPC-HFW8331E-Z-IRA-I")
+		   afcfg=union_0047_0470
+	       cap_af="AF"
+	       ;;
+	#union_0040_0128
+	"IPC-HFW8239E-ZNF-IRA" | "IPC-HDBW8239E-ZNF")
+		   afcfg=union_0040_0128
+	       cap_af="AF"
+	       ;;
+	#yasico_0070-0350
+	"IPC-HFW8238K-Z-0735" | "IPC-HFW8331K-Z-0735" | "IPC-HFW8238K-Z-CVI-0735" | "IPC-HFW8331K-Z-CVI-0735")
+		   afcfg=yasico_0070_0350
+	       cap_af="AF"
+	       ;;
+	
+	#yangming3.7-11
+	"IPC-HDBW8239E-Z"|"IPC-HFW8239K-Z-I4"|"IPC-HDBW8239E-Z-SDI"|"IPC-HFW8239K-Z-SDI-I4")
+		   afcfg=yangming_0037-0110
+	       cap_af="AF"
+	       ;;
+
+	#手动镜头
+	 "IPC-HFW4231R-VF" | "IPC-HFW4431R-VF" | "IPC-HFW4231R-VFAS" | "IPC-HFW4431R-VFAS" | \
+	 "IPC-HDBW4231R-VF" | "IPC-HDBW4231R-VFAS" | "IPC-HDBW4431R-VF" | "IPC-HDBW4431R-VFAS" | \
+	 "IPC-HDBW8238E-A2" | "IPC-HDBW8331E-A2")
+		   afcfg=ABF
+	       cap_af="AF"
+		   VideoEnv="${VideoEnv} AF"
+	       ;;
+esac
+
+if [ "$afcfg" != "" ];then
+	cp -f /var/tmp/2Acfg/$afcfg/af_cfg.bin /mnt/mtd/3A/
+fi
+
+#删除临时目录
+rm -rf /var/tmp/product
+#rm -rf /var/tmp/2Acfg
+
+echo "${VideoEnv}" >/var/tmp/videoEnv
+#configuration
+cd /usr/bin
+VIDEODEBUG=`cat /dev/mtdblock1 | grep -m 1 ^videodebug=`
+APPAUTO=`cat /dev/mtdblock1 | grep -m 1 ^appauto=`
+if [ "$APPAUTO" = "appauto=0" ] && [ "$VIDEODEBUG" = "videodebug=1" ];then
+	echo "VideoDaemon is not start!"
+else
+	VideoDaemon ${VideoEnv} &
+fi
+busybox sleep 4
+#sonia
+

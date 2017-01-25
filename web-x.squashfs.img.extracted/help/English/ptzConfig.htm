@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            PTZ Settings
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <p class="noiceC">
+            <span class="bold">Comment：</span>
+            Only the equipments which support these scales have the function.
+        </p>
+        <p class="detailP">
+            Here is to set PTZ protocol, address, baud rate, data bit, stop bit and parity,Please refer to the following sheet for detailed information.
+        </p>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Parameter</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td class="wid80">Protocol</td>
+                <td>Select the corresponding PTZ protocol.</td>
+            </tr>
+            <tr>
+                <td class="wid80">Address</td>
+                <td>
+                    Set corresponding device address.
+                    <p class="noiceC">
+                        <span class="bold">Note：</span>
+                        Please note your setup here shall comply with your device address; otherwise you can not control the device.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Baudrate</td>
+                <td>Select the device baud rate.</td>
+            </tr>
+            <tr>
+                <td class="wid80">Data Bit</td>
+                <td>Default setup is 8.</td>
+            </tr>
+            <tr>
+                <td class="wid80">Stop Bit</td>
+                <td>Default setup is 1.</td>
+            </tr>
+            <tr>
+                <td class="wid80">Parity</td>
+                <td>Default setup is none.</td>
+            </tr>
+        </table>
+
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

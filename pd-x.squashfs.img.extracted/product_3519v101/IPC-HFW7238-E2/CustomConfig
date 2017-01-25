@@ -1,0 +1,90 @@
+{
+	  "Encode" : [ {
+	     "MainFormat" : [ 
+			{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"BitRate" : 12288,
+				"Height" : 1080,
+				"Width" : 3840
+	  			}
+	  		},
+			{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"BitRate" : 12288,
+				"Height" : 1080,
+				"Width" : 3840
+	  			}
+	  		},
+			{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"BitRate" : 12288,
+				"Height" : 1080,
+				"Width" : 3840
+	  			}
+	  		},
+			{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+	  			"BitRate" : 12288,
+				"Height" : 1080,
+				"Width" : 3840
+	  			}
+	  		}],	   
+	  	"ExtraFormat" : [ {
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"Height" : 288,
+				"Width" : 704
+	  			}
+	  	},
+		{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"Height" : 480,
+				"Width" : 1440
+	  			}
+	  	},
+		{
+			"Audio" : {			 
+               "Frequency": 48000
+            },
+	  		"Video" : {
+				"Height" : 576,
+				"Width" : 1408
+	  			}
+	  	}],	  
+	  	"SnapFormat":[ {	  		
+	  		"Video" : {
+				"Height" : 1080,
+				"Width" : 3840
+	  			}
+	  		},
+	  		 {
+	  		"Video" : {
+				"Height" : 1080,
+				"Width" : 3840			
+				}
+	  		},
+	  		 {
+	  		"Video" : {
+				"Height" : 1080,
+				"Width" : 3840 			
+				}
+	  		}]
+	  }]
+}

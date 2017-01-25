@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            Connection
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <h2>Parameter Function</h2>
+        <table cellpadding="0" cellspacing="0" class="Table">
+            <tr>
+                <th>Parameter</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td class="wid80">Max connection</td>
+                <td>
+                    It is the max Web connection for the same device. The value ranges from 1 to 20. The max connection amount is 20.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">RTSP</td>
+                <td>
+                    <span class="kuai">■</span>
+                    The default value is 554.You can use the following format to play if you are using Apple browser QuickTime or VLC. The Blackberry phone also supports this function.
+                    <br/>
+                    <span class="kuai">■</span>
+                    Real-time monitor bit stream Url format. You need to input the channel name, bit stream type in the Url when you are querying the real-time monitor bit stream Rtsp stream media service. You need to input the user name and password if you want the verification information.
+                    <br/>
+                    <span class="kuai">■</span>
+                    If you are using the blackberry phone to play the video. The stream encode mode shall be H.264B，resolution is CIF and disable the audio.
+                    <br/>
+                    <span class="boldT">
+                        Please refer to the following contents for Url format information：
+                    </span>
+                    <br/>
+                    rtsp://username:password@ip:port/cam/realmonitor?channel=1&subtype=0
+                    <br/>
+                    Among which：
+                    <br/>
+                    username：such as admin。
+                    <br/>
+                    password：such as admin。
+                    <br/>
+                    ip：IP address such as  10.7.8.122。
+                    <br/>
+                    port：Default value is 554. You can leave it in blank.
+                    <br/>
+                    channel：Channel number begins with 1. The second channel is shown as channel=2
+                    <br/>
+                    subtype：Bit stream type. The main stream is  0（subtype=0）. The extra stream is 1（subtype=1）.
+                    <br/>
+                    If you want to query the extra stream of the channel 2.The Url is shown as below:
+                    <br/>
+                    rtsp://admin:admin@10.12.4.84:554/cam/realmonitor?channel=2&subtype=1
+                    <br/>
+                    You do not need to input the user name and password if you do not need to the verification. Such as：
+                    <br/>
+                    rtsp://ip:port/cam/realmonitor?channel=1&subtype=0
+                    <br/>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">TCP port</td>
+                <td>
+                    TCP protocol communication service port. The value ranges from 1025 to 65534.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">UDP port</td>
+                <td>
+                    User data packet protocol port. The value ranges from 1025 to 65534.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">HTTP port</td>
+                <td>HTTP communication port. The value ranges from 1025 to 65534</td>
+            </tr>
+            <tr>
+                <td class="wid80">HTTPs On</td>
+                <td>
+                    HTTPs communication service control. When HTTPs is on, you can use https://ip:port to login the device. The data has encryption.You can use https://ip to login if you are using default port.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">HTTPs port</td>
+                <td>HTTPs communication port. The value ranges from 1025~65534.</td>
+            </tr>
+        </table>
+        <p class="noiceC">
+            <span class="bold">Please note:</span>
+            <br/>
+            1. Do not use the port value such as 0-1024, 37780-37880, 1900, 3800, 5000, 5050, 9999, 37776, 39999 and 42323 since they are used as the special port.
+            <br/>
+            <span class="bold">2.</span>
+            When setting the port value,it's not recommended to use other ports' default port value.
+        </p>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

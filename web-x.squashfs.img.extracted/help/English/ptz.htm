@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../../css/ui.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/skin.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/fn.css" type="text/css" rel="stylesheet"/>
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body  onload="ptzHelp()">
+    <div class="detailBox">
+        <h1>
+            PTZ
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <p class="noiceC">
+            <span class="bold">Comment：</span>
+            Only the equipments which support these scales have the function.
+        </p>
+        <ul class="listul" id ='help_ptz_'>
+            <li class="help-minh35">
+                <p class="p1">
+                    <span class="fn-left">1.</span>
+                    <a class="ui-ptz-specail-icon" href="javascript:;">
+                        <i class="ui-ptz-icon-center"></i>
+                    </a>
+                    Fast positioning button. Use your mouse to select a zone in the monitor window, PTZ can fast rotate and focus to current position.
+                </p>
+            </li>
+            <li>
+                <p class="p1">
+                    <span class="fn-left">2.</span>
+                    Step is for speed operation. The larger the value is, the faster the speed is. The step is for PTZ direction control, zoom, focus and aperture.
+                </p>
+            </li>
+            <li>
+                <p class="p1">
+                    <span class="fn-left">3.</span>
+                    PTZ has the scan, preset, tour, pattern, AUX, wiper and light function.
+                </p>
+            </li>
+            <li id="joystick">
+                <p class="p1">
+                    <span class="fn-left">4.</span>
+                    Virtual joystick is to drag the button at the centre to simulate the joystick operation to control the device movement. 
+                </p>
+            </li>
+            <li>
+                <table class="Table" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Function</th>
+                    </tr>
+                    <tr>
+                        <td class="wid80">Scan</td>
+                        <td>
+                            <p class="normalP1">
+                                <span class="kuai">■</span>
+                                Click "Set" button, you can set scan left and right limit.
+                            </p>
+                            <p class="normalP1">
+                                <span class="kuai">■</span>
+                                Move the camera to you desired location and then click "Set Lift/Right" button to set the left/right limit.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="wid80">Preset</td>
+                        <td>
+                            <p class="normalP1">
+                                <span class="kuai">■</span>
+                                Input the preset value and then click "Goto" button, the camera turns to the corresponding position of the preset.
+                            </p>
+                            <p class="normalP1">
+                                <span class="kuai">■</span>
+                                Use direction keys to move the camera to your desired location and then input preset value. Click "Add" button, you have set one preset.The preset value due to different protocols.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="wid80">Tour</td>
+                        <td>
+                            <p class="normalP1">
+                                <span class="kuai">■</span>
+                                Input tour value and then click the "Add" button, you have set one tour. The tour value due to different protocols.
+                            </p>
+                            <p class="normalP1">
+                                <span class="kuai">■</span>
+                                Then input preset value in the column. Click "Add Preset" button, you have added one preset in the tour. Or you can click "Del Preset" button to remove one preset from the tour.
+                            </p>
+                            <p class="noiceC">
+                                Note: Repeat the above procedures you can add or delete more presets in one tour.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="wid80">Pattern</td>
+                        <td>
+                            You can input pattern value and click "Add" button, then click "Start Rec" button to begin PTZ movement such as zoom, focus, aperture, direction and etc. Please go back to this interface to click "Stop Rec" button. Now you have set one pattern.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="wid80">Assistant</td>
+                        <td>
+                            You can input assistant function value and then click "AUX On" or "AUX Off" button to enable or disable the corresponding assistant function.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="wid80">Light wiper</td>
+                        <td>You can enable or disable the light/wiper.</td>
+                    </tr>
+                    <tr id = 'help_ptz_move'>
+                        <td class="wid80">Absolute Move</td>
+                        <td>
+                            Input the horizontal degree, vertical degree and the zoom rate. Click the "Goto" button, you can go to the accurate position. The unit of the horizontal degree, and vertical degree are 0.1°.
+                        </td>
+                    </tr>
+                    <tr id = 'help_ptz_pan'>
+                        <td class="wid80">Pan</td>
+                        <td>Start or stop the camera rotation movement.</td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <p class="noiceC">
+                    <span class="bold">Note：</span>
+                    Please make you have set PTZ protocol before you use the PTZ control function.
+                    <br/>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../../css/ui.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/skin.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/fn.css" type="text/css" rel="stylesheet"/>
+	<link href="../../css/playback.css" type="text/css" rel="stylesheet"/>
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body onLoad="encodeHelp()">
+    <div class="detailBox">
+        <h1>
+            Video
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <p class="noiceC">
+            <span class="bold">Comment:</span>
+            Only the equipments which support these scales have the function.
+        </p>
+
+        <h2>Video Bit Stream</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">Code-Stream Type</td>
+                <td>
+                    <span class="kuai">■</span>
+                    System supports active control frame function (ACF). It allows you to record in different frame rates. For example, you can use high frame rate to record important events, record scheduled event in lower frame rate and it allows you to set different frame rates for motion detection record and alarm record.
+                    <br/>
+                    <span class="kuai">■</span>
+                    It includes general stream, motion detect stream and alarm stream. You can select different encode frame rates form different recorded events.
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Encode mode</td>
+                <td>
+                    <span class="kuai">■</span>
+                    <span class="yellow">H.264  ：</span>
+                    Main Profile encode mode.
+                    <br/>
+                    <span class="kuai">■</span>
+                    <span class="yellow">H.264H  ：</span>
+                    High Profile encode mode.
+                    <br/>
+                     <span class="kuai">■</span>
+                    <span class="yellow">H.264B ：</span>
+                    Baseline Profile encode mode.
+                    <br/>
+                    <span class="kuai">■</span>
+                    <span class="yellow">MJPEG ：</span>
+                    In this encode mode, the video needs larger bit stream to guarantee the video definition. You can use the max bit stream value in the recommend bit to get the better video output effect.
+                    <br/>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Resolution</td>
+                <td>
+                    There are multiple resolutions. You can select from the dropdown list.For each resolution, the recommended bit stream value is different.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Frame Rate（FPS）</td>
+                <td>
+                    50Hz: 1～25f/s，60Hz: 1～30f/s.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Bit Rate Type</td>
+                <td>
+                    <span class="kuai">■</span>
+                    There are two options: VBR and CBR. Please note you can set video quality in VBR mode.
+                    <br/>
+                    <span class="kuai">■</span>
+                    In MJPEG encode mode, the bit stream control mode shall be CBR only.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Bit Rate</td>
+                <td>
+                    In the VBR mode, it is the threshold value of the bit stream. In the CBR mode, it is a fixed value.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">I Frame Interval</td>
+                <td>
+                    Here you can set the P frame amount between two I frames. The value is 150.  Recommended value is frame rate *2.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">SVC</td>
+                <td>
+                    frame rate can be encoded by layer. It is a flexible encoding method. By default, it is 1 as 1 layer. You also can set 2/3/4 layers.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Watermark</td>
+                <td>
+                    <span class="kuai">■</span>
+                    This function allows you to verify the video is tampered or not.
+                    <br/>
+                    <span class="kuai">■</span>
+                    Here you can select watermark bit stream, watermark mode and watermark character. The max length is 128-digit. The character can only include number, character, underline and hyphen.
+                </td>
+            </tr>
+        </table>
+        <h2>Snapshot</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">Snapshot Type</td>
+                <td>
+                    <span class="kuai">■</span>
+                    General snapshot is to snap during the specified period.
+                    <br/>
+                    <span class="kuai">■</span>
+                    Activation snapshot is to snap after motion detect, camera masking or local alarm occurred.
+                    <br/>
+                    <p class="more"> <b>Activation snapshot can become active once you setup meet the following items:</b> 
+                        <br/>
+                        1.The action is in the specified period.
+                        <br/>
+                        2.The motion detect, camera masking or local alarm and their snapshot functions are enabled.
+                        <br/>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Image Size</td>
+                <td>It is the same with the resolution of the main stream.</td>
+            </tr>
+            <tr>
+                <td class="wid80">Image Quality</td>
+                <td>
+                    The image quality can be best, better, good, bad, wrose or wrost.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Interval</td>
+                <td>It is to set snapshot frequency.</td>
+            </tr>
+        </table>
+        <h2>Overlay</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">Privacy Masking</td>
+                <td>
+                    <span class="kuai">■</span>
+                    Here you can privacy mask the specified video in the monitor video.
+                    <br/>
+                    <span class="kuai">■</span>
+                    System max supports 4 privacy mask zones.
+                </td>
+            </tr>
+            <tr>
+                <td  class="wid80">Channel Title</td>
+                <td>
+                    <span class="kuai">■</span>
+                    You can enable this function so that system overlays channel information in video window.
+                    <br/>
+                    <span class="kuai">■</span>
+                    You can use the mouse to drag the channel title position.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Time Title</td>
+                <td>
+                    <span class="kuai">■</span>
+                    You can enable this function so that system overlays time information in video window.
+                    <br/>
+                    <span class="kuai">■</span>
+                    You can use the mouse to drag the time title position.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Text Overlay</td>
+                <td>
+                    <span class="kuai">■</span>
+                    You can enable this function so that system overlays text information in video window.
+                    <br/>
+                    <span class="kuai">■</span>
+                    You can use the mouse to drag the text overlay position.Text Align consists of left and right. 
+                </td>
+            </tr>
+			<tr>
+                <td class="wid80">Picture Overlay</td>
+                <td>
+                    <span class="kuai">■</span>
+                    You can enable this function so that system overlays picture information in video window.
+                    <br/>
+                    <span class="kuai">■</span>
+                    Click Upload picture to overlay local picture to video window. Drag the yellow frame to adjust overlay position. 
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Refresh</td>
+                <td>
+                    After you successfully set and saved the privacy mask zone, channel title, time title and location, you can click the refresh button to see the effect.
+                </td>
+            </tr>
+        </table>
+		<p class="noiceC">
+			<span class="bold">Note: </span>
+			The text overlay and picture overlay can not be valid at the same time.
+		</p>
+        
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

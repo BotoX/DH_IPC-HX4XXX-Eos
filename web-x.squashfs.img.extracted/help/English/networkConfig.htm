@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            TCP/IP
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <h2>TCP/IP Introduce</h2>
+        <p class="detailP">
+            TCP/IP mode is to set device login IP. It supports IPV4 and IPV6. IPV4 supports static IP and DHCP IP,IPV6 only supports static IP. After you set the IP address manually, Web interface can automatically go to the login interface of the new IP.
+        </p>
+        <h2>Parameter Function</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">Host Name</td>
+                <td>
+                    It is to set current host device name. It max supports 15-digit character.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Ethernet Card</td>
+                <td>
+                    Please note you can modify the default Ethernet port setup if there are several options.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Mode</td>
+                <td>
+                    There are two modes: static mode and the DHCP mode.The IP/sub mask/gateway are null when you select the DHCP mode to auto search the IP. 
+If you select the static mode, you need to set the IP/sub mask/gateway manually；If you select the DHCP mode, you can view the IP/sub mask/gateway from the DHCP. 
+If you switch from the DHCP mode to the static mode, you need to reset the IP parameters.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">MAC Address</td>
+                <td>It is to display hose mac address (read-only).</td>
+            </tr>
+            <tr>
+                <td class="wid80">IP Version</td>
+                <td>
+                    It is to select IP version. IPV4 or IPV6. You can access the IP address of these two versions: <strong>http://[ fe80::5054:4cff:fefa:1682]</strong>
+                    。
+                    <br/>
+                    <span class="boldT">IPV6 newly added field includes：</span>
+                    <br/>
+                    <span class="gray">MAC address：</span>
+                    In the LAN, each host can get one unique MAC address. It is for you to access in the LAN. The address is read-only；
+                    <br/>
+                    <span class="gray">IP address:</span>
+                    Just like the host of the IPv4. It is 128-digit and can not be null.
+                    <br/>
+                    <span class="gray">Subnet prefix：</span>
+                    The number ranges from 0 to 128. The subnet prefix can mark a specified network MAC. It usually includes a structure of several layers.
+                    <br/>
+                    <span class="gray">Default gateway：</span>
+                    Just like IPv4 gateway. It is 128-digit and can not be null.
+                    <br/>
+                    <span class="gray">Preferred DNS：</span>
+                    Just lick the IPv4 DNS. It is 128-digit and can not be null.
+                    <br/>
+                    <span class="gray">Alternate DNS：</span>
+                    Just lick the IPv4 DNS. It is 128-digit and can not be null.
+                    <br/>
+                    <p class="noiceC">
+                        <span class="bold">Note：</span>
+                        <br />
+                        1.It is for all the IPV6 address to check the validity. The IP address and the default gateway shall be in the same network section. That is to say, you need to set the subnet prefix field shall have the same length so that it can pass the verification.
+                        <br />
+                        2.When PPPOE is enabled, the IP address, subnet mask, default gateway of the IPV4 or IPv6 is read-only and can not restore the default setup.
+                        <br />
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <h2>Enable ARP/Ping set device IP address service</h2>
+        <p class="detailP">
+            You can use ARP/Ping command to modify or set the device IP address if you know the device MAC address.
+        </p>
+        <p class="detailP">
+            When it is enabled by default, during the reboot process, you can use the specified ping packet to set the device IP within 2 minutes. The service turns off after 2 minutes. The service also becomes off if you successfully set the IP address. The Ping function can not set the IP address if current function is disabled.
+        </p>
+
+        <h2>
+            You can refer to the following contents to set the device IP via ARP/Ping setup
+        </h2>
+        <p class="detailP dispos">
+            <span class="boldT">1.</span>
+            Please get an IP address and make sure the IPC and the PC are in the same LAN.
+            <br/>
+            <span class="boldT">2.</span>
+            Get the device physical address from the IPC label.
+            <br/>
+            <span class="boldT">3.</span>
+            Go to the command interface of the PC and input the following commands.
+            <br/>
+            <span class="pad5">
+                <img src="../image/ARPPing.png"/>
+            </span>
+            <br/>
+            <span class="boldT">4.</span>
+            Turn off the power to reboot the IPC or reboot the device via the network.
+            <br/>
+            <span class="boldT">5.</span>
+            Once you can see the information such as
+            <span class="bold">“Reply from 192.168.0.125 …”</span>
+            you can see the setup succeeded. Now you can turn off the command interface.
+            <br/>
+            <span class="boldT">6.</span>
+            Input
+            <span class="bold">http://&lt; IP address &gt;</span>
+            n the browser and then click the Enter to access.
+            <br/>
+        </p>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

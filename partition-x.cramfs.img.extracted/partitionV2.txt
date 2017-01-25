@@ -1,0 +1,15 @@
+#  Version=3								
+#  name    	cs	       offset       	     size    	mask_flags	fs_flags	fs_type  	mount_cmd                                       	       backup_off
+U-Boot,    	0,	0x0000000000090000,	0x0000000000030000,    	 RW,      	,       	,        	,                                               	0xffffffffffffffff,
+hwid,      	0,	0x00000000000C0000,	0x0000000000020000,    	 RW,      	,       	,        	,                                               	0xffffffffffffffff,
+updateflag,	0,	0x00000000000E0000,	0x0000000000030000,    	 RW,      	,       	,        	,                                               	0xffffffffffffffff,
+partition, 	0,	0x0000000000110000,	0x0000000000020000,    	 RW,      	R,      	cramfs,  	,                                               	0xffffffffffffffff,
+custom,    	0,	0x0000000000130000,	0x0000000000020000,    	 RW,      	R,      	squashfs,	"mount /dev/mtdblock4 /mnt/custom/",            	0xffffffffffffffff,
+product,   	0,	0x0000000000150000,	0x0000000000020000,    	 RW,      	R,      	squashfs,	"mount /dev/mtdblock5 /mnt/pd/",                	0xffffffffffffffff,
+Kernel,    	0,	0x0000000000170000,	0x0000000000180000,    	 RW,      	,       	,        	,                                               	0xffffffffffffffff,
+romfs,     	0,	0x00000000002F0000,	0x00000000000E0000,    	 RW,      	R,      	squashfs,	,                                               	0xffffffffffffffff,
+web,       	0,	0x00000000003D0000,	0x0000000000280000,    	 RW,      	R,      	squashfs,	"mount /dev/mtdblock8 /mnt/web/",               	0xffffffffffffffff,
+user,      	0,	0x0000000000650000,	0x00000000008C0000,    	 RW,      	R,      	squashfs,	"mount /dev/mtdblock9 /usr/",                   	0xffffffffffffffff,
+syslog,    	0,	0x0000000000F10000,	0x0000000000050000,    	 RW,      	RW,     	jffs2,   	"mnt_jffs2 /dev/mtdblock10  /mnt/syslog jffs2",  	0xffffffffffffffff,
+config,    	0,	0x0000000000F60000,	0x0000000000050000,    	 RW,      	RW,     	jffs2,   	"mnt_jffs2 /dev/mtdblock11 /mnt/mtd" jffs2,      	0xffffffffffffffff,
+backup,    	0,	0x0000000000FB0000,	0x0000000000050000,    	 RW,      	RW,     	jffs2,   	"mnt_jffs2 /dev/mtdblock12 /mnt/backup" jffs2,   	0xffffffffffffffff,

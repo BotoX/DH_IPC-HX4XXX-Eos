@@ -1,0 +1,27 @@
+{
+   "EncodingResolutionLimit" : [
+      [ "1080P", "SXGA", "1_3M", "720P", "D1" ],
+      [ "D1", "CIF" ],
+      [ "1080P", "720P", "D1" ],
+      null,
+      [ "1080P", "SXGA", "1_3M", "720P", "D1" ]
+   ],
+   "IntelliTracker" : {
+      "Support" : false
+   },
+   "MaxMainStreamBitrate" : 16384,
+   "RotateResolutionLimit" : [ "1080P", "SXGA", "1_3M", "720P", "D1", "CIF" ],
+   "VideoAnalyse" : {
+      "Support" : true,
+      "SupportedRules" : {
+         "Normal" : [
+            "CrossLineDetection",
+            "CrossRegionDetection",
+            "LeftDetection",
+            "TakenAwayDetection",
+            "VideoAbnormalDetection"
+         ]
+      },
+      "SupportedScene" : [ "Normal", "FaceDetection" ]
+   }
+}

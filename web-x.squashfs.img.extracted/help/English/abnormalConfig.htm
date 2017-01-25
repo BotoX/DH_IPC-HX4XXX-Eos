@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            Abnormity
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <p class="noiceC">
+            <span class="bold">Comment:</span>
+            Only the equipments which support these scales have the function.
+        </p>
+
+        <h2>Abnormity Introduce</h2>
+        <p class="detailP">
+            It includes five statuses: No SD card, capacity warning, SD card error, disconnection, IP conflict and unauthorized access.
+        </p>
+        <h2>SD Card</h2>
+        <p class="detailP">
+            SD Card alarm occurred when there is no SD card, insufficient SD card space or SD card error.
+        </p>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Parameter</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td class="wid80">Enable</td>
+                <td>
+                    Please check the box here to enable SD card error alarm function.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Relay-out</td>
+                <td>
+                    The alarm output channel is enabled when an alarm occurs. It can activate the alarm output device. You need to check the box to enable this function.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Relay-out Delay</td>
+                <td>
+                    The alarm output can delay for the specified time after alarm stops. The value ranges from 10s to 300s.
+                    <p class="noiceC">
+                        <span class="bold">
+                            Note: For no SD card alarm, insufficient space alarm or the SD card error alarm, the alarm delaying time begins with the alarm occurrence time.
+                        </span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Send Email</td>
+                <td>
+                    If you enable this function, system can send out email to alert the specified user. You can go to"
+                    <a href="emailConfig.htm"  class="linka">Network->SMTP(Email)</a>
+                    " to set the email address.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Capacity limit</td>
+                <td>
+                    Here you can set SD card free percentage. System can generate an alarm when the free space is lower than the threshold you set here.
+                </td>
+            </tr>
+        </table>
+        <h2>Network</h2>
+        <p class="detailP">
+            System can generate a network alarm when network disconnection or IP conflict occurred.
+        </p>
+		<h2>Illegal Access</h2>
+        <p class="detailP">
+			Once the login failure reaches the specified times, it may result in illegal access alarm event. 
+		It has the similar operation as the SD card.<br/>
+        </p>
+        <p class="detailP">
+            Login Error: System generates illegal access alarm event and lock the account once the login error times reaches the threshold here. 
+        </p>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

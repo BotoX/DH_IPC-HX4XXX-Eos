@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            Destination
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <p class="noiceC">
+            <span class="bold">Comment:</span>
+            Only the equipments which support these scales have the function.
+        </p>
+        <h2>Parameter Function</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Parameter</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td class="wid80">Path</td>
+                <td>
+                    1、Here you can set Device record and snapshot storage setup.System can record according to the event types (General, motion detect and alarm) in the Schedule interface. You can check the box here to storage the corresponding record or snapshot picture.
+                    <br/>
+                    2、There is local SD card, FTP or NAS storage setup for you to choose . 
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Local</td>
+                <td>
+                    Here you can view the local SD card or the disk information from the list. There are several operations such as Read-only, Read&Write, Format.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">FTP</td>
+                <td>
+                    Please select the FTP in the storage destination interface. Emergency save in the local can save the record file or snapshot picture in the local SD card when the network is offline or malfunction.
+                </td>
+            </tr>
+			<tr>
+                <td class="wid80">NAS</td>
+                <td>
+                    Please select the NAS in the storage destination interface. When selected the NAS storage, you can save files to the NAS server.
+                </td>
+            </tr>
+        </table>
+		<p class="noiceC">
+			<span class="bold">Note：</span>
+			FTP and NAS both belong to network storage, they can not work at the same time.
+		</p>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

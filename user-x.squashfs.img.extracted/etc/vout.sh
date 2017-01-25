@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#BT1120: VO_Y,VO_UV
+himm 0x12040070 0x2;    # 0: GPIO5_0    1: EPHY_CLK      2: VO_DATA8
+himm 0x1204004c 0x2;    # 0: GPIO3_7    1: RGMII_TXD2    2: VO_DATA9
+himm 0x12040044 0x2;    # 0: GPIO3_5    1: RGMII_TXD0    2: VO_DATA10
+himm 0x12040054 0x2;    # 0: GPIO4_1    1: RGMII_RX_CLK  2: VO_DATA11
+himm 0x12040068 0x2;    # 0: GPIO4_6    1: RGMII_RXD3    2: VO_DATA12
+himm 0x12040064 0x2;    # 0: GPIO4_5    1: RGMII_RXD2    2: VO_DATA13
+himm 0x12040060 0x2;    # 0: GPIO4_4    1: RGMII_RXD1    2: VO_DATA14
+himm 0x12040058 0x2;    # 0: GPIO4_2    1: RGMII_RX_DV   2: VO_DATA15
+
+himm 0x12040018 0x1;    # 0: GPIO2_2    1: VO_CLK
+
+himm 0x1204001c 0x1;    # 0: GPIO2_3    1: VO_DATA0
+himm 0x12040020 0x1;    # 0: GPIO2_4    1: VO_DATA1
+himm 0x12040024 0x1;    # 0: GPIO2_5    1: VO_DATA2
+himm 0x12040028 0x1;    # 0: GPIO2_6    1: VO_DATA3
+himm 0x1204002c 0x1;    # 0: GPIO2_7    1: VO_DATA4
+himm 0x12040030 0x1;    # 0: GPIO3_0    1: VO_DATA5
+himm 0x12040034 0x1;    # 0: GPIO3_1    1: VO_DATA6
+himm 0x12040038 0x1;    # 0: GPIO3_2    1: VO_DATA7

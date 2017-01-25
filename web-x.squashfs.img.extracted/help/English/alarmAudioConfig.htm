@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body onload="alarmSetHelp()">
+    <div class="detailBox">
+        <h1>
+            Audio Detect
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Parameter</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td class="wid80">Audio Channel</td>
+                <td>Audio channel shows all audio channels of current device. Select different audio channels and current channel info will be displayed below. </td>
+            </tr>
+            <tr>
+                <td class="wid80">Sensitivity</td>
+                <td>Level 1-100 adjustable, the lower the value, the higher of the difference in input volume change will be than continuous environmental volume. This can be judged as abnormal audio. User shall adjust it according to actual environment. </td>
+            </tr>
+            <tr>
+                <td class="wid80">Anomaly Threshold</td>
+                <td>Level 1-100 adjustable, used to set filtered environmental sound intensity. The higher the noise, the higher the value shall be set. User shall adjust according to actual environment. </td>
+            </tr>
+        </table>
+        <p class="noiceC">
+            For detailed information of other items, please refer to.
+            <a href="videoDetectConfig.htm" class="linka">Video Detect</a>
+            。
+        </p>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

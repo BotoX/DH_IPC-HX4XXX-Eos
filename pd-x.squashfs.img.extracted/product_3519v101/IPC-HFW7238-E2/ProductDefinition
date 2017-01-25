@@ -1,0 +1,26 @@
+{
+   "EncodingResolutionLimit" : [
+      [ "3840x1080", "2560x1024", "2560x960", "2560x720" ],
+      [ "1408x576", "704x288" ],
+      [ "1408x576", "704x288" ],
+      null,
+      [ "3840x1080", "2560x1024", "2560x960", "2560x720" ]
+   ],
+   "IntelliTracker" : {
+      "Support" : false
+   },
+   "MaxMainStreamBitrate" : 16384,
+   "VideoAnalyse" : {
+      "Support" : true,
+      "SupportedRules" : {
+         "Normal" : [
+            "CrossLineDetection",
+            "CrossRegionDetection",
+            "LeftDetection",
+            "TakenAwayDetection",
+            "VideoAbnormalDetection"
+         ]
+      },
+      "SupportedScene" : [ "Normal", "FaceDetection" ]
+   }
+}

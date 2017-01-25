@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            QoS
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <h2>QoS Introduce</h2>
+        <p class="detailP">
+            DSCP priority has 64(0-63) levels. It marks the different priorities of the packets. Level 0 has the lowest priority and level 63rd has the highest priority. It can select the different queues according to the priorities of the packets and select the bandwidth of the each queue. It can also discard at the different ratio when the broad bandwidth is jam.
+        </p>
+        <h2>Parameter Function</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Parameter</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td class="wid80">Real-time monitor</td>
+                <td>It is the data packet of the network video monitor.</td>
+            </tr>
+            <tr>
+                <td class="wid80">Command</td>
+                <td>
+                    It is the non-monitor data packet such as setup packet and search operation packet.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

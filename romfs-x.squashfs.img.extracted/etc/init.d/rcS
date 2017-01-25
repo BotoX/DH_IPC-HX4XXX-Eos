@@ -1,0 +1,91 @@
+#! /bin/sh
+
+#echo /bin/mdev >/proc/sys/kernel/hotplug
+if [ -f /proc/dahua/fsmountcmd ]; then
+	echo #! /bin/sh > /var/script
+	cat /proc/dahua/fsmountcmd >> /var/script
+	chmod 777 /var/script
+	/var/script
+	rm /var/script
+else
+	/sbin/ubiattach /dev/ubi_ctrl -m 10
+	/sbin/ubimkvol /dev/ubi0 -s 2500000 -N syslog
+	mount -t ubifs ubi0_0 /mnt/syslog
+
+	if [ $? -ne 0 ];then
+		echo "/mnt/syslog mount fail!" >> /mnt/syslog/ubifsLog
+		sync
+		flash_eraseall /dev/mtd/10
+		/sbin/ubiattach /dev/ubi_ctrl -m 10
+		/sbin/ubimkvol /dev/ubi0 -s 2500000 -N syslog
+		mount -t ubifs ubi0_0 /mnt/syslog
+	fi
+
+	/sbin/ubiattach /dev/ubi_ctrl -m 11
+	/sbin/ubimkvol /dev/ubi1 -s 2500000 -N config
+	mount -t ubifs ubi1_0 /mnt/mtd
+	
+	if [ $? -ne 0 ];then
+		echo "/mnt/config mount fail!" >> /mnt/syslog/ubifsLog
+		sync
+		flash_eraseall /dev/mtd/10
+		/sbin/ubiattach /dev/ubi_ctrl -m 11
+		/sbin/ubimkvol /dev/ubi1 -s 2500000 -N config
+		mount -t ubifs ubi1_0 /mnt/config
+	fi
+
+	/sbin/ubiattach /dev/ubi_ctrl -m 12
+	/sbin/ubimkvol /dev/ubi2 -s 2500000 -N backup
+	mount -t ubifs ubi2_0 /mnt/backup
+	if [ $? -ne 0 ];then
+		echo "/mnt/backup mount fail!" >> /mnt/syslog/ubifsLog
+		sync
+		flash_eraseall /dev/mtd/10
+		/sbin/ubiattach /dev/ubi_ctrl -m 12
+		/sbin/ubimkvol /dev/ubi2 -s 2500000 -N backup
+		mount -t ubifs ubi2_0 /mnt/backup
+	fi
+	
+	mount /dev/mtdblock4 /mnt/custom/
+	mount /dev/mtdblock5 /mnt/pd/
+	mount /dev/mtdblock8 /mnt/web/
+	mount /dev/mtdblock9 /usr/
+fi
+
+KEYBOARD=0
+CMDLINE="/proc/dahua/bootpara"
+KEYBOARD=`cat $CMDLINE`
+KEYBOARD=${KEYBOARD##*dh_keyboard:}
+KEYBOARD=${KEYBOARD%%ethaddr*}
+if [ $KEYBOARD == '1' ];then
+    echo "keyboard = 1"
+    ln -s /dev/null /dev/mytty
+
+else
+     echo "keyboard = 0"
+    ln -s /dev/ttyS0 /dev/mytty
+    
+fi
+
+#mkdir -p /dev/pts -m 666
+#mount -a
+mkdir -p /var/tmp
+#mkdir -p /dev/pts
+#mkdir -p /dev/misc
+#mkdir -p /dev/mtd
+
+mount -t devpts devpts /dev/pts
+
+mkdir -p /mnt/mtd/Config /mnt/mtd/Log /mnt/backup/Config /mnt/mtd/Config/ppp /mnt/mtd/3A /var/tmp
+mkdir -p /mnt/backup/debug
+mkdir -p /var/tmp/autoFix
+
+touch /mnt/mtd/Config/ppp/options
+touch /mnt/mtd/Config/ppp/pppoe-enable
+touch /mnt/mtd/Config/ppp/pap-secrets
+touch /mnt/mtd/Config/ppp/pppoesessionctx
+touch /mnt/mtd/Config/ppp/pppoe-redial_time
+touch /mnt/mtd/Config/dial-ip
+
+/usr/etc/imod
+

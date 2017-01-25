@@ -1,0 +1,199 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{ width: 100%; height: 100%; background:#fff;}
+*{ margin:0; padding:0; text-decoration:none; list-style:none; font-size:12px; color:#333;}
+.detailBox{ width:100%; min-height: 100%; background:#fff url(image/helpbg.gif) repeat-x;}
+/*help catalog*/
+.h1{ height:32px; line-height:32px;background:url(image/helpbg.gif) repeat-x #000;color:#FFF; font-size:14px; font-weight:bold;}
+.icon_help{float:left; display:block; width:24px; height:23px; margin:4px 5px 0; background:url(../image/btnbar.png) -360px -40px no-repeat; }
+.helpBox a{ background:#FAFAFA url(image/helpicon.png) 0 0 no-repeat;display:block; height:24px; text-indent:30px; line-height:24px; color:#4f4f4f;}
+.helpBox a:hover{ background-color: #f7e084; background-position: 0 -24px; color:#944c0d;}
+.helpBox .tlinow,.helpBox .tlinow1,.helpBox .tlinow:hover{ background-color:#d5d5d5;  background-position: 0 -48px; color:#373737; font-weight:bold; border-top:1px solid #ddd; border-bottom:1px solid #c2c2c2; height:24px; line-height:24px;}
+.helpBox .tlinow1:hover{ background-color:#f7e084;  background-position: 0 -48px; }
+/*see details of help */
+.J_btn_help{ display:block; width:104px; height:24px; line-height:24px; margin:10px auto;  border:1px solid #464646; background:url(../../image/btnbg.png) repeat-x;  cursor:pointer; text-align:center;}
+.detailBox h1{ height:32px; line-height:32px; margin-left:5px; color:#FFF; font-size:14PX; font-weight:bold; padding-left:10px;}
+.righBut{ float:right; display:block; color:#FFF; height:16px;text-align:left; line-height:16px; margin-top: 8px; background:url(image/helpicon.png) 0 -72px no-repeat; padding-right:10px; padding-left:20px; font-size:12px; font-weight:normal; *margin-top:-25px;}
+.righBut:hover{ text-decoration: underline;}
+.before{background:url(image/helpbg1.gif) no-repeat 0 -88px;}
+.tittle,.tittle1{ background:url(image/helpbg1.gif) 0 0; color:#FFF; height:27px; font-weight:bold; line-height:27px; font-size:12px;  padding-left:30px;}
+.tittle1{ background-positon: 0 -27px; color:#454545; }
+.conHeip{ clear:both; background:#d5d5d5; padding:10px;}
+.detailBox h2{ width:100%; height:24px; line-height:24px; background:#d5d5d5; font-size:12px; font-weight:bold; color:#373737; border-bottom:1px solid #c2c2c2; text-indent:15px; clear:both; border-top:1px solid #c2c2c2;}
+.Table{ clear:both; background:#FFF; margin:10px auto; border-collapse:collapse; width:98%;}
+.Table td,.Table th{ line-height:24px; padding-left:10px; border:1px solid #e4e4e4; color:#333; text-align:left; padding-right:10px; padding-top:4px; padding-bottom:4px;}
+.Table th{ background:#f0f0f0;border:1px solid #d1d1d1;}
+.Table .wid80{ width:80px; background:#fafafa; color:#6c5032;}
+.Table .C{ text-align:center;}
+.yellow{ color:#7d2b07;}
+/*preview page*/
+.listul{ margin-bottom:10px; width:100%;}
+.listul li{ line-height:28px; border-bottom:1px dashed #ebebeb; color:#333; clear:both; margin:5px auto; width:100%;}
+.lefticon{ float:left; width:30px; text-align:center;}
+.list2ul li{border-bottom:0px;clear:both; width:100%; text-indent:25px;}
+.iconP1,.iconP2{ background:url(image/helpicon.png) 10px -286px no-repeat; line-height:20px; padding-left:30px;}
+.iconP2{ line-height:24px; padding-right:15px;}
+.codarl{ color:#333;}
+/*camera property*/
+.stitle{ font-weight:bold;}
+.detailP{ line-height:24px; text-indent:20px; margin:5px 10px;}
+.disindent{ text-indent:0px;}
+.disindent1{text-indent:0px; margin-left:15px;}
+.more{ color:#452604; padding-left:10px;background:#e9e7e4; margin-right:10px; margin-bottom:5px;}
+.normalP{ line-height:24px; padding-left:20px; margin-top:5PX;}
+.normalP1{ line-height:24px;}
+.red{ color:#FF3300}
+.blue{ color:blue; }
+.boldT{ font-weight:bold; color:#444;}
+.pad5{ padding-top:5px; padding-bottom:5px; padding-left:60px;}
+.gray{ color:#653f1d;}
+.bgbox{background:#f0f0f0;  color:#000;}
+.padL0{background:url(image/helpicon.png) 0px -145px no-repeat; padding-left:10px;}
+.dispos{ padding-left:20px; text-indent:0;}
+.noice,.noiceP,.noiceC{ background:#fafafa url(image/helpicon.png) 10px -105px no-repeat; padding:5px 5px 5px 34px; line-height:24px; margin:10px 10px 10px 10px;}
+.noiceP{font-weight:bold;}
+.noiceC{ background-color:#e3e3e3; color:#CC6633; margin: 0;}
+.p1{ padding-left:15px; padding-right:15px;}
+.kuai{ font-size:6px; color:#444; padding-right:5px;}
+
+.green{ color:#00ff00;}
+.redd{ color:#ff0000;}
+.yelloww{ color:#ffff00;}
+.lef50{ padding-left:50px; line-height:24px; color:#565656;}
+
+.linka{ color:blue; text-decoration:underline;}
+.bold{ font-weight:bold; color:#CC6633}
+.remark{ width:24px; margin-right: 12px; background-position:-277px 0;}
+.per100{background-position: -23px 0;}
+.auto{background-position: -46px 0;}
+.wh{background-position: -69px 0;}
+.liu{background-position: -92px 0;}
+.ptz{background-position: -115px 0;}
+.sfouse{background-position: -161px 0;}
+.J_light_icon{background-position:-56px -228px;}
+.J_contrast_icon{background-position:-56px -244px;}
+.J_chroma_icon{background-position:-56px -260px;}
+.J_saturation_icon{background-position:-56px -276px;}
+.play{background-position: -68px 0;}
+.stop{background-position: -68px -27px;}
+.slow{background-position: -68px -135px;}
+.fast{background-position: -68px -162px;}
+.next{background-position: -68px -108px;}
+.audio{background-position: -68px -216px;}
+.pos{ width: 34px; height: 34px; margin-right: 5px; background-position: 0 0;}
+.J_floatl{ float: left;; display: block;}
+.J_height35{height:35px;}
+.J_marr5{margin-right: 5px;}
+.play-bottom-iconbg:hover { background-position: -300px 0;}
+.play-bottom-bigicon:hover{ background-position: -300px -60px;}
+.ui-button-special:hover {background-position: 0 0;}
+.ui-button:hover {background-position: 0 0;}
+[class^= "main-top-icon-"] {
+    float: none;
+    margin: 2px auto 0;
+}
+.help-pre-icons {
+    display: inline-block;
+     *display: inline; 
+     *zoom: 1;
+    vertical-align: middle;
+    width: 35px;
+    height: 26px;
+    margin-right: 5px;
+    text-align: center;
+    background: #373737;
+}
+.playback-cut-download{
+	display:block;
+	margin: 0 auto;
+	width: 35px;
+    height: 26px;
+	background-position: -8px -1px;
+}
+.help-pre-icons1{
+	float: left;
+	width:29px;
+	height:26px;
+	margin-right: 5px;
+	padding-left:6px;
+    text-align: center;
+    background: #373737;
+}
+.main-top-icon-alarm:hover {
+    background-position: 0 0;
+}
+.main-top-icon-icon-duck:hover {
+    background-position: -400px 0;     
+}
+.main-top-icon-figure:hover {
+    background-position: -440px 0;
+}
+.main-top-icon-big:hover {
+    background-position: -40px 0;
+}
+.main-top-icon-picture-hover {
+    background-position: -80px 0;
+}
+.main-top-icon-picturethree-hover {
+    background-position: -120px 0;
+}
+.main-top-icon-vedio:hover {
+    background-position: -160px 0;
+}
+.main-top-icon-afocus:hover {
+    background-position: -200px 0;
+}
+.main-top-icon-locate:hover {
+    background-position: -240px 0;
+}
+.main-top-icon-voice:hover {
+    background-position: -280px 0;
+}
+.main-top-icon-speak:hover {
+    background-position: -320px 0;
+}
+.main-top-icon-reginFoucs:hover {
+    background-position: -640px 3px;
+}
+.ui-video-icon:hover {
+    background-position: -60px -30px;
+}
+.playback-dates-icon-down{
+    float: none;
+    margin: 0 auto;
+}
+.playback-dates-icon-down:hover{
+    background-position: -210px 0;    
+}
+.ui-video-icon {margin: 4px 5px auto 0; }
+[class^= "ui-slider-icon-"] {
+    background-color: #373737;
+    width: 18px;
+}
+.ui-video-icon:hover {
+    background-position: -60px 0;
+}
+.ui-ptz-specail-icon {
+    margin: 0 4px 0 0 ;
+}
+.ui-video-icon:hover [class^= "ui-video-icon-"],
+.ui-ptz-specail-icon:hover [class^= "ui-ptz-icon-"] {
+    -moz-opacity: 0.8; 
+    /*opacity:  0.8;*/
+    filter: alpha(opacity=80); 
+}
+.ui-ptz-specail-icon:hover {
+    background-position: 0 -60px;
+    cursor: default;
+}
+.help-minh35 {
+    min-height: 35px;
+}
+.ui-video-icon,
+.ui-button-special label, 
+.ui-button-special [class^= "ui-button-icon-"]
+[class^= "ui-button-icon-"],
+[class^= "play-bottom-icon-"],
+.ui-button, .ui-button-special{
+    cursor: default;
+}

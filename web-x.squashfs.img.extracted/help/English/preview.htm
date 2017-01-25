@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../../css/ui.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/skin.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/fn.css" type="text/css" rel="stylesheet"/>
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body onLoad="previewHelp()">
+    <div class="detailBox">
+        <h1>
+            Live
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <p class="noiceC">
+            <span class="bold">Comment：</span>
+            Only the equipments which support these scales have the function.
+        </p>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">
+                    <a href="javascript:;" class="ui-button">Main Stream</a>
+                </td>
+                <td>
+                    Use the stream protocol you select from the protocol dropdown list to connect. You can go to the
+                    <a href="encodeConfig.htm" class="linka">Set->Video->Main Stream</a>
+                    to set to realize the monitor or close the video. Usually it is for storage or monitor.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">
+                    <a href="javascript:;" class="ui-button">Sub Stream 1</a>
+                </td>
+                <td>
+                    Use the stream protocol you select from the protocol dropdown list to connect.You can go to the
+                    <a href="encodeConfig.htm" class="linka">Set->Video->Sub Stream 1</a>
+                    to set to realize monitor or close the video. If network width is not sufficient, you can use it to realize network monitor.
+                </td>
+            </tr>
+			<tr>
+                <td class="wid80">
+                    <a href="javascript:;" class="ui-button">Sub Stream 2</a>
+                </td>
+                <td>
+                    Use the stream protocol you select from the protocol dropdown list to connect.You can go to the
+                    <a href="encodeConfig.htm" class="linka">Set->Video->Sub Stream 2</a>
+                    to set to realize monitor or close the video. If network width is not sufficient, you can use it to realize network monitor.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Protocol</td>
+                <td>
+                    You can select the video monitor protocol from the dropdown list. It includes: TCP, UDP and Multicast.
+                </td>
+            </tr>
+        </table>
+        <h2>Video Window Function Option</h2>
+        <ul class="listul">
+            <li id='help_preview_reginFoucs'>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-reginFoucs"></a></p>
+                    <span class="boldT">Regional Focus</span>
+                    - Click it and then use mouse to select a zone, device can auto focus within the specified region.
+                </div>
+            </li>            
+			<li id='help_preview_remark'>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-icon-duck"></a></p>
+                    <span class="boldT">Remark</span>
+                    - Click it and then select pen color, you can write down the mark information on the preview interface.
+                </div>
+            </li>
+			<li id='help_preview_gesture'>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-figure"></a></p>
+                    <span class="boldT">Gesture control</span>
+                    - On the preview interface you can left click mouse to control the PTZ and use the middle button to zoom in/zoom out.
+                </div>
+            </li>
+            <li>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-alarm"></a></p>
+                    <span class="boldT">Alarm output button</span>
+                    - Click it to generate an alarm output.  The button becomes red/grey when an alarm is output or is cancelled.
+                </div>
+            </li>
+            <li>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-big"></a></p>
+                    <span class="boldT">Digital zoom</span>
+                    - Click it, 1. In the original video status, you can select any area to zoom in. In the non-original video status, you can drag to zoom in the area in the specified range. Right click mouse to restore previous status. 2. Use your mouse wheel to zoom the video size.
+                </div>
+            </li>
+            <li>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-picture"></a></p>
+                    <span class="boldT">Snapshot</span>
+                    - Click it to snap current video. The picture saved at Camera -> Video -> Path.
+                </div>
+            </li>
+            <li>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-picturethree"></a></p>
+                    <span class="boldT">Triple Snapshot</span>
+                    – Click it, the system begins snap at 1 picture/second. The picture saved at Camera -> Video -> Path.
+                </div>
+            </li>
+            <li>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-vedio"></a></p>
+                    <span class="boldT">Manual record</span>
+                    - Click it to snapshoot the video. The video saved at Camera -> Video -> Path.
+                </div>
+            </li>
+			<li id='help_preview_ivs'>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-locate"></a></p>
+                    <span class="boldT">Manual Track</span>
+                    - Click it and then left click the mouse and drag the mouse in the video window to select any zone, you can enable the speed dome to auto track the object in the specified area. 
+					Please note, you need to go to the Setup->IVS setup->Global setup interface to enable IVS auto track function. Otherwise, this function is null.
+                </div>
+            </li>
+            <li id ='help_preview_easyfocus'>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-afocus"></a></p>
+                    <span class="boldT">Easy Focus</span>
+                    - Click this button; you can see there are two parameters AF Peak and AF Max in the preview video. AF Peak is the real-time feature of the video definition during the focus process/ AF Max is the best value of the video definition. The close the AF Peak and AF Max is, the better the focus effect is.
+                </div>
+            </li>
+            <li>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-voice"></a></p>
+                    <span class="boldT">Audio</span>
+                    - Click it to enable/disable the monitor audio output bit stream.
+                </div>
+            </li>
+            <li>
+                <div class="p1">
+                    <p class="help-pre-icons"><a class="main-top-icon-speak"></a></p>
+                    <span class="boldT">Bidirectional talk</span>
+                    - Click it to enable/disable bidirectional talk. Please turn off the stereo mix on the computer while bidirectional talk is enabled.
+                </div>
+            </li>
+            <li class="bgli1" id ='help_preview_focus'>
+                <p class="noiceC">Note: The Easy Focus function becomes off in 5 minutes.</p>
+            </li>
+        </ul>
+        <h2>Video Window Setup</h2>
+        <ul class="listul">
+            <li>
+                <div class="p1">
+                    <a href="javascript:;" class="ui-video-icon"> <i class="ui-video-icon-image"></i>
+                    </a>
+                    <span class="boldT">Image Adjustment</span>
+                    - Click it to open image adjustment interface. Left click mouse to set the video parameters.
+                </div>
+                <ul class="list2ul">
+                    <li>
+                        <p class="p1">
+                            <i class="ui-slider-icon-light"></i>
+                            - Brightness setup icon,It is to adjust the brightness of the monitor video.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="p1">
+                            <i class="ui-slider-icon-contrast"></i>
+                            - Contrastness setup icon. It is to adjust the contrastness of the monitor video.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="p1">
+                            <i class="ui-slider-icon-chroma"></i>
+                            - Hue setup icon. It is to adjust the hue of the monitor video.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="p1">
+                            <i class="ui-slider-icon-saturation"></i>
+                            - Saturation setup icon. It is to adjust the saturation of the monitor video.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li class="bgli1">
+                <p class="iconP1 codarl">
+                    Click Reset button you can restore brightness, contrastness saturation and hue to system default setup.
+                </p>
+                <p class="noiceC"  id="help_preview_image">
+                    Note:All the operations here apply to WEB end only. Please go to
+                    <a href="cameraConfig.htm" class="linka">Set->Camera->Conditions</a>
+                    to adjust corresponding items of the system.
+                </p>
+            </li>
+            <li>
+                <div class="p1">
+                    <a href="javascript:;" class="ui-video-icon"> <i class="ui-video-icon-per"></i>
+                    </a>
+                    <span class="boldT">Original size</span>
+                    - Click it to view original size. It is to display the actual size of the video stream.
+                </div>
+            </li>
+            <li>
+                <div class="p1">
+                    <a href="javascript:;" class="ui-video-icon"> <i class="ui-video-icon-full"></i>
+                    </a>
+                    <span class="boldT">Full screen</span>
+                    - Click it to go to full-screen mode. Double click the mouse or click the Esc button to exit the full screen.
+                </div>
+            </li>
+            <li>
+                <div class="p1">
+                    <a href="javascript:;" class="ui-video-icon"> <i class="ui-video-icon-wh"></i>
+                    </a>
+                    <span class="boldT">Width and height ratio</span>
+                    -  Click it to restore original ratio or suitable window.
+                </div>
+            </li>
+            <li>
+                <div class="p1">
+                    <a href="javascript:;" class="ui-video-icon"> <i class="ui-video-icon-quality"></i>
+                    </a>
+                    <span class="boldT">Adjust fluency ratio</span>
+                    -  Click this button, there are three fluency levels. The default setup is Normal.
+                </div>
+            </li>
+
+            <li id='help_preview_ptz'>
+                <div class="p1">
+                    <a  href="javascript:;" class="ui-video-icon"> <i class="ui-video-icon-ptz"></i>
+                    </a>
+                    <span class="boldT">PTZ</span>
+                    - Click it to open the
+                    <a href="ptz.htm" class="linka">PTZ</a>
+                    config
+                </div>
+            </li>
+            <li id="TrackingHelp">
+                <div class="p1">
+                    <a href="javascript:;" class="ui-video-icon"> <i class="ui-video-icon-eye"></i>
+                    </a>
+                    <span class="boldT">Object Tracking</span>
+                    - Track and display the moving object which triggers tripwire/intrusion in the preview page, display mode mainly includes 1+3/1+5 mode. Note: currently the function can only be supported by the device with 4K resolution.
+                </div>
+            </li>
+        </ul>
+        <div id="focusZoomSet">
+            <h2>Focusing Scale Setup</h2>
+            <ul class="listul">
+                <li>
+                    <div class="p1">
+                        <a href="javascript:;" class="ui-video-icon"> <i class="ui-video-icon-adjust"></i></a>
+                        <span class="boldT">Focusing Scale Key</span>
+                        - Click it to open focusing scale interface. Left click mouse to set the focusing sacle.
+                    </div>
+                </li>
+            </ul>
+        <h2>Zoom</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">Zoom out</td>
+                <td>
+                    If you press the minus key,the focal length of the video decreases.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Zoom in</td>
+                <td>
+                    If you press the add key,the focal length of the video increase.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Speed</td>
+                <td>Speed consists of 1，5，20，100.</td>
+            </tr>
+        </table>
+        <h2>Focus</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="wid80">NEAR</td>
+                <td>
+                    If you press the minus key,the focal plane of the lens moves to the close shot.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">FAR</td>
+                <td>
+                    If you press the add key,the focal plane of the lens moves to the long shot.
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Speed</td>
+                <td>Speed consists of 1，5，20，100.</td>
+            </tr>
+        </table>
+        <h2>Restory All</h2>
+        <p class="detailP">Restory All,the value of focus and zoom change to 0.</p>
+        <h2>Autofocus</h2>
+        <p class="detailP">
+            Adjust the focal plane of the lens to make the video in the clearest condition.
+        </p>
+        <h2>Refresh</h2>
+        <p class="detailP">Obtain the newest condition of focusing scale.</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

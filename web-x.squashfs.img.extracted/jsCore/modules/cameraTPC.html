@@ -1,0 +1,246 @@
+<div class="ui-form-item fn-hide">
+    <div class="ui-checkbox">
+        <input type="checkbox" id="c_a_presetEnable" name="preScene">
+    </div>
+    <label for="c_a_presetEnable" class="ui-label fn-padl5" t="Preset"><!--预置点--></label>
+    <select class="ui-select fn-width120" id="c_a_preset" disabled></select>
+</div>
+<div class="fn-horizontal-line fn-hide"></div>
+<div class="ui-form-item">
+    <div class="ui-checkbox">
+        <input type="checkbox" id="c_a_sceneEnable" name="preScene">
+    </div>
+    <label for="c_a_sceneEnable" class="ui-label fn-padl5" t="scene"><!--场景--></label>
+    <select class="ui-select fn-width120" id="c_a_scene" disabled></select>
+</div>
+<div class="fn-horizontal-line"></div>
+<div class="ui-form-item">
+    <label class="ui-label fn-padl25" t="colorization"><!--伪彩色--></label>
+    <select class="ui-select fn-width120" id="c_a_colorization"></select>
+</div>
+<fieldset class="ui_filed fn-maxwid470 fn-mart10">
+    <legend t="correctSet"></legend>
+    <div class="ui-form-item">
+        <label for="c_a_name" class="ui-label fn-padl20" t="sceneName"><!-- 场景名称 --></label>
+        <input type="text" class="ui-input" id="c_a_name" maxlength="16" disabled>
+    </div>
+    <div class="data-box">
+        <h2>
+            <label t="basicSet"></label>
+            <i class="ui-switch-icon" data-link="c_a_basicSet"></i>
+        </h2>
+        <div id="c_a_basicSet">
+            <div class="ui-form-item">
+                <label class="ui-label fn-padl20" t="w_Brightness"><!-- 亮度 --></label>
+                <div class="fn-width185" slider cfg="thermographyCaps" key="Brightness"></div>
+            </div>
+            <div class="ui-form-item">
+                <label class="ui-label fn-padl20" t="w_Acutance"><!-- 锐度 --></label>
+                <div class="fn-width185" slider scene cfg="thermographyCaps" key="Sharpness"></div>
+            </div>
+            <div class="ui-form-item FPGA">
+                <label class="ui-label fn-padl20" t="w_Gamma"><!-- 伽马 --></label>
+                <div class="fn-width185" slider scene cfg="thermographyCaps" key="ThermographyGamma"></div>
+            </div>
+            <div class="ui-form-item">
+                <label class="ui-label fn-padl20" t="EZoom"><!-- 电子放大 --></label>
+                <div class="fn-width185" slider scene cfg="thermographyCaps" key="EZoom"></div>
+            </div>
+            <div class="ui-form-item FPGA">
+                <label class="ui-label fn-padl20" t="smartScene"><!-- 智能场景 --></label>
+                <div class="fn-width185" slider scene cfg="thermographyCaps" key="SmartOptimizer"></div>
+            </div>
+            <div class="ui-form-item">
+                <label for="c_a_ROIType" class="ui-label fn-padl20" t="ROIType"><!-- 区域视频质量增强 --></label>
+                <select class="ui-select fn-width120" id="c_a_ROIType"></select>
+            </div>
+            <div class="ui-form-item" cfg="VideoImageControl" boxKey="Mirror" style="display:none;">
+                <label class="ui-label fn-padl20" t="Mirror"><!-- 镜像 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="mirrorAble" id="c_a_mirrorEnable" checked>
+                </div>
+                <label for="c_a_mirrorEnable" class="ui-label-sub" t="on"><!-- 开启 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="mirrorAble" id="c_a_mirrorDisable">
+                </div>
+                <label for="c_a_mirrorDisable" class="ui-label-sub" t="off"><!-- 关闭 --></label>
+            </div>
+            <div class="ui-form-item" cfg="VideoImageControl" boxKey="Flip" style="display:none;">
+                <label for="c_a_flipEx" class="ui-label fn-padl20" t="w_FlipEx"><!-- 视角 --></label>
+                <select class="ui-select fn-width120" id="c_a_flipEx"></select>
+            </div>
+            <div class="ui-form-item" cfg="VideoInFocus" boxKey="SupportFocusRegion" style="display:none;">
+                <label for="c_a_focusMode" class="ui-label fn-padl20" t="FocusMode"><!-- 聚焦模式 --></label>
+                <select class="ui-select fn-width120" id="c_a_focusMode">
+                    <option value="2" t="w_Automatic"><!-- 自动 --></option>
+                    <option value="3" t="semiAuto"><!-- 半自动 --></option>
+                    <option value="4" t="w_Manual"><!-- 手动 --></option>
+                </select>
+            </div>
+            <div class="ui-form-item" cfg="VideoImageControl" boxKey="Freeze" style="display:none;">
+                <label for="c_a_freeze" class="ui-label fn-padl20" t="imageFreeze"><!-- 图像冻结 --></label>
+                <div class="ui-checkbox">
+                    <input type="checkbox" id="c_a_freeze">
+                </div>   
+            </div>
+            <div class="ui-form-item" cfg="VideoInDenoise" boxKey="2D" style="display:none;">
+                <div class="ui-checkbox">
+                    <input type="checkbox" id="c_a_2DdepNoise">
+                </div>
+                <label for="c_a_2DdepNoise" class="ui-label" t="basicDenoise"><!-- 基础降噪 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="2DdepNoise" value="1" id="c_a_2DdepNoiseLow">
+                </div>
+                <label for="c_a_2DdepNoiseLow" class="ui-label-sub" t="w_low"><!-- 低 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="2DdepNoise" value="2" id="c_a_2DdepNoiseMiddle">
+                </div>
+                <label for="c_a_2DdepNoiseMiddle" class="ui-label-sub" t="w_Middle"><!-- 中 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="2DdepNoise" value="3" id="c_a_2DdepNoiseHigh">
+                </div>
+                <label for="c_a_2DdepNoiseHigh" class="ui-label-sub" t="w_high"><!-- 高 --></label>
+            </div>
+            <div class="ui-form-item" cfg="VideoInDenoise" boxKey="3D" style="display:none;">
+                <div class="ui-checkbox">
+                    <input type="checkbox" id="c_a_3DdepNoise">
+                </div>
+                <label for="c_a_3DdepNoise" class="ui-label" t="advanceDenoise"><!-- 高级降噪 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="3DdepNoise" value="5" id="c_a_3DdepNoiseLow">
+                </div>
+                <label for="c_a_3DdepNoiseLow" class="ui-label-sub" t="w_low"><!-- 低 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="3DdepNoise" value="50" id="c_a_3DdepNoiseMiddle">
+                </div>
+                <label for="c_a_3DdepNoiseMiddle" class="ui-label-sub" t="w_Middle"><!-- 中 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="3DdepNoise" value="100" id="c_a_3DdepNoiseHigh">
+                </div>
+                <label for="c_a_3DdepNoiseHigh" class="ui-label-sub" t="w_high"><!-- 高 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="3DdepNoise" value="0" id="c_a_3DdepNoiseCustom">
+                </div>
+                <label for="c_a_3DdepNoiseCustom" class="ui-label-sub" t="w_Customize"><!-- 自定义 --></label>
+            </div>
+            <div class="ui-form-item" style="display:none;">
+                <label class="ui-label fn-padl20 tau_3DdepressLevel"><!-- t="w_3DdepressLevel"3D降噪等级 --></label>
+                <div class="fn-width185" slider cfg="thermographyCaps" key="3D"></div>
+            </div>
+        </div>
+    </div>
+    <div class="data-box">
+        <h2 class="lensControl">
+            <label t="agcSet"></label>
+            <i class="ui-switch-icon" data-link="c_a_agcSet"></i>
+        </h2>
+        <div id="c_a_agcSet" class="lensControl">
+            <div class="ui-form-item fn-padt10 agcAuto" style="display:none;">
+                <label class="fn-padl150 fn-bold" t="GainModelow"><!-- 低温 --></label>   
+            </div>
+            <div class="fn-horizontal-line agcAuto" style="display:none;"></div>
+            <div class="ui-form-item">
+                <label class="ui-label fn-padl20" t="w_GainMode"><!-- 自动增益 --></label>
+                <div class="fn-width185" slider cfg="thermographyCaps" scene key="Agc"></div>
+            </div>
+            <div class="ui-form-item FPGA">
+                <label class="ui-label fn-padl20" t="AgcMaxGain"><!-- 最大增益 --></label>
+                <div class="fn-width185" slider cfg="thermographyCaps" scene key="AgcMaxGain"></div>
+            </div>
+            <div class="ui-form-item">
+                <label class="ui-label fn-padl20" t="AgcPlateau"><!-- 均衡增益 --></label>
+                <div class="fn-width185" slider cfg="thermographyCaps" scene key="AgcPlateau"></div>
+            </div>
+            <div class="ui-form-item" id="c_a_gaintype_wrap">
+                <label class="ui-label fn-padl20" t="GainType"><!-- 增益模式 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="GainType" value="LowTemperature" id="c_a_gainLow">
+                </div>
+                <label for="c_a_gainLow" class="ui-label-sub" t="GainModelow"><!-- 低温 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="GainType" value="HighTemperature" id="c_a_gainHigh">
+                </div>
+                <label for="c_a_gainHigh" class="ui-label-sub" t="GainModehigh"><!-- 高温 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="GainType" value="Auto" id="c_a_gainAuto">
+                </div>
+                <label for="c_a_gainAuto" class="ui-label-sub" t="w_Automatic"><!-- 自动 --></label>
+            </div>
+            <div class="ui-form-item agcAuto" style="display:none;">
+                <label for="c_a_gainLowToHigh" class="ui-label fn-padl150 fn-width160" t="GainModeLowToHigh"><!-- 低温转高温阈值 --></label>
+                <input type="text" gainTo min="51" max="160" numberfield="LowToHigh" class="ui-input fn-width40" id="c_a_gainLowToHigh">
+                <div class="fn-left icon-updown">
+                    <i class="i-up" data-for="LowToHigh"></i>
+                    <i class="i-down" data-for="LowToHigh"></i>
+                </div>
+            </div>
+            <div class="ui-form-item agcAuto" style="display:none;">
+                <label for="c_a_gainLHRoi" class="ui-label fn-padl150 fn-width160" t="GainModeLHRoi"><!-- 低温区域百分比 --></label>
+                <input type="text" gainRoi min="3" max="98" numberfield="LHROI" class="ui-input fn-width40" id="c_a_gainLHRoi">
+                <div class="fn-left icon-updown">
+                    <i class="i-up" data-for="LHRoi"></i>
+                    <i class="i-down" data-for="LHRoi"></i>
+                </div>
+            </div>
+            <div class="ui-form-item agcAuto" style="display:none;">
+                <label for="c_a_gainHighToLow" class="ui-label fn-padl150 fn-width160" t="GainModeHighToLow"><!-- 高温转低温阈值 --></label>
+                <input type="text" gainTo min="50" max="159" numberfield="HighToLow" class="ui-input fn-width40" id="c_a_gainHighToLow">
+                <div class="fn-left icon-updown">
+                    <i class="i-up" data-for="HighToLow"></i>
+                    <i class="i-down" data-for="HighToLow"></i>
+                </div>
+            </div>
+            <div class="ui-form-item agcAuto" style="display:none;">
+                <label for="c_a_gainHLRoi" class="ui-label fn-padl150 fn-width160" t="GainModeHLRoi"><!-- 高温区域百分比 --></label>
+                <input type="text" gainRoi min="3" max="98" numberfield="HLROI" class="ui-input fn-width40" id="c_a_gainHLRoi">
+                <div class="fn-left icon-updown">
+                    <i class="i-up" data-for="HLRoi"></i>
+                    <i class="i-down" data-for="HLRoi"></i>
+                </div>
+            </div>
+            <div class="ui-form-item fn-padt10 agcAuto" style="display:none;">
+                <label class="fn-padl150 fn-bold" t="GainModehigh"><!-- 高温 --></label>   
+            </div>
+            <div class="fn-horizontal-line agcAuto" style="display:none;"></div>
+            <div class="ui-form-item agcAuto" style="display:none;">
+                <label class="ui-label fn-padl20" t="w_GainMode"><!-- 自动增益 --></label>
+                <div class="fn-width185" slider high cfg="thermographyCaps" key="Agc"></div>
+            </div>
+            <div class="ui-form-item FPGA agcAuto" style="display:none;">
+                <label class="ui-label fn-padl20" t="AgcMaxGain"><!-- 最大增益 --></label>
+                <div class="fn-width185" slider high cfg="thermographyCaps" key="AgcMaxGain"></div>
+            </div>
+            <div class="ui-form-item agcAuto" style="display:none;">
+                <label class="ui-label fn-padl20" t="AgcPlateau"><!-- 均衡增益 --></label>
+                <div class="fn-width185" slider high cfg="thermographyCaps" key="AgcPlateau"></div>
+            </div>     
+        </div>
+    </div>
+    <div class="data-box">
+        <h2>
+            <label t="ffcSet"></label>
+            <i class="ui-switch-icon" data-link="c_a_ffcSet"></i>
+        </h2>
+        <div id="c_a_ffcSet">
+            <div class="ui-form-item">
+                <label class="ui-label fn-padl20" t="FFCMode"><!-- FFC模式 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="FFCMode" value="Auto" id="c_a_ffcAuto">
+                </div>
+                <label for="c_a_ffcAuto" class="ui-label-sub" t="w_Automatic"><!-- 自动 --></label>
+                <div class="ui-checkbox">
+                    <input type="radio" name="FFCMode" value="Manual" id="c_a_ffcManu">
+                </div>
+                <label for="c_a_ffcManu" class="ui-label-sub" t="w_Manual"><!-- 手动 --></label>
+            </div>
+            <div class="ui-form-item" style="display:none;">
+                <label class="ui-label fn-padl20" t="FFCAutoPeriod"><!-- FFC切换周期 --></label>
+                <div class="fn-width185 fn-left" slider cfg="thermographyCaps" key="FFCPeriod"></div>
+                <span class="ui-text" t="w_Second"><!-- 秒 --></span>
+            </div>
+            <div class="ui-button-box fn-padt10 fn-padl150">
+                <a class="u-button" btn-for="onDoFFC" t="doFFC"><!-- 快门校正 --></a>
+            </div>
+        </div>
+    </div>
+</fieldset>

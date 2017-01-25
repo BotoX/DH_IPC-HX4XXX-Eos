@@ -1,0 +1,28 @@
+// 默认的帐户配置，默认的组包含组名和组描述等必填项，默认的用户包含用户名，用户
+// 描述，所属组名，密码，是否共享等必填项。default用户不用写在下表中。
+{
+	"Groups" : [
+		{
+			"Memo" : "administrator group",
+			"Name" : "admin"
+		},
+		{
+			"Memo" : "user group",
+			"Name" : "user"
+		},
+		{
+			"Memo" : "operator group",
+			"Name" : "operator"
+		}
+	],
+	"Users" : [
+		{
+			"Group" : "admin",
+			"Memo" : "admin 's account",
+			"Name" : "admin",
+			"Password" : "admin",
+			"PasswordModifiedTime" : "1970-1-1 00:00:00",
+			"Sharable" : true
+		}
+	]
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <title></title> <script src="../jsBase/lib/jquery.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/jquery.ui.core.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/jquery.ui.widget.js?version=@WebVersion@"></script> <script>jQuery.noConflict();</script> <script src="../jsBase/lib/m.js?version=@WebVersion@"></script> <script src="../jsBase/lib/more.js?version=@WebVersion@"></script> <script src="../jsBase/common/extend.js?version=@WebVersion@"></script> <script src="../jsCore/common.js?version=@WebVersion@"></script> <script src="../jsBase/lib/base64.js?version=@WebVersion@"></script> <script src="../jsBase/lib/md5.js?version=@WebVersion@"></script> <script src="../js/publicFunc.js?version=@WebVersion@"></script> <script src="../jsCore/modules/ui-schedule.js?version=@WebVersion@"></script> <script src="../jsBase/lib/qrcode.js?version=@WebVersion@"></script> <script src="../jsBase/lib/sea.js?version=@WebVersion@"></script> <script src="../jsBase/lib/seajs-text.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.tab.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.table.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.pagination.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.textfield.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.numberfield.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.datepicker.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.timefield.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.tip.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.dialog.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.ipfield.js?version=@WebVersion@"></script> <script src="../jsBase/widget/js/dui.validator.js?version=@WebVersion@"></script> <link rel="stylesheet" href="../css/reset.css?version=@WebVersion@"> <link rel="stylesheet" href="../css/ui.css?version=@WebVersion@"> <link rel="stylesheet" href="../css/custom.css?version=@WebVersion@"> <link rel="stylesheet" href="../css/skin.css?version=@WebVersion@"> <link rel="stylesheet" href="../css/main.css?version=@WebVersion@"> <link rel="stylesheet" href="../css/set.css?version=@WebVersion@"> <link rel="stylesheet" href="../css/resize.css?version=@WebVersion@"> <link rel="stylesheet" href="../jsBase/widget/css/ui.css?version=@WebVersion@"> <link rel="stylesheet" href="../jsBase/widget/css/skin.css?version=@WebVersion@"> <link rel="stylesheet" href="../css/fn.css?version=@WebVersion@"> </head> <body> <div class="main-container"> <div id="set_page_wrap"> <div class="set-container"> <div class="set-sidebar"> <ul id="set-menu"></ul> </div> <div class="set-content"> <div id="set-content" class="set-content-box fn-minwid912"></div> </div> </div>  <script type="text/template" id="menu"><% $.each(data, function(i, value) { %>
+                    <li category="<%= value.category %>">
+                        <a class="set-menu">
+                            <i class="set-menu-icon"></i>
+                            <span class="set-menu-label" t="<%= value.t %>"></span>
+                        </a>
+                        <ul style="display:none">
+                            <% $.each(value.member, function(i, item) { %>
+                                <li class="set-item" filename="<%= item.filename %>" <% if(item.condition !== undefined) { %>style="display:none;"<% } %> <% if(item.vsp !== undefined) { %>vsp="vsp"<% } %>>
+                                    <i class="set-item-icon"></i>
+                                    <span class="set-menu-label" t="<%= item.t %>"></span>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </li>
+                <% }); %></script> </div> </div> <div class="J_estop_all" style="display:none" id="estopAll"></div> <script>seajs.config({
+        base: '../jsBase',
+        paths: {
+            'js': '../js',
+            'html': '../html',
+            'platformHtm': '../platformHtm',
+            'jsCore': '../jsCore'
+        }
+    });
+    seajs.use('/jsCore/app', function (App) {
+        window.webApp = new App();
+        domready();
+    });
+
+var webCaps = getWebCapsConfig();
+var isPSS = true;
+
+function parseParams(keyStr) {
+    var paramHash = new Hash();
+    var parms = keyStr.split('&');
+    for (var i = 0; i < parms.length; i++) {
+        var start = parms[i].indexOf('=');
+        if (start < 0) {
+            return -1;
+        } else {
+            paramHash.include(parms[i].slice(0, start), parms[i].slice(start + 1));
+        }
+    }
+    return paramHash;
+}
+
+
+//onunload is unable in firefox, onbeforeunload is effective all
+if (!Browser.Engine.trident) {
+    window.addEvent('beforeunload', doLogout);
+}
+window.addEvent('unload', doLogout);
+
+function doLogout() {
+    login.logout();
+    plugin.logout();
+}
+
+function domready() {
+    var url = window.location.href;
+    var sInd = url.indexOf('?');
+    if (sInd < 0) {
+        location.href = '../';
+    } else {
+        var keyStr = url.slice(sInd + 1);
+        var paramHash = parseParams(Base64.decode(keyStr));
+        var username = '';
+        var password = '';
+        if (paramHash < 0) {
+            //compatibility plaintext username=admin&password=admin
+            paramHash = parseParams(keyStr);
+            if (paramHash < 0) {;
+            } else {
+                username = paramHash.get('username');
+                password = paramHash.get('password');
+            }
+        } else {
+            username = paramHash.get('username');
+            password = paramHash.get('password');
+        }
+
+        if (username == null || password == null) {
+            location.href = '../';
+        } else {
+            login.login(username, password).done(function () {
+                plugin.login(username, password, 0);
+                    seajs.use('/js/set', function (Set) {
+                        document.title = tl('w_Setup');
+                        new Set({
+                            'element': webApp.$('#set_page_wrap')
+                        });
+                    });
+            }).fail(function () {
+                alert(tl('Login failure!'));
+                location.href = '../';
+            });
+        }
+    }
+}</script> </body> </html>

@@ -1,0 +1,82 @@
+{
+   "AnomalyDetect" : true,
+   "AudioProperties" : {
+      "Support" : true
+   },
+   "CameraAttribute" : {
+      "LinkRule" : "/usr/data/AttributeRule/LinkRule",
+      "RuleTranslate" : "/usr/data/AttributeRule/RuleTranslate",
+      "Support" : true
+   },
+   "CameraSwitchComV" : "V3",
+   "CifPFrameSize" : [ 2, 40 ],
+   "CustomLanguages" : "/mnt/custom/i18n",
+   "DH2Caps" : {
+      "VideoWaterMark" : {
+         "Support" : 1
+      }
+   },
+   "DefaultLanguage" : "/usr/data/Strings/i18n",
+   "DetectLevelMap" : {
+      "Sensitive" : [ 40, 50, 60, 70, 75, 80 ],
+      "Threshold" : [ 15, 10, 5, 6, 4, 2 ]
+   },
+   "Device" : "IPC-HDW11XX",
+   "HttpPath" : "/usr/data/Http",
+   "IEEE802_1X" : true,
+   "IVSFDConflict" : true,
+   "IntelliTracker" : {
+      "Support" : false
+   },
+   "MJPEGBitRateRange" : {
+      "All" : [ 0, 65536 ]
+   },
+   "MaxPreRecordTime" : 5,
+   "MotionDetectWindow" : 4,
+   "MutationDetect" : true,
+   "PicFileManager" : {
+      "PicFormat" : [ "bmp" ],
+      "PicName" : "/mnt/mtd/osd.bmp",
+      "Support" : true
+   },
+   "PositionDetect" : true,
+   "PreLanguage" : "/mnt/mtd/Config/preLanguage",
+   "ProductInfo" : "/usr/data/ProductInfo",
+   "QueryDatabase" : {
+      "EventTypes" : {
+         "A" : [ "AlarmLocal" ],
+         "F" : null,
+         "M" : [
+            "VideoMotion",
+            "VideoBlind",
+            "CrossLineDetection",
+            "CrossRegionDetection",
+            "LeftDetection",
+            "TakenAwayDetection",
+            "VideoAbnormalDetection",
+            "FaceDetection",
+            "AudioMutation",
+            "AudioAnomaly",
+            "VideoUnFocus",
+            "WanderDetection",
+            "ParkingDetection",
+            "RetrogradeDetection",
+            "RioterDetection",
+            "MoveDetection",
+            "NumberStat",
+            "TrafficJunction"
+         ],
+         "R" : null
+      },
+      "Path" : "/mnt/sd/database/EventInfo.db",
+      "Support" : true,
+      "Type" : "Custom"
+   },
+   "SockBuf" : 1024,
+   "StreamTransmitChannels" : 20,
+   "SupportIVSGlobalConfig" : false,
+   "VideoInStable" : [ "DspStable" ],
+   "VolumeDetect" : true,
+   "CameraAspect" : true,
+   "WBMode" : ["Auto", "Natural", "StreetLamp", "Outdoor", "Manual", "ManualDatum"]
+}

@@ -1,0 +1,180 @@
+#! /bin/sh
+
+#distinguish IPC and SpeedDome device by HWID
+#SD device category flag equal 3
+
+# pinmux configuration
+/usr/etc/pinmux_hi3516a.sh >/dev/null
+
+# clock configuration
+/usr/etc/clkcfg_hi3516a.sh >/dev/null
+
+# system configuration
+/usr/etc/sysctl_hi3516a.sh 0 >/dev/null
+
+PRODUCT=`cat /proc/dahua/bootpara`
+PRODUCT=${PRODUCT#*HWID:*}
+MEMSIZE=${PRODUCT##*:}
+PRODUCT=${PRODUCT%%:*}
+if [ $MEMSIZE != "400" ];then
+	old_size=$(cat /proc/cmdline)
+	old_size=${old_size##*mem=}
+	old_size=${old_size%% *}
+
+	if [ $MEMSIZE == "100" ];then
+		mem_size="93M"
+		case "$PRODUCT" in
+			"IPC-HFW4431B" | "IPC-HFW4431B-AS" | "IPC-HDW4431C" | "IPC-HFW5431-IRA" | "IPC-HFW5431-IRA-AS" | \
+			"IPC-HF5431EP" | "IPC-HFW5431EP-Z" | "IPC-HFW5431DP-Z" | "IPC-HDBW5431EP-Z" | "IPC-HDBW5431RP-Z" | "IPC-HFW5431EP-Z-IRA" | \
+			"IPC-HFW4431R-VF" | "IPC-HFW4431R-VFAS" | "IPC-HFW4431R-Z" | "IPC-HDBW4431R-VF" | "IPC-HDBW4431R-VFAS" | "IPC-HDBW5431R-Z" | "IPC-HF4431" | \
+			"IPC-HFW4431KM" | "IPC-HFW4431KM-AS" | "IPC-HFW4431K-I6" | "IPC-HFW4431K-AS-I6" | "IPC-HDBW4431R-Z" | "IPC-HDBW4431R-ZAS")
+			mem_size="85M"
+		esac
+	else
+		mem_size="255M"
+	fi
+	#如果内存大小不匹配，则进行修改
+	if [ $old_size != $mem_size ];then
+		echo "Change Linux mem from $old_size to $mem_size"
+		insmod /usr/lib/modules/osa.ko
+		insmod /usr/lib/modules/log.ko
+		insmod /usr/lib/modules/binder.ko r0size=508 r2size=508
+		insmod /usr/lib/modules/prc.ko
+		insmod /usr/lib/modules/pdc.ko gBaseline=240
+		armbenv -s bootargs "mem=$mem_size console=ttyS0,115200 root=/dev/mtdblock7 rootfstype=squashfs"
+		busybox sleep 20
+		reboot
+	fi
+fi
+
+cd /usr/lib/modules
+Mem_size=`cat /proc/cmdline`
+Mem_size=${Mem_size%% console*}
+
+#echo $Mem_size
+if [ $Mem_size = "mem=85M" ];then
+	insmod mmz.ko mmz=anonymous,0,0x85500000,126M:buf0,0,0x8D300000,23M:buf1,0,0x8EA00000,10M:buf2,0,0x8F400000,5M:buf3,0,0x8F900000,7M anony=1 || report_error
+elif [ $Mem_size = "mem=256M" ];then
+	insmod mmz.ko mmz=anonymous,0,0x90000000,528M:buf0,0,0xB1000000,80M:buf1,0,0xB6000000,48M:buf2,0,0xB9000000,32M:buf3,0,0xBB000000,80M anony=1 || report_error
+elif [ $Mem_size = "mem=255M" ];then
+	insmod mmz.ko mmz=anonymous,0,0x8FF00000,148M:buf0,0,0x99300000,23M:buf1,0,0x9AA00000,10M:buf2,0,0x9B400000,5M:buf3,0,0x9b900000,13M anony=1 || report_error
+elif [ $Mem_size = "mem=93M" ];then
+	insmod mmz.ko mmz=anonymous,0,0x85D00000,117M:buf0,0,0x8D200000,18M:buf1,0,0x8E400000,10M:buf2,0,0x8EE00000,5M:buf3,0,0x8F300000,13M anony=1 || report_error
+else
+	echo "error"
+fi
+
+if [ -f /usr/sbin/4G ];then
+	insmod /usr/lib/modules/usbserial.ko
+	#insmod /usr/lib/modules/lc_ether.ko
+	insmod /usr/lib/modules/usb_wwan.ko
+	insmod /usr/lib/modules/option.ko
+	insmod /usr/lib/modules/usbnet.ko
+	insmod /usr/lib/modules/cdc_ether.ko
+	mount -t usbfs none /proc/bus/usb
+fi
+
+insmod hi_media.ko
+insmod hi3516a_base.ko
+
+insmod hi3516a_sys.ko vi_vpss_online=0 sensor=imx178
+
+insmod hi3516a_tde.ko
+insmod hi3516a_region.ko
+insmod hi3516a_vgs.ko
+
+insmod hi3516a_isp.ko
+insmod hi3516a_viu.ko detect_err_frame=10 csc_tv_en=1 csc_ct_mode=1 ext_csc_en=1
+insmod hi3516a_vpss.ko
+#insmod hi3516a_vou.ko
+insmod hi3516a_vou.ko detectCycle=0 			#close dac detect
+insmod hifb.ko video="hifb:vram0_size:1620"		# default pal
+
+insmod hi3516a_rc.ko
+insmod hi3516a_venc.ko
+insmod hi3516a_chnl.ko
+insmod hi3516a_h264e.ko OneStreamBuffer=1
+insmod hi3516a_h265e.ko OneStreamBuffer=1
+insmod hi3516a_jpege.ko OneStreamBuffer=1
+insmod hi3516a_vda.ko
+insmod hi3516a_ive.ko
+
+insmod osa.ko
+insmod log.ko
+insmod binder.ko r0size=508 r2size=508
+
+#insmod dmaf.ko
+#insmod spf.ko
+
+insmod acodec.ko
+insmod hi3516a_aio.ko
+insmod hi3516a_ai.ko
+insmod hi3516a_ao.ko
+insmod hi3516a_aenc.ko
+insmod hi3516a_adec.ko
+
+insmod prc.ko
+APPAUTO=1
+CMDLINE="/proc/dahua/bootpara"
+APPAUTO=`cat /proc/dahua/bootpara`
+APPAUTO=${APPAUTO##*appauto:}
+APPAUTO=${APPAUTO%%dh_keyboard*}
+if [  $APPAUTO == '1' -a -e "/mnt/mtd/Config/clearparam" -a ! -e "/mnt/mtd/powerup" ]
+then
+	TEST=`cat /mnt/mtd/Config/clearparam`
+	if [ "$TEST" = "paramClear" ]
+	then
+		insmod pdc.ko gBaseline=240
+		clearparam
+	else
+		rm -f /mnt/mtd/Config/clearparam
+	fi
+fi
+
+if [  $APPAUTO == '1' -a -e "/mnt/mtd/Config_bak" ]
+then
+	rm -rf /mnt/mtd/Config
+	rm -rf /mnt/mtd/backup/*
+	mv -f /mnt/mtd/Config_bak /mnt/mtd/Config
+	mkdir -p /mnt/mtd/Config /mnt/mtd/Log /mnt/backup/Config /mnt/mtd/Config/ppp
+	mkdir -p /mnt/backup/debug
+	mkdir -p /var/tmp/autoFix
+
+	touch /mnt/mtd/Config/ppp/options
+	touch /mnt/mtd/Config/ppp/pppoe-enable
+	touch /mnt/mtd/Config/ppp/pap-secrets
+	touch /mnt/mtd/Config/ppp/pppoesessionctx
+	touch /mnt/mtd/Config/ppp/pppoe-redial_time
+	touch /mnt/mtd/Config/dial-ip
+	touch /mnt/mtd/powerup
+	sync
+fi
+insmod pdc.ko gBaseline=240
+
+
+#insmod pwm.ko
+insmod sdcard.ko
+
+insmod hi_mipi.ko
+#insmod crypt.ko
+
+touch /tmp/enc2app_data
+touch /tmp/enc2app_cmd
+touch /tmp/cmd_shmarea
+touch /tmp/myencodemsg
+
+STRING=$(gethwid 2)
+temp=${STRING##*hwidValue == }
+CATEGORY=${temp%% *}
+echo CATEGORY = $CATEGORY 
+
+
+if [ $CATEGORY -eq 3 ];then
+	echo "SD Device"
+	/usr/etc/SDimod
+else
+	echo "IPC Device"
+	/usr/etc/IPCimod
+fi
+
+

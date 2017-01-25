@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../../css/ui.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/playback.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/skin.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/fn.css" type="text/css" rel="stylesheet"/>
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            Playback
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <p class="noiceC">
+            <span class="bold">Comment：</span>
+            Only the equipments which support these scales have the function.
+        </p>
+        <h2>Playback function buttons</h2>
+        <ul class="listul">
+            <li style="height:50px;">
+                <p class="p1">
+                    <a class="play-bottom-iconbg fn-mart0">
+                        <i class="play-bottom-icon-play"></i>
+                    </a>
+                    <span class="boldT">Play</span>
+                    - This button means pause play or there is no playing record. Click it again to switch to normal play status.
+                </p>
+            </li>
+            <li>
+                <p class="p1">
+                    <a class="play-bottom-iconbg fn-mart0">
+                        <i class="play-bottom-icon-stop"></i>
+                    </a>
+                    <span class="boldT">Stop</span>
+                    - Click it to stop playback.
+                </p>
+            </li>
+            <li>
+                <p class="p1">
+                    <a class="play-bottom-iconbg fn-mart0">
+                        <i class="play-bottom-icon-next"></i>
+                    </a>
+                    <span class="boldT">Play frame by frame</span>
+                    – Click it to go to the next frame to play.
+                </p>
+            </li>
+            <li>
+                <p class="p1">
+                    <a class="play-bottom-iconbg fn-mart0">
+                        <i class="play-bottom-icon-slow"></i>
+                    </a>
+                    <span class="boldT">Slow play</span>
+                    – Click it to lower the play speed.
+                </p>
+            </li>
+            <li>
+                <p class="p1">
+                    <a class="play-bottom-iconbg fn-mart0">
+                        <i class="play-bottom-icon-fast"></i>
+                    </a>
+                    <span class="boldT">Fast play</span>
+                    - Click it to speed up the play speed.
+                </p>
+            </li>
+            <li>
+                <p class="p1">
+                    <a class="play-bottom-iconbg play-bottom-iconbg-disabled fn-mart0">
+                        <i class="play-bottom-icon-sound"></i>
+                    </a>
+                    <span class="boldT">Mute</span>
+                    - The system is mute when you see current button. Click it again, the audio restores normal status.
+                </p>
+            </li>
+            <p>&nbsp;</p>
+            <p class="noiceC">
+                <span class="bold">Note:</span>
+                Please pause current playback operation if you want to use frame by frame play function.
+            </p>
+        </ul>
+		<h2>File Type</h2>
+        <p class="detailP">
+            You can choose record or snap to playback.
+        </p>
+        <h2>File list options</h2>
+        <p class="detailP">
+            In the calendar, the blue highlighted color means there is record file in current date and is current selected. Double click a file name in the list, system begins playback. You can view file size, start time and end time. You can also see there are several options for you such as download, download more, watermark, back and search.
+        </p>
+        <p class="iconP2">
+            Search：It is to search the record files in current day from the start time to the end time you input here.
+        </p>
+        <p class="iconP2">
+            Download：When record type is dav,click download button, you can download specified file(s) to the local end; When record type is MP4,click download button, you can download specified file(s) to Camera -> Video -> Path.
+        </p>
+        <p class="iconP2">
+            Back：Click it, you can go back to the Calendar interface to select time again to operate.
+        </p>
+			<p class="noiceC">
+				<span class="bold">Note:</span>
+				Record does not support download and playback operation at the same time.
+			</p>
+        <h2>Record Type/Snap Type</h2>
+        <p class="detailP">
+            After you checked the file type, you can just show the corresponding files in the process bar or the file list.
+        </p>
+		<h2>Playback Cut</h2>
+		 <p class="detailP">When you selected start time and end time, click the putton to save file to  Camera -> Video -> Path.
+		</p>
+			<p class="noiceC">
+				<span class="bold">Note:</span>
+				Please pause current playback operation if you want to use playback cut function.
+			</p>
+        <h2>Process bar time format</h2>
+        <ul class="listul">
+            <li>
+                <p class="p1">
+                    <a href="javascript:;" class="ui-button-special ui-smart-button">
+                        <i class="ui-button-icon-time">&nbsp;</i>
+                        <label>24hr</label>
+                    </a>
+                    <span class="boldT">24-h button</span>
+                    -  Click it, system displays the process bar in 24-h mode.
+                </p>
+            </li>
+            <li>
+                <p class="p1">
+                    <a href="javascript:;" class="ui-button-special ui-smart-button">
+                        <i class="ui-button-icon-time">&nbsp;</i>
+                        <label>2hr</label>
+                    </a>
+                    <span class="boldT">2-h button</span>
+                    -  Click it, system just displays a 2-hour period bar (0-2 o’clock, 2-4 o’clock, 4-6 o’clock and etc) bar for you reference. For example, the process bar ranges from 8 to 10 o’clock if you record file time is recorded at 9 o’clock.
+                </p>
+            </li>
+            <li>
+                <p class="p1">
+                    <a href="javascript:;" class="ui-button-special ui-smart-button">
+                        <i class="ui-button-icon-time">&nbsp;</i>
+                        <label>1hr</label>
+                    </a>
+                    <span class="boldT">1-h button</span>
+                    -  Click it, system just displays a 1-hour bar for you reference.
+                </p>
+            </li>
+            <li>
+                <p class="p1">
+                    <a href="javascript:;" class="ui-button-special ui-smart-button">
+                        <i class="ui-button-icon-time">&nbsp;</i>
+                        <label>30min</label>
+                    </a>
+                    <span class="boldT">30-m button</span>
+                    –  Click it, system just displays a 30-minute bar for you reference.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

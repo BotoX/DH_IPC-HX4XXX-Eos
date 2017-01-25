@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="detailBox">
+        <h1>
+            Account
+            <a href="javascript:;" class="righBut" onClick="back()">back list</a>
+        </h1>
+        <h2>Account</h2>
+        <p class="noiceC">
+            <span class="bold">Comment:</span>
+            Only the equipments which support these scales have the function.
+        </p>
+        <h2>Anonymous Login</h2>
+        <p class="iconP2">
+            Please enable anonymous login and input IP, you can login the device without user name or password. The anonymous login user can only have the preview rights in the authority list.
+        </p>
+        <p class="iconP2">
+            Under anonymous login mode, click logout you can login the device via other account.
+        </p>
+        <h2>Authority List</h2>
+        <table class="Table" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Authority Name</th>
+                <th>Corresponding Function</th>
+            </tr>
+            <tr>
+                <td class="wid80">Live</td>
+                <td>Preview video</td>
+            </tr>
+            <tr>
+                <td class="wid80">Playback</td>
+                <td>Playback</td>
+            </tr>
+            <tr>
+                <td class="wid80">Record control</td>
+                <td>The record control function in the Storage interface</td>
+            </tr>
+            <tr>
+                <td class="wid80">Backup</td>
+                <td>Backup during the playback process</td>
+            </tr>
+            <tr>
+                <td class="wid80">PTZ</td>
+                <td>PTZ control</td>
+            </tr>
+            <tr>
+                <td class="wid80">Account</td>
+                <td>
+                    The account function in the system management and online user in the information
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Alarm</td>
+                <td>Alarm setup</td>
+            </tr>
+            <tr>
+                <td class="wid80">Log Search</td>
+                <td>Search button in the system information log</td>
+            </tr>
+            <tr>
+                <td class="wid80">Clear Log</td>
+                <td>The clear button in the System-system log</td>
+            </tr>
+            <tr>
+                <td class="wid80">Upgrade</td>
+                <td>The firmware update in the system management interface</td>
+            </tr>
+            <tr>
+                <td class="wid80">Auto Maintain</td>
+                <td>
+                    The auto maintenance function in the system management interface
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">General</td>
+                <td>The general setup in the system management</td>
+            </tr>
+            <tr>
+                <td class="wid80">Video/Audio</td>
+                <td>The audio and video setup of the camera</td>
+            </tr>
+            <tr>
+                <td class="wid80">Schedule/Destination</td>
+                <td>The schedule and storage setup in the system management</td>
+            </tr>
+            <tr>
+                <td class="wid80">Network</td>
+                <td>Network setup</td>
+            </tr>
+            <tr>
+                <td class="wid80">Abnormity</td>
+                <td>The abnormity interface in the event management</td>
+            </tr>
+            <tr>
+                <td class="wid80">Video Detect</td>
+                <td>The video detect in the event management</td>
+            </tr>
+            <tr>
+                <td class="wid80">PTZ settings</td>
+                <td>The PTZ setup in the system management</td>
+            </tr>
+            <tr>
+                <td class="wid80">Default/Import/Export</td>
+                <td>
+                    The restore default setup, set import and export in the system management
+                </td>
+            </tr>
+            <tr>
+                <td class="wid80">Conditions</td>
+                <td>Set the camera property of the device</td>
+            </tr>
+            <tr>
+                <td class="wid80">IntelliConf</td>
+                <td>The IVS Analyse and Face Detect in the event management</td>
+            </tr>
+        </table>
+        <h2>Note</h2>
+        <p>&nbsp;</p>
+        <p class="iconP2">
+            For the version information, and the other icons excluding the alarm in the live interface are read-only.
+        </p>
+        <p class="iconP2">
+            Only the user of account rights can implement the <strong>user management</strong>
+            operation.
+        </p>
+        <p class="lef50">
+            <span class="kuai">■</span>
+            1)  For the character in the following user name or the user group name, system max supports 15-digits. The valid string includes: character, number, and underline.
+        </p>
+        <p class="lef50">
+            <span class="kuai">■</span>
+            2)  The password length ranges from 0 to 32. It can only include the number and characters. The user can modify the password of other users.
+        </p>
+        <p class="lef50">
+            <span class="kuai">■</span>
+            3)  The factory default amount of the user is 18 and the factory default amount of the user group is 8.
+        </p>
+        <p class="lef50">
+            <span class="kuai">■</span>
+            4)  User management adopts group/user modes. The user name and the group name shall be unique. One user shall be included in only one group.
+        </p>
+        <p class="lef50">
+            <span class="kuai">■</span>
+            5)  Current login-in user can only change his own rights.
+        </p>
+        <p class="iconP2">
+            There are one default users admin。admin have administrator right. 
+        </p>
+        <p class="iconP2">
+            The rights of the user can not exceed the rights of the user group it belongs to.
+        </p>
+        <!-- <h2>Online User</h2>
+        <p class="detailP">Here you can view Web current login user information.</p> -->
+    </div>
+    <script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+    <script type="text/javascript" src="../help.js"></script>
+</body>
+</html>

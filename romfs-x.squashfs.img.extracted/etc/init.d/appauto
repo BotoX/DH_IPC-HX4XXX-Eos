@@ -1,0 +1,39 @@
+#! /bin/sh
+APPAUTO=0
+CMDLINE="/proc/dahua/bootpara"
+APPAUTO=`cat $CMDLINE`
+APPAUTO=${APPAUTO##*appauto:}
+APPAUTO=${APPAUTO%%dh_keyboard*}
+USERFILE="/usr/etc/user.sh"
+APPFILE="/usr/etc/app.sh"
+if [ -f ${USERFILE} ];then
+	.${USERFILE}
+fi
+
+if [ $APPAUTO == '1' ];then
+	echo "appauto=1"
+
+	if [ -f ${APPFILE} ];then
+		.${APPFILE}
+	else
+		echo "${APPFILE} not found!"
+	fi
+else
+	echo "appauto=0"
+fi
+
+KEYBOARD=0
+CMDLINE="/proc/dahua/bootpara"
+KEYBOARD=`cat $CMDLINE`
+KEYBOARD=${KEYBOARD##*dh_keyboard:}
+KEYBOARD=${KEYBOARD%%ethaddr*}
+if [ $KEYBOARD == '1' ];then
+	echo "keyboard = 1"
+	while [ 1 ]
+	do
+		busybox sleep 60
+	done
+else
+	echo "keyboard = 0"
+	/bin/sh
+fi

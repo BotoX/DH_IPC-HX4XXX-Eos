@@ -1,0 +1,68 @@
+{
+	  "Encode" : [ {
+	     "MainFormat" : [ {
+	  		"Video" : {
+	  			"Width" : 4000,
+	  			"Height" : 3000,
+	  			"BitRate" : 8192
+	  			}
+	  		},
+	  		 {
+	  		"Video" : {
+	  			"Width" : 4000,
+	  			"Height" : 3000,
+	  			"BitRate" : 8192
+	  			}
+	  		},
+	  		 {
+	  		"Video" : {
+	  			"Width" : 4000,
+	  			"Height" : 3000,
+	  			"BitRate" : 8192
+	  			}
+	  		},
+			{
+	  		"Video" : {
+	  			"Width" : 4000,
+	  			"Height" : 3000,
+	  			"BitRate" : 8192
+	  			}
+	  		}],	   
+	  	"ExtraFormat" : [ {
+	  		"Video" : {	  		
+	  			"BitRate" : 1024,
+				"CustomResolutionName": "D1"
+	  			}
+	  	},
+		{
+	  		"Video" : {	  
+				"CustomResolutionName": "D1",
+	  			"BitRate" : 1024
+	  			}
+	  	}],	
+	  	"SnapFormat":[ {	  		
+	  		"Video" : {
+	  		  "Compression" : "MJPG",
+	  		  "Quality" : 5,
+	  			"Width" : 4000,
+	  			"Height" : 3000
+	  			}
+	  		},
+	  		 {
+	  		"Video" : {
+	  		  "Compression" : "MJPG",
+	  		  "Quality" : 5,
+	  			"Width" : 4000,
+	  			"Height" : 3000
+	  			}
+	  		},
+	  		 {
+	  		"Video" : {
+	  			"Compression" : "MJPG",
+	  			"Quality" : 5,
+	  			"Width" : 4000,
+	  			"Height" : 3000
+	  			}
+	  		}]
+	  }]
+}

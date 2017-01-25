@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>help information</title>
+	<link href="../help.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div class="detailBox">
+    <h1>
+    	Intelligence Behavior Analytics 
+        <a href="javascript:;" class="righBut" onclick="back()">back list</a>
+    </h1>
+    <p class="noiceC">
+        <span class="bold">Comment：</span>
+        Only the equipments which support these scales have the function.
+    </p> 
+    <h2>DOF Calibration Function</h2>
+    <p class="detailP">Objective and theory: </p>
+    <p class="detailP">Estimate the camera’s internal parameters (including internal geometric features, optical features) and external parameters (the camera’s 3D location and direction relative to the real coordinate system) according to one horizontal line and three altitude lines calibrated by users and corresponding distance in reality, then confirm the corresponding relations between the 2D image captured by the camera and real 3D object.</p>
+    <p class="detailP">DOF calibration config method and attentions: </p>
+    <p class="detailP">1.  Application scene </p>
+    <p class="detailP">Try to select far scene where camera installation height is more than 3m, it doesn’t support the ceiling scene with parallel sight angle; </p>
+    <p class="detailP">it only supports calibration on the horizontal plane rather than vertical wall or inclined plane; </p>
+    <p class="detailP">It doesn’t support the scene with distorted image, such as ultra-wide angle and fisheye camera. </p>
+    <p class="detailP">2.  Calibration area setup. The calibration area which is drawn by users should be the same horizontal plane;</p>
+    <p class="detailP">3.  Vertical gauge setup. The bottom of the three vertical gauges should be on the same horizontal plane, users should select three reference objects with fixed height as vertical gauge displayed as a triangle, such as the parked car on the roadside, streetlight pole and etc; The best way is to ask someone to select three locations to stand in the monitoring scene, and then draw lines respectively. </p>
+    <p class="detailP">4.  Vertical gauge setup. Similarly select the reference object on the ground with known length, such as the indication sign on the road and etc. Or you can measure actual length with tape. It is shown in the following figure that road width is selected to be the reference object. </p>
+    <p class="detailP">5.  According to the imaging model of the camera, the pixel height in the image meets the model which is big when near and small when far due to the fact that the corresponding actual height of three vertical gauges is the same; Therefore, the length is bigger when getting close to the camera while the length is smaller when staying away from the camera. </p>
+    <p class="detailP">6.  Calibration check. It needs to use calibration check tool to check the parameters after completing calibration setup. It needs to adjust setting slightly or reset till meeting the deviation requirement if it is found there is big difference between calibration deviation and actual length. Anyway, try to set according to the actual image effect, which will basically meet the requirements. </p>
+    <table class="Table" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="wid80">Rule type supported</td>
+            <td>Tripwire, Cross Warning Zone, Abandoned Object，Missing Object Detection, Parking Detection, Directional Flow Violation Detection，Loitering Detection, Crowd Gathering Estimation, Fast-Moving.</td>
+        </tr>
+        <tr>
+            <td class="wid80">Direction </td>
+            <td>It is for the Through area option in the Detect action list item. It is to set the cross direction. The option includes: Enters,Exits,Enter&Exit.</td>
+        </tr>
+        <tr>
+            <td class="wid80">Report interval</td>
+            <td>It is for the In area option in the Detect action list item. It is to set alarm period. System just alarms once if the value is 0 here.</td>
+        </tr>
+        <tr>
+            <td class="wid80">Target filter</td>
+            <td>Check the box here  to enable this function and then click button 'draw', you can set the target filter model in this scene for this rule. Click the button 'clear', you can remove selected target filter model</td>
+        </tr>
+    </table>
+    <p class="noiceC">
+        For detailed information of other items, please refer to.
+        <a href="videoDetectConfig.htm" class="linka">Video Detect</a>
+        。
+    </p>
+</div>
+<script type="text/javascript" src="../../jsBase/lib/jquery.js"></script>
+<script type="text/javascript" src="../help.js"></script>
+</body>
+</html>
