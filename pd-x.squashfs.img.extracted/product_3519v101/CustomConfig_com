@@ -803,9 +803,5 @@
 		"RegisterServer" : "www.easy4ip.com",
 		"Type" : "dhp2p",
 		"WebVersion" : "2.420.0"
-	},
-		"CloudUpgradeServer" : {
-		"Address" : "dus.easy4ipcloud.com",
-		"Port" : 16759
-		}
+	}
 }

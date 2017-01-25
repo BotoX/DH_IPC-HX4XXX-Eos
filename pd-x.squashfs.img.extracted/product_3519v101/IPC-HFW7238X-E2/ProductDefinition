@@ -15,11 +15,24 @@
       "Support" : true,
       "SupportedRules" : {
          "Normal" : [
+            "VideoMotion",
+            "VideoBlind",
             "CrossLineDetection",
             "CrossRegionDetection",
             "LeftDetection",
             "TakenAwayDetection",
-            "VideoAbnormalDetection"
+            "VideoAbnormalDetection",
+            "FaceDetection",
+            "AudioMutation",
+            "AudioAnomaly",
+            "VideoUnFocus",
+            "WanderDetection",
+            "ParkingDetection",
+            "RetrogradeDetection",
+            "RioterDetection",
+            "MoveDetection",
+            "NumberStat",
+            "TrafficJunction"
          ]
       },
       "SupportedScene" : [ "Normal", "FaceDetection" ]
