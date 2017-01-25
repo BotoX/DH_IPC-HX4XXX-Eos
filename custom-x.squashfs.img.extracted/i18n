@@ -38,9 +38,9 @@
    ],
    "DefaultLanguage" : "English",
    "DefaultVideoStandard" : "PAL",
-   "DevStringFiles" : [ "StringsEn.txt" ],
-   "HTMLStringFiles" : [ "webEN.json" ],
-   "Languages" : [ "English" ],
-   "VideoStandards" : [ "PAL" ],
-   "WebStringFiles" : [ "webEN.lang" ]
+   "DevStringFiles" : [ "StringsEn.txt", "StringsSp.txt", "StringsFr.txt", "StringsRu.txt" ],
+   "HTMLStringFiles" : [ "webEN.json", "webES.json", "webFR.json", "webRU.json" ],
+   "Languages" : [ "English", "Spanish", "French", "Russian" ],
+   "VideoStandards" : [ "PAL", "NTSC" ],
+   "WebStringFiles" : [ "webEN.lang", "webES.lang", "webFR.lang", "webRU.lang" ]
 }
