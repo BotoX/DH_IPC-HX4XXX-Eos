@@ -1,4 +1,14 @@
 {
+   "EncodeCrop" : [
+      {
+         "Extra1" : {
+            "Support" : true
+         },
+         "Extra2" : {
+            "Support" : true
+         }
+      }
+   ],
    "EncodingResolutionLimit" : [
       [ "3840x1080", "2560x1024", "2560x960", "2560x720" ],
       [ "1408x576", "704x288" ],

@@ -1,4 +1,14 @@
 {
+   "EncodeCrop" : [
+      {
+         "Extra1" : {
+            "Support" : true
+         },
+         "Extra2" : {
+            "Support" : true
+         }
+      }
+   ],
    "EncodingResolutionLimit" : [
       [ "4000x3000", "2880x2880", "2880x2160", "3M" ],
       [ "D1", "CIF" ],

@@ -1,4 +1,14 @@
 {
+   "EncodeCrop" : [
+      {
+         "Extra1" : {
+            "Support" : true
+         },
+         "Extra2" : {
+            "Support" : true
+         }
+      }
+   ],
    "EncodingResolutionLimit" : [
       [ "1080P", "SXGA", "1_3M", "720P", "D1" ],
       [ "D1", "CIF" ],
