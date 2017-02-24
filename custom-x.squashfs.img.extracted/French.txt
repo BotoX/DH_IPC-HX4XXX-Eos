@@ -1,4 +1,4 @@
-{
+﻿{
 "Path":"Chemin",
 "Ok":"Ok",
 "Cancel":"Annuler",
